@@ -26,6 +26,7 @@
 \DeclareMathOperator{\Ion}{\textrm{I}}
 \DeclareMathOperator{\nul}{\textrm{null}}
 \DeclareMathOperator{\RP}{\mathbb{RP}}
+\DeclareMathOperator{\CC}{\mathbb{C}}
 \newcommand{\hk}{\mathbin{\! \hbox{\vrule height0.3pt width5pt depth 0.2pt \vrule height5pt width0.4pt depth 0.2pt}}}
 \newtheorem{defn}{Definition}
 \newtheorem{thm}{Theorem}
@@ -143,5 +144,58 @@ The above diagram demonstrates this notion of parallel transport in $\RR^2$. Luc
 
 You will notice that if you draw vectors which \textit{stay tangent to the surface of the sphere}, then they change direction slightly as you move across the surface of the sphere. A vector (as shown in the diagram) which starts tangent to a line of latitude will eventually end up being perturbed by the motion.
 \pagebreak
-%22 minutes into lecture 2
+
+Let's consider this parallel transport in our relative space $r(2,2)$, which we saw earlier could be represented as that sort of 'cone' shape. You can check that on an ordinary trajectory on the surface of this cone, vectors do not undergo any strange transformation. But consider when a vector is transported around the singularity. Suppose the trajectory begins at a point $x$, and crosses through the point $-x \sim x$. A vector held parallel along this trajectory is going to have to undergo the transformation $v \mapsto -v$ in order to satisfy the criteria for 'parallel transport'. You can see the reasoning behind this in more detail in any text on Differential Geometry.
+
+Now let's look at three dimensions. We consider the relative space $r(2,3) \cong \RP^2$ of two particles living in three spacial dimensions. A good way to visualize this space is as follows. Imagine the sphere, where each point $x$ is identified with the point on the opposite side of the sphere. As you move towards the equator, you need to identify points on opposite sides of the equator. In this way, it's sort of like the upper half of the sphere (of radius $d/2$, where $d$ is the distance between the particles). There are some great visualizations of this on wikipedia, if you look up 'real projective space'.
+
+The next thing to do would be to try to look at trajectories in this space, so let's consider a few different trajectories, as shown in the next figure.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/trajectories_in_rp2.png}
+    \caption*{}
+    \label{fig:23}
+\end{figure}
+
+The trajectory T1 is contractible to a point, as this region is clearly simply connected. The trajectory T2 begins at a point on the equator, moves over the surface of the sphere, and then returns to the 'same' point on the other side of the sphere, and the trajectory T3 follows a similar path. It turns out that T3 is contractible to a point, but T2 is not! The reason for this is that T3 passes around the singularity twice, whereas T2 only passes around the singularity once. A space like this is called \textit{doubly connected}, and can be studied in detail in a Topology course. 
+
+Now, why did we spend so much time going over these weird properties? I hope this sets the stage for the study of the mysterious properties of these configuration spaces, but these properties don't have much of an effect in classical mechanics. This is because classical mechanics is very local. The place where this becomes much more important is in quantum systems. So we are now going to leave the topic of classical particles, and begin the study of quantum point particles.
+
+\subsection{Quantization of Identical Quantum Particles I}
+
+We need to remember that the problem of quantization is not very well posed. Many quantum systems can result in the same classical system, so we need to consider some guiding principles. As as example, if our configuration space $\mathcal{M}$ is continuous, we should take $L^2(\mathcal{M}$ as our Hilbert space - this is a very common approach. But we know that this is just one example of a probabilistic theory - there are quite a few structure that could give the same probabilistic data for a system, so we need to answer a specific question: \textbf{What do we mean by wavefunction?} A very literal approach would be that a wavefunction is a function! 
+\[\Psi: \mathcal{M} \to \CC\]
+
+But there is an alternative interpretation to the word wavefunction, and it can give inequivalent results! Let's construct it. First we need to build some space $F$ which is locally similar to $\mathcal{M} \times \CC$ (it could just be $F = \mathcal{M}\times \CC$). As an example, we could take $\mathcal{M} = \RR$. A trajectory in $F = \RR \times \CC$ would be equivalent to what you've learned in single particle 1D quantum mechanics - below is a diagram of what this looks like. But this construction becomes different when you start looking at spaces which have singularities and other strange properties. So let's put some terminology together.
+
+The space $\mathcal{M}$ is called the \textit{base space}. The space $\CC$ is called the \textit{fibre}. The space $F$ is called the \textit{fibre bundle}, and a choice of an element in $\CC$ for each point in $\mathcal{M}$ is called a \textit{section}. Since our fibre is $\CC$, we will just call this a $\CC$-bundle.
+
+So that's one interpretation of a wavefunction - it's a section of a $\CC$-bundle over a base space $\mathcal{M}$ (provided the section meets some continuity and differentiability requirements, which won't be discussed in depth). Why go through these complicated constructions with all this terminology? Because there are sometimes multiple nontrivial $\CC$-bundles over a space which are \textit{inequivalent}! We can even go further, as a nice example we can consider relatively simple spaces over which there are inequivalent $\RR$-bundles (fibre bundles where the fibre is $\RR$). We could consider "real" quantum mechanics, where every wave function is real-valued. There are some problems with the theory of real quantum mechanics (mostly with entanglement), but it's a perfectly respectible theory in many ways. So consider the base space $\mathcal{M} = S^1$, the circle. We will construct two different $\RR$-bundles over the circle, which are shown on the following page in a diagram from the Encyclopedia Britannica.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/mobius_bundle.jpg}
+    \caption*{}
+    \label{fig:24}
+\end{figure}
+
+In order to describe wavefunctions as sections of these bundles, it's therefore important to consider the vector space properties of $\CC$, as you could choose some basis vector for the fibre and it will twist and turn as you move around the base space. The way we do this is to further generalize our fibre bundle. Let's just consider our base space $\mathcal{M}$, and for each point $x$ in $\mathcal{M}$ we will associate a fibre $h_x$. In our case, we will always be using $\CC = h_x$, but it's important to make this generalization so that we can write the following. We want to make some choice of (normalized) basis vector $\chi_x$ for each $h_x$, so that $\textrm{Span}(\chi_x) = h_x$. Thus any section $\Psi$ can be written so that you can evaluate $\Psi$ at a point: $\Psi(x) = \psi(x)\chi_x$. You could therefore change this basis vector as you move around the space! Such a choice of $\chi_x$ for each $h_x$ is called a choice of gauge, and it's the same gauge you refer to in gauge theory. Suppose you wanted to change your basis vectors, so that $\chi_x \mapsto e^{-i\varphi(x)}\chi'_x$. Then you'd require that $\psi'(x) \mapsto e^{i\varphi(x)}$ so that $\Psi$ is unchanged. This is called a gauge transformation. The fact that physical quantities should not depend on this choice of gauge (gauge invariance!) causes issues when defining your derivative operator, and we will talk about this in the next section.
+
+\pagebreak
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
 \end{document}
