@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.7)  7 JUL 2019 20:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.7)  7 JUL 2019 20:57
 entering extended mode
 **./advancedquantum.tex
 (advancedquantum.tex
@@ -766,7 +766,12 @@ File: Figures/mobius_bundle.jpg Graphic file (type jpg)
 Package pdftex.def Info: Figures/mobius_bundle.jpg  used on input line 186.
 (pdftex.def)             Requested size: 345.0pt x 207.01556pt.
  [12 <./Figures/mobius_bundle.jpg>]
-[13] (advancedquantum.aux) )
+Overfull \hbox (3.83582pt too wide) in paragraph at lines 215--216
+[]\OT1/cmr/m/it/10 A gauge trans-for-ma-tion $\OML/cmm/m/it/10 U$ \OT1/cmr/m/it
+/10 is a choice
+ []
+
+[13] [14] (advancedquantum.aux) )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 282 (\begingroup)
@@ -774,7 +779,7 @@ Package pdftex.def Info: Figures/mobius_bundle.jpg  used on input line 186.
 Here is how much of TeX's memory you used:
  17280 strings out of 492895
  300244 string characters out of 3122802
- 319077 words of memory out of 3000000
+ 320077 words of memory out of 3000000
  21057 multiletter control sequences out of 15000+200000
  551578 words of font info for 93 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -801,9 +806,9 @@ eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Michael/AppData/Local
 Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmti10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on advancedquantum.pdf (13 pages, 466722 bytes).
+Output written on advancedquantum.pdf (14 pages, 470241 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
+ 130 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

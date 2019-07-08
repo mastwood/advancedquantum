@@ -7,4 +7,4 @@
 \contentsline {subsection}{\numberline {2.2}Quantization of Identical Quantum Particles I}{11}% 
 \contentsline {section}{\numberline {3}Lecture 3}{13}% 
 \contentsline {subsection}{\numberline {3.1}Quantization of Identical Quantum Particles II}{13}% 
-\contentsline {subsection}{\numberline {3.2}Momentum is not Gauge Invariant}{13}% 
+\contentsline {subsection}{\numberline {3.2}Momentum is not Gauge Invariant}{14}% 

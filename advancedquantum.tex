@@ -176,7 +176,7 @@ The space $\mathcal{M}$ is called the \textit{base space}. The space $\CC$ is ca
 \end{defn}
 
 \begin{defn}[Section]
-	Given a $\CC$-bundle $(E,\mathcal{M},\pi)$, a section of the bundle is a map $\Psi : \mathcal{M} \mapsto h_x \in E$, so that $\Psi(x) = \psi(x)\chi_x$.
+	Given a $\CC$-bundle $(E,\mathcal{M},\pi)$, a section of the bundle is a map $\Psi : \mathcal{M} \mapsto h_x \in E$, so that $\Psi(x) = \psi(x)\chi_x$. The set of all sections of $E$ is denoted $\Gamma(E)$.
 \end{defn}
 
 So that's one interpretation of a wavefunction - it's a section of a $\CC$-bundle over a base space $\mathcal{M}$ (provided the section meets some continuity and differentiability requirements, which won't be discussed in depth). Why go through these complicated constructions with all this terminology? Because there are sometimes multiple nontrivial $\CC$-bundles over a space which are \textit{inequivalent}! We can even go further, as a nice example we can consider relatively simple spaces over which there are inequivalent $\RR$-bundles (fibre bundles where the fibre is $\RR$). We could consider "real" quantum mechanics, where every wave function is real-valued. There are some problems with the theory of real quantum mechanics (mostly with entanglement), but it's a perfectly respectible theory in many ways. So consider the base space $\mathcal{M} = S^1$, the circle. We will construct two different $\RR$-bundles over the circle, which are shown on the following page in a diagram from the Encyclopedia Britannica.
@@ -197,6 +197,10 @@ We won't spend too long talking about the theory of $\CC$ bundles. In this lectu
 
 Recall that a \textbf{State} is an assignment of complex vectors at each point in $\mathcal{M}$, or in other words, it is a section of a $\CC$-bundle over $\mathcal{M}$. To do computations with this on a computer, we need to choose a basis for each point in the $\CC$-bundle. Such a choice of basis is called a \textit{frame}.
 
+\begin{defn}[Frame]
+	Given a fibre bundle $E$, A \textit{local frame} for $E$ on some open set $M \subseteq \mathcal{M}$ is a choice of basis $\chi_x$ for each $h_x \in E$, with $x \in M$.
+\end{defn}
+
 \begin{defn}[Quantum State]
 	A state $\Psi(x)$ of a quantum system is a \textit{section} of a $\CC$-bundle over the configuration space $\mathcal{M}$ of the system.
 \end{defn}
@@ -206,6 +210,11 @@ Let $h_x$ be the fibre at the point $x \in \mathcal{M}$. Then we can choose a no
 Once we've chosen this basis $\chi_x$ then we could write $\Psi(x) = \psi(x) \chi_x$.
 
 We want to understand how to keep our quantities invariant to our choice of basis. So let's recall the \textit{Gauge Transformations}, which are transformations of the form $\chi'_x = e^{-i\phi(x)}\chi_x$. Under a gauge transformation, $\Psi$ is transformed by $\Psi'(x) = \Psi(x) \exp(i\phi(x))$. The clear example of a gauge invariant quantity is the probability amplitude $\overline{\Psi(x)}\Psi(x) = p(x)$. This is expected. But we'd also like to look at other quantities, such as our position and momentum operator.
+
+\begin{defn}[Gauge Transformation]
+	A gauge transformation $U$ is a choice of maps $U_x : h_x \to h_x$ with $U_x(\chi_x) = e^{-i\phi(x)}\chi_x$. This induces a transformation on sections of $E$ as so: $U[\Psi](x) = e^{i\phi(x)}\Psi(x) $
+\end{defn}
+\pagebreak
 
 \subsection{Momentum is not Gauge Invariant}
 
