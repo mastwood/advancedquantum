@@ -1,0 +1,809 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.7)  7 JUL 2019 20:46
+entering extended mode
+**./advancedquantum.tex
+(advancedquantum.tex
+LaTeX2e <2018-12-01>
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls
+"
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\inputenc.st
+y"
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption.
+sty"
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\caption3
+.sty"
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\keyval.
+sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\captionmargin=\dimen103
+\captionmargin@=\dimen104
+\captionwidth=\dimen105
+\caption@tempdima=\dimen106
+\caption@indent=\dimen107
+\caption@parindent=\dimen108
+\caption@hangindent=\dimen109
+)
+\c@caption@flags=\count88
+\c@ContinuedFloat=\count89
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
+x.sty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphic
+s.sty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\trig.st
+y"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\gra
+phics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdf
+tex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen110
+\Gin@req@width=\dimen111
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listing
+s.sty"
+\lst@mode=\count90
+\lst@gtempboxa=\box27
+\lst@token=\toks17
+\lst@length=\count91
+\lst@currlwidth=\dimen112
+\lst@column=\count92
+\lst@pos=\count93
+\lst@lostspace=\dimen113
+\lst@width=\dimen114
+\lst@newlines=\count94
+\lst@lineno=\count95
+\lst@maxwidth=\dimen115
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc
+.sty"
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count96
+\lst@skipnumbers=\count97
+\lst@framebox=\box28
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listing
+s.cfg"
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\amsfont
+s.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsmath.
+sty"
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amstext.
+sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsgen.s
+ty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen116
+))
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.s
+ty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen117
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.s
+ty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count98
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count99
+\leftroot@=\count100
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count101
+\DOTSCASE@=\count102
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box29
+\strutbox@=\box30
+\big@size=\dimen118
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count103
+\c@MaxMatrixCols=\count104
+\dotsspace@=\muskip10
+\c@parentequation=\count105
+\dspbrk@lvl=\count106
+\tag@help=\toks20
+\row@=\count107
+\column@=\count108
+\maxfields@=\count109
+\andhelp@=\toks21
+\eqnshift@=\dimen119
+\alignsep@=\dimen120
+\tagshift@=\dimen121
+\tagwidth@=\dimen122
+\totwidth@=\dimen123
+\lineht@=\dimen124
+\@envbody=\toks22
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/mnsymbol\MnSymbo
+l.sty"
+Package: MnSymbol 2007/01/21 v1.4 support for the MnSymbol font
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textcomp.st
+y"
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1enc.dfu"
+File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+LaTeX Info: Redefining \dagger on input line 84.
+LaTeX Info: Redefining \ddagger on input line 84.
+LaTeX Info: Redefining \mathparagraph on input line 84.
+LaTeX Info: Redefining \mathsection on input line 84.
+LaTeX Info: Redefining \mathdollar on input line 84.
+LaTeX Info: Redefining \mathsterling on input line 84.
+LaTeX Info: Redefining \yen on input line 84.
+LaTeX Info: Redefining \circledR on input line 84.
+LaTeX Info: Redefining \Re on input line 84.
+LaTeX Info: Redefining \Im on input line 84.
+\symMnSyA=\mathgroup6
+\symMnSyB=\mathgroup7
+\symMnSyC=\mathgroup8
+\symMnSyD=\mathgroup9
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 119.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/MnSymbolE/m/n on input line 119.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/MnSymbolE/m/n on input line 119.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 120.
+LaTeX Font Info:    Encoding `OMS' has changed to `U' for symbol font
+(Font)              `symbols' in the math version `normal' on input line 120.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> U/MnSymbolF/m/n on input line 120.
+LaTeX Font Info:    Encoding `OMS' has changed to `U' for symbol font
+(Font)              `symbols' in the math version `bold' on input line 120.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> U/MnSymbolF/m/n on input line 120.
+LaTeX Font Info:    Overwriting symbol font `MnSyA' in version `bold'
+(Font)                  U/MnSymbolA/m/n --> U/MnSymbolA/b/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `MnSyB' in version `bold'
+(Font)                  U/MnSymbolB/m/n --> U/MnSymbolB/b/n on input line 122.
+LaTeX Font Info:    Overwriting symbol font `MnSyC' in version `bold'
+(Font)                  U/MnSymbolC/m/n --> U/MnSymbolC/b/n on input line 123.
+LaTeX Font Info:    Overwriting symbol font `MnSyD' in version `bold'
+(Font)                  U/MnSymbolD/m/n --> U/MnSymbolD/b/n on input line 124.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/MnSymbolE/m/n --> OMX/MnSymbolE/b/n on input line 1
+25.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  U/MnSymbolF/m/n --> U/MnSymbolF/b/n on input line 126.
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 241.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `bold'
+(Font)                  OMS/MnSymbolS/m/n --> OMS/MnSymbolS/b/n on input line 2
+41.
+LaTeX Info: Redefining \longrightarrow on input line 548.
+LaTeX Info: Redefining \longleftarrow on input line 549.
+LaTeX Info: Redefining \longleftrightarrow on input line 550.
+LaTeX Info: Redefining \Longrightarrow on input line 551.
+LaTeX Info: Redefining \Longleftarrow on input line 552.
+LaTeX Info: Redefining \Longleftrightarrow on input line 553.
+LaTeX Info: Redefining \longmapsto on input line 554.
+LaTeX Info: Redefining \vdots on input line 868.
+LaTeX Font Info:    Redeclaring math symbol \braceld on input line 1721.
+LaTeX Font Info:    Redeclaring math symbol \bracelu on input line 1722.
+LaTeX Font Info:    Redeclaring math symbol \bracerd on input line 1723.
+LaTeX Font Info:    Redeclaring math symbol \braceru on input line 1724.
+LaTeX Info: Redefining \downbracefill on input line 1799.
+LaTeX Info: Redefining \upbracefill on input line 1800.
+LaTeX Info: Redefining \overbrace on input line 1819.
+LaTeX Info: Redefining \underbrace on input line 1820.
+LaTeX Info: Redefining \surd on input line 1843.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 1845.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 1846.
+LaTeX Font Info:    Redeclaring math accent \vec on input line 1848.
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\wasysym.
+sty"
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+LaTeX Font Info:    Redeclaring math symbol \invneg on input line 239.
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/physics\physics.
+sty"
+Package: physics 
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3packages/xpars
+e\xparse.sty"
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3.s
+ty"
+Package: expl3 2019-07-01 L3 programming layer (loader) 
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3kernel\expl3-c
+ode.tex"
+Package: expl3 2019-07-01 L3 programming layer (code)
+\c_max_int=\count110
+\l_tmpa_int=\count111
+\l_tmpb_int=\count112
+\g_tmpa_int=\count113
+\g_tmpb_int=\count114
+\g__kernel_prg_map_int=\count115
+\c__ior_term_ior=\count116
+\c_log_iow=\count117
+\l_iow_line_count_int=\count118
+\l__iow_line_target_int=\count119
+\l__iow_one_indent_int=\count120
+\l__iow_indent_int=\count121
+\c_zero_dim=\dimen125
+\c_max_dim=\dimen126
+\l_tmpa_dim=\dimen127
+\l_tmpb_dim=\dimen128
+\g_tmpa_dim=\dimen129
+\g_tmpb_dim=\dimen130
+\c_zero_skip=\skip46
+\c_max_skip=\skip47
+\l_tmpa_skip=\skip48
+\l_tmpb_skip=\skip49
+\g_tmpa_skip=\skip50
+\g_tmpb_skip=\skip51
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+\l_keys_choice_int=\count122
+\l__intarray_loop_int=\count123
+\c__intarray_sp_dim=\dimen131
+\g__intarray_font_int=\count124
+\c__fp_leading_shift_int=\count125
+\c__fp_middle_shift_int=\count126
+\c__fp_trailing_shift_int=\count127
+\c__fp_big_leading_shift_int=\count128
+\c__fp_big_middle_shift_int=\count129
+\c__fp_big_trailing_shift_int=\count130
+\c__fp_Bigg_leading_shift_int=\count131
+\c__fp_Bigg_middle_shift_int=\count132
+\c__fp_Bigg_trailing_shift_int=\count133
+\c__kernel_randint_max_int=\count134
+\g__fp_array_int=\count135
+\l__fp_array_loop_int=\count136
+\l__sort_length_int=\count137
+\l__sort_min_int=\count138
+\l__sort_top_int=\count139
+\l__sort_max_int=\count140
+\l__sort_true_max_int=\count141
+\l__sort_block_int=\count142
+\l__sort_begin_int=\count143
+\l__sort_end_int=\count144
+\l__sort_A_int=\count145
+\l__sort_B_int=\count146
+\l__sort_C_int=\count147
+\l__str_internal_int=\count148
+\c__str_replacement_char_int=\count149
+\l__tl_analysis_normal_int=\count150
+\l__tl_analysis_index_int=\count151
+\l__tl_analysis_nesting_int=\count152
+\l__tl_analysis_type_int=\count153
+\l__regex_internal_a_int=\count154
+\l__regex_internal_b_int=\count155
+\l__regex_internal_c_int=\count156
+\l__regex_balance_int=\count157
+\l__regex_group_level_int=\count158
+\l__regex_mode_int=\count159
+\c__regex_cs_in_class_mode_int=\count160
+\c__regex_cs_mode_int=\count161
+\l__regex_catcodes_int=\count162
+\l__regex_default_catcodes_int=\count163
+\c__regex_catcode_D_int=\count164
+\c__regex_catcode_S_int=\count165
+\c__regex_catcode_L_int=\count166
+\c__regex_catcode_O_int=\count167
+\c__regex_catcode_A_int=\count168
+\c__regex_all_catcodes_int=\count169
+\l__regex_show_lines_int=\count170
+\l__regex_min_state_int=\count171
+\l__regex_max_state_int=\count172
+\l__regex_left_state_int=\count173
+\l__regex_right_state_int=\count174
+\l__regex_capturing_group_int=\count175
+\l__regex_min_pos_int=\count176
+\l__regex_max_pos_int=\count177
+\l__regex_curr_pos_int=\count178
+\l__regex_start_pos_int=\count179
+\l__regex_success_pos_int=\count180
+\l__regex_curr_char_int=\count181
+\l__regex_curr_catcode_int=\count182
+\l__regex_last_char_int=\count183
+\l__regex_case_changed_char_int=\count184
+\l__regex_curr_state_int=\count185
+\l__regex_step_int=\count186
+\l__regex_min_active_int=\count187
+\l__regex_max_active_int=\count188
+\l__regex_replacement_csnames_int=\count189
+\l__regex_match_count_int=\count190
+\l__regex_min_submatch_int=\count191
+\l__regex_submatch_int=\count192
+\l__regex_zeroth_submatch_int=\count193
+\g__regex_trace_regex_int=\count194
+\c_empty_box=\box31
+\l_tmpa_box=\box32
+\l_tmpb_box=\box33
+\g_tmpa_box=\box34
+\g_tmpb_box=\box35
+\l__box_top_dim=\dimen132
+\l__box_bottom_dim=\dimen133
+\l__box_left_dim=\dimen134
+\l__box_right_dim=\dimen135
+\l__box_top_new_dim=\dimen136
+\l__box_bottom_new_dim=\dimen137
+\l__box_left_new_dim=\dimen138
+\l__box_right_new_dim=\dimen139
+\l__box_internal_box=\box36
+\l__coffin_internal_box=\box37
+\l__coffin_internal_dim=\dimen140
+\l__coffin_offset_x_dim=\dimen141
+\l__coffin_offset_y_dim=\dimen142
+\l__coffin_x_dim=\dimen143
+\l__coffin_y_dim=\dimen144
+\l__coffin_x_prime_dim=\dimen145
+\l__coffin_y_prime_dim=\dimen146
+\c_empty_coffin=\box38
+\l__coffin_aligned_coffin=\box39
+\l__coffin_aligned_internal_coffin=\box40
+\l_tmpa_coffin=\box41
+\l_tmpb_coffin=\box42
+\g_tmpa_coffin=\box43
+\g_tmpb_coffin=\box44
+\l__coffin_bounding_shift_dim=\dimen147
+\l__coffin_left_corner_dim=\dimen148
+\l__coffin_right_corner_dim=\dimen149
+\l__coffin_bottom_corner_dim=\dimen150
+\l__coffin_top_corner_dim=\dimen151
+\l__coffin_scaled_total_height_dim=\dimen152
+\l__coffin_scaled_width_dim=\dimen153
+\c__coffin_empty_coffin=\box45
+\l__coffin_display_coffin=\box46
+\l__coffin_display_coord_coffin=\box47
+\l__coffin_display_pole_coffin=\box48
+\l__coffin_display_offset_dim=\dimen154
+\l__coffin_display_x_dim=\dimen155
+\l__coffin_display_y_dim=\dimen156
+\g__file_internal_ior=\read1
+\l__seq_internal_a_int=\count195
+\l__seq_internal_b_int=\count196
+\c__deprecation_minus_one=\count197
+)
+
+! LaTeX Error: File `l3backend-pdfmode.def' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+)
+Package: xparse 2019-05-28 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count198
+\g__xparse_grabber_int=\count199
+\l__xparse_m_args_int=\count266
+\l__xparse_v_nesting_int=\count267
+))
+\c@defn=\count268
+\c@thm=\count269
+ (advancedquantum.aux)
+\openout1 = `advancedquantum.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 33.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp
+-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count270
+\scratchdimen=\dimen157
+\scratchbox=\box49
+\nofMPsegments=\count271
+\nofMParguments=\count272
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count273
+\MPscratchDim=\dimen158
+\MPnumerator=\count274
+\makeMPintoPDFobject=\count275
+\everyMPtoPDFconversion=\toks25
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopd
+f-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\infwa
+rerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\grfext.
+sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvdef
+inekeys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ltxcm
+ds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\kvoptio
+ns.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\kvset
+keys.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\etexc
+mds.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\iflua
+tex.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\pdfte
+xcmds.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf
+.sty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+\c@lstlisting=\count276
+LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
+"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
+"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+wasy on input line 34.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd
+"
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+) [1
+
+{C:/Users/Michael/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(advancedquantum.toc)
+\tf@toc=\write3
+\openout3 = `advancedquantum.toc'.
+
+ [2]
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 74--75
+ [] 
+ []
+
+[3]
+<Figures/fig1.png, id=17, 505.52866pt x 258.7266pt>
+File: Figures/fig1.png Graphic file (type png)
+<use Figures/fig1.png>
+Package pdftex.def Info: Figures/fig1.png  used on input line 81.
+(pdftex.def)             Requested size: 345.0pt x 176.57523pt.
+ [4 <./Figures/fig1.png>]
+<Figures/figure2.png, id=26, 505.52866pt x 258.7266pt>
+File: Figures/figure2.png Graphic file (type png)
+<use Figures/figure2.png>
+Package pdftex.def Info: Figures/figure2.png  used on input line 101.
+(pdftex.def)             Requested size: 345.0pt x 176.57523pt.
+ [5] [6 <./Figures/figure2.png>]
+<Figures/rp1.png, id=44, 354.123pt x 408.68684pt>
+File: Figures/rp1.png Graphic file (type png)
+<use Figures/rp1.png>
+Package pdftex.def Info: Figures/rp1.png  used on input line 119.
+(pdftex.def)             Requested size: 172.5pt x 199.08592pt.
+ [7 <./Figures/rp1.png>] [8]
+<Figures/figure3.png, id=53, 505.52866pt x 258.7266pt>
+File: Figures/figure3.png Graphic file (type png)
+<use Figures/figure3.png>
+Package pdftex.def Info: Figures/figure3.png  used on input line 133.
+(pdftex.def)             Requested size: 345.0pt x 176.57523pt.
+<Figures/spheretransport.png, id=54, 504.80595pt x 258.0039pt>
+File: Figures/spheretransport.png Graphic file (type png)
+<use Figures/spheretransport.png>
+Package pdftex.def Info: Figures/spheretransport.png  used on input line 140.
+(pdftex.def)             Requested size: 345.0pt x 176.33398pt.
+ [9 <./Figures/figure3.png> <./Figures/spheretransport.png>]
+<Figures/trajectories_in_rp2.png, id=60, 505.52866pt x 258.7266pt>
+File: Figures/trajectories_in_rp2.png Graphic file (type png)
+<use Figures/trajectories_in_rp2.png>
+Package pdftex.def Info: Figures/trajectories_in_rp2.png  used on input line 15
+6.
+(pdftex.def)             Requested size: 345.0pt x 176.57523pt.
+ [10 <./Figures/trajectories_in_rp2.png>] [11]
+<Figures/mobius_bundle.jpg, id=68, 401.5pt x 240.9pt>
+File: Figures/mobius_bundle.jpg Graphic file (type jpg)
+<use Figures/mobius_bundle.jpg>
+Package pdftex.def Info: Figures/mobius_bundle.jpg  used on input line 186.
+(pdftex.def)             Requested size: 345.0pt x 207.01556pt.
+ [12 <./Figures/mobius_bundle.jpg>]
+[13] (advancedquantum.aux) )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 282 (\begingroup)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 17280 strings out of 492895
+ 300244 string characters out of 3122802
+ 319077 words of memory out of 3000000
+ 21057 multiletter control sequences out of 15000+200000
+ 551578 words of font info for 93 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 47i,8n,65p,2060b,2256s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/d
+vips/mnsymbol/MnSymbolD.enc}{C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9
+/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{C:/Users/Michael/AppData/Local/Program
+s/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{C:/Users/Michael/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Users/Micha
+el/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{C:
+/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSym
+bolS.enc}<C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/mnsymbol/MnSymbol10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/mnsymbol/MnSymbol7.pfb><C:/Users/Michael/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Michael/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users
+/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi7.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Michael/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Michael
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/
+Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmti10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on advancedquantum.pdf (13 pages, 466722 bytes).
+PDF statistics:
+ 127 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+
