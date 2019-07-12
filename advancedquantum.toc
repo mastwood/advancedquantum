@@ -11,3 +11,4 @@
 \contentsline {subsection}{\numberline {3.1}Quantization of Identical Quantum Particles II}{15}% 
 \contentsline {subsection}{\numberline {3.2}Making Momentum Gauge Invariant}{16}% 
 \contentsline {subsubsection}{\numberline {3.2.1}Using Parallel Transport}{16}% 
+\contentsline {subsection}{\numberline {3.3}Free Particle in Two Dimensions}{18}% 

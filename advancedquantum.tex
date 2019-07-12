@@ -26,6 +26,7 @@
 \DeclareMathOperator{\Ion}{\textrm{I}}
 \DeclareMathOperator{\nul}{\textrm{null}}
 \DeclareMathOperator{\RP}{\mathbb{RP}}
+\DeclareMathOperator{\ZZ}{\mathbb{Z}}
 \DeclareMathOperator{\CC}{\mathbb{C}}
 \newcommand{\hk}{\mathbin{\! \hbox{\vrule height0.3pt width5pt depth 0.2pt \vrule height5pt width0.4pt depth 0.2pt}}}
 \newtheorem{defn}{Definition}
@@ -275,11 +276,40 @@ The issue with this is that we want particles to locally behave like free partic
 f_{k\ell}(x) = i[D_k,D_\ell] = \pdv{b_\ell}{x^k} - \pdv{b_k}{x^\ell}=0
 \end{equation}
 
+As long as equation 5 is imposed everywhere (except singularities, such as is the case on $\mathcal{M}=r(2,2)$) we will have freedom in choosing the $b_k$ terms. This freedom at the singularities allows us to pick nontrivial $b_k$ terms, which gives rise to interesting phenomena in 2-d materials. Due to $b_k$ being curl free, we also now know that $P_\gamma(y,x)$ is path independent as long as $\gamma$ does not encircle the singularity.
 
+Let's study what happens when you go in a loop around the singularity. You can see that $P_\gamma(x,x)$ should just be some number $e^{i\xi}$ for some $\xi \in [0,2\pi)$, as $h_x \cong \CC$ and $\dim(\CC)=1$. However, this $\xi$ turns out to be independent of $x$! To demonstrate this, see the followng figure. 
 
+\pagebreak
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/path_independence_gauge.png}
+    \caption*{}
+    \label{fig:31}
+\end{figure}
 
+So when $e^{i\xi}=1$, nothing happens when you move around a singularity - this means the wavefunction is unchanged! However, when $e^{i\xi}\neq 1$, you will be able to generate phases of $e^{i\xi n}$ for any $n \in \ZZ$ by transporting vectors around the singularity. This means that if you have some strange system with $e^{i\xi}\neq 1$ then dynamical effects will be observable due to the geometry of the system. This can only happen in two spacial dimensions!
 
+\subsection{Free Particle in Two Dimensions}
+
+Now let's consider the free particle in two dimensions. We will neglect center of mass coordinates, and use polar coordinates. The standard hamiltonian for a free particle in two dimensions is the following.
+
+\begin{equation}
+H = \frac{-1}{m}\left(\pdv[2]{r}+\frac{1}{r}\pdv{r}+ \frac{1}{r^2}\pdv[2]{\phi}\right)
+\end{equation}
+
+When you have this property that wavefunctions pick up a phase of $e^{i\xi}$ when you go around the singularity, you impose a nontrivial boundary condition: $\Psi(r,\phi+2\pi) = e^{i\xi}\Psi(r,\phi)$. This is what gives us strange dynamics - polar coordinates no longer gives us nice symmetry. There is, however, a transformation you can make to the Schrodinger equation that makes it easier to solve. The strategy is to replace $\Psi$ with $\Psi'(r,\phi) = e^{i\frac{\xi}{2\pi}\phi}\Psi(r,\phi)$. Then the Hamiltonian transforms as $H' = e^{-i\frac{\xi}{2\pi}\phi}H e^{i\frac{\xi}{2\pi}\phi}$. This gives $H\Psi = H'\Psi'$, so the solutions to the Schrodinger equation are unchanged. But observe what happens:
+
+\begin{equation}
+H' = \frac{-1}{m}\left(\pdv[2]{r}+\frac{1}{r}\pdv{r}+ \frac{1}{r^2}\left(\pdv[2]{\phi}+\frac{i\xi}{2\pi}\right)^2\right)
+\end{equation}
+
+As an exercise, solve the Schrodinger equation after this transformation.
+
+\subsection{Conclusions of Lecture 3}
+
+This weirdness doesn't happen in three dimensions. The reason is that $\RP^{n-1}$ is doubly connected. Any curve $\gamma^2$ that goes around the singularity twice is contractible. Therefore we have $P_{\gamma^2}(x,x) = e^{2i\xi}=1$, so $\xi = 0$ or $\xi = \pi$. In the case that $\xi = \pi$, we have the dynamics of a fermion. In the case that $\xi = 0$ we have the dynamics of a boson! But what does it mean to go around the singularity once in $\RP^{n-1}$? It means you exchange the two particles. This is why fermions are antisymmetric under exchange, which is what causes the Pauli exclusion principle. We will see this in extreme detail in the following lectures.
 
 
 

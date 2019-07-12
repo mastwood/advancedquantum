@@ -13,14 +13,14 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:export-ydpi="200"
    inkscape:export-xdpi="200"
-   inkscape:export-filename="C:\Users\mastw\Documents\Quantum Theory Notes\figure3.png"
+   inkscape:export-filename="C:\Users\Michael\Documents\GitHub\advancedquantum\Figures\path_independence_gauge.png"
    width="177.71648mm"
    height="90.903389mm"
    viewBox="0 0 177.71648 90.903389"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   sodipodi:docname="figure3.svg">
+   sodipodi:docname="path_independence_parallel.svg">
   <defs
      id="defs2">
     <marker
@@ -1000,7 +1000,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>

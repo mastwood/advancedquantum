@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.7)  11 JUL 2019 23:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.11)  12 JUL 2019 00:54
 entering extended mode
 **./advancedquantum.tex
 (advancedquantum.tex
@@ -578,44 +578,43 @@ Package: expl3 2019-07-01 L3 programming layer (code)
 \l__seq_internal_b_int=\count196
 \c__deprecation_minus_one=\count197
 )
-
-! LaTeX Error: File `l3backend-pdfmode.def' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: def)
-
-Enter file name: 
-)
-Package: xparse 2019-05-28 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count198
-\g__xparse_grabber_int=\count199
-\l__xparse_m_args_int=\count266
-\l__xparse_v_nesting_int=\count267
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/l3backend\l3back
+end-pdfmode.def"
+File: l3backend-pdfmode.def 2019-04-06 v L3 Experimental backend support: PDF m
+ode
+\l__kernel_color_stack_int=\count198
+\l__pdf_internal_box=\box49
 ))
-\c@defn=\count268
-\c@thm=\count269
+Package: xparse 2019-05-28 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count199
+\g__xparse_grabber_int=\count266
+\l__xparse_m_args_int=\count267
+\l__xparse_v_nesting_int=\count268
+))
+\c@defn=\count269
+\c@thm=\count270
  (advancedquantum.aux)
 \openout1 = `advancedquantum.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 34.
 
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    ... okay on input line 34.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -623,16 +622,16 @@ Package caption Info: End \AtBeginDocument code.
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp
 -pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count270
+\scratchcounter=\count271
 \scratchdimen=\dimen157
-\scratchbox=\box49
-\nofMPsegments=\count271
-\nofMParguments=\count272
+\scratchbox=\box50
+\nofMPsegments=\count272
+\nofMParguments=\count273
 \everyMPshowfont=\toks24
-\MPscratchCnt=\count273
+\MPscratchCnt=\count274
 \MPscratchDim=\dimen158
-\MPnumerator=\count274
-\makeMPintoPDFobject=\count275
+\MPnumerator=\count275
+\makeMPintoPDFobject=\count276
 \everyMPtoPDFconversion=\toks25
 )
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopd
@@ -693,20 +692,20 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count276
-LaTeX Font Info:    Try loading font information for U+msa on input line 34.
+\c@lstlisting=\count277
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
 
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 "
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 34.
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 "
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 34.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 35.
 
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd
 "
@@ -719,49 +718,49 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 \openout3 = `advancedquantum.toc'.
 
  [2]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 74--75
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 75--76
  [] 
  []
 
 [3]
-<Figures/fig1.png, id=17, 505.52866pt x 258.7266pt>
+<Figures/fig1.png, id=16, 505.52866pt x 258.7266pt>
 File: Figures/fig1.png Graphic file (type png)
 <use Figures/fig1.png>
-Package pdftex.def Info: Figures/fig1.png  used on input line 81.
+Package pdftex.def Info: Figures/fig1.png  used on input line 82.
 (pdftex.def)             Requested size: 345.0pt x 176.57523pt.
  [4]
-<Figures/figure2.png, id=28, 505.52866pt x 258.7266pt>
+<Figures/figure2.png, id=27, 505.52866pt x 258.7266pt>
 File: Figures/figure2.png Graphic file (type png)
 <use Figures/figure2.png>
-Package pdftex.def Info: Figures/figure2.png  used on input line 101.
+Package pdftex.def Info: Figures/figure2.png  used on input line 102.
 (pdftex.def)             Requested size: 345.0pt x 176.57523pt.
  [5 <./Figures/fig1.png>] [6] [7 <./Figures/figure2.png>]
-<Figures/rp1.png, id=50, 354.123pt x 408.68684pt>
+<Figures/rp1.png, id=49, 354.123pt x 408.68684pt>
 File: Figures/rp1.png Graphic file (type png)
 <use Figures/rp1.png>
-Package pdftex.def Info: Figures/rp1.png  used on input line 119.
+Package pdftex.def Info: Figures/rp1.png  used on input line 120.
 (pdftex.def)             Requested size: 172.5pt x 199.08592pt.
  [8 <./Figures/rp1.png>] [9]
 <Figures/figure3.png, id=58, 505.52866pt x 258.7266pt>
 File: Figures/figure3.png Graphic file (type png)
 <use Figures/figure3.png>
-Package pdftex.def Info: Figures/figure3.png  used on input line 135.
+Package pdftex.def Info: Figures/figure3.png  used on input line 136.
 (pdftex.def)             Requested size: 345.0pt x 176.57523pt.
 <Figures/spheretransport.png, id=59, 504.80595pt x 258.0039pt>
 File: Figures/spheretransport.png Graphic file (type png)
 <use Figures/spheretransport.png>
-Package pdftex.def Info: Figures/spheretransport.png  used on input line 142.
+Package pdftex.def Info: Figures/spheretransport.png  used on input line 143.
 (pdftex.def)             Requested size: 345.0pt x 176.33398pt.
  [10 <./Figures/figure3.png> <./Figures/spheretransport.png>]
 <Figures/trajectories_in_rp2.png, id=65, 505.52866pt x 258.7266pt>
 File: Figures/trajectories_in_rp2.png Graphic file (type png)
 <use Figures/trajectories_in_rp2.png>
-Package pdftex.def Info: Figures/trajectories_in_rp2.png  used on input line 15
-9.
+Package pdftex.def Info: Figures/trajectories_in_rp2.png  used on input line 16
+0.
 (pdftex.def)             Requested size: 345.0pt x 176.57523pt.
 
 [11 <./Figures/trajectories_in_rp2.png>]
-LaTeX Font Info:    Try loading font information for U+euf on input line 183.
+LaTeX Font Info:    Try loading font information for U+euf on input line 184.
 
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd
 "
@@ -770,61 +769,70 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 <Figures/mobius_bundle.jpg, id=78, 401.5pt x 240.9pt>
 File: Figures/mobius_bundle.jpg Graphic file (type jpg)
 <use Figures/mobius_bundle.jpg>
-Package pdftex.def Info: Figures/mobius_bundle.jpg  used on input line 194.
+Package pdftex.def Info: Figures/mobius_bundle.jpg  used on input line 195.
 (pdftex.def)             Requested size: 345.0pt x 207.01556pt.
  [13 <./Figures/mobius_bundle.jpg>] [14]
-Overfull \hbox (3.83582pt too wide) in paragraph at lines 223--224
+Overfull \hbox (3.83582pt too wide) in paragraph at lines 224--225
 []\OT1/cmr/m/it/10 A gauge trans-for-ma-tion $\OML/cmm/m/it/10 U$ \OT1/cmr/m/it
 /10 is a choice
  []
 
-[15] [16] [17] (advancedquantum.aux) )
-(\end occurred inside a group at level 1)
+[15] [16] [17]
+<Figures/path_independence_gauge.png, id=99, 505.52866pt x 258.7266pt>
+File: Figures/path_independence_gauge.png Graphic file (type png)
+<use Figures/path_independence_gauge.png>
+Package pdftex.def Info: Figures/path_independence_gauge.png  used on input lin
+e 287.
+(pdftex.def)             Requested size: 345.0pt x 176.57523pt.
+ [18 <./Figures/path_independence_gauge.png>]
+(advancedquantum.aux)
 
-### semi simple group (level 1) entered at line 282 (\begingroup)
-### bottom level 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17302 strings out of 492895
- 300643 string characters out of 3122802
- 320079 words of memory out of 3000000
- 21070 multiletter control sequences out of 15000+200000
+ 17435 strings out of 492895
+ 304319 string characters out of 3122801
+ 313007 words of memory out of 3000000
+ 21199 multiletter control sequences out of 15000+200000
  553485 words of font info for 101 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,9n,65p,2239b,2257s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Michael\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkn
-appen/ec/dpi600\tcti1000.pk>{C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9
-/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}{C:/Users/Michael/AppData/Local/Program
-s/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Users/Michael/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{C:/Users/Micha
-el/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:
-/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSym
-bolF.enc}{C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mn
-symbol/MnSymbolC.enc}<C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/mnsymbol/MnSymbol10.pfb><C:/Users/Michael/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol7.pfb><C:/Users/Michael/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Users/Mi
-chael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.p
-fb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Michael/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Michael/
-AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/
+ 47i,9n,65p,2239b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Michael\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcti1000.pk>{C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
+ps/mnsymbol/MnSymbolA.enc}{C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/f
+onts/enc/dvips/mnsymbol/MnSymbolE.enc}{C:/Users/Michael/AppData/Local/Programs/
+MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{C:/Users/Michael/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{C:/Users/Michael
+/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}{C:/U
+sers/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbo
+lC.enc}<C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/m
+nsymbol/MnSymbol10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/mnsymbol/MnSymbol7.pfb><C:/Users/Michael/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Users/Michael/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/M
+ichael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Michael/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Michael/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/
 Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Michael/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Michael/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Mich
-ael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr8.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmti10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Michael/AppData/Local/Pr
-ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on advancedquantum.pdf (17 pages, 552858 bytes).
+cmr10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Michael/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Michael/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Micha
+el/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C
+:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Michael/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on advancedquantum.pdf (18 pages, 594750 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
+ 187 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
