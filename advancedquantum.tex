@@ -302,7 +302,7 @@ H = \frac{-1}{m}\left(\pdv[2]{r}+\frac{1}{r}\pdv{r}+ \frac{1}{r^2}\pdv[2]{\phi}\
 When you have this property that wavefunctions pick up a phase of $e^{i\xi}$ when you go around the singularity, you impose a nontrivial boundary condition: $\Psi(r,\phi+2\pi) = e^{i\xi}\Psi(r,\phi)$. This is what gives us strange dynamics - polar coordinates no longer gives us nice symmetry. There is, however, a transformation you can make to the Schrodinger equation that makes it easier to solve. The strategy is to replace $\Psi$ with $\Psi'(r,\phi) = e^{i\frac{\xi}{2\pi}\phi}\Psi(r,\phi)$. Then the Hamiltonian transforms as $H' = e^{-i\frac{\xi}{2\pi}\phi}H e^{i\frac{\xi}{2\pi}\phi}$. This gives $H\Psi = H'\Psi'$, so the solutions to the Schrodinger equation are unchanged. But observe what happens:
 
 \begin{equation}
-H' = \frac{-1}{m}\left(\pdv[2]{r}+\frac{1}{r}\pdv{r}+ \frac{1}{r^2}\left(\pdv[2]{\phi}+\frac{i\xi}{2\pi}\right)^2\right)
+H' = \frac{-1}{m}\left(\pdv[2]{r}+\frac{1}{r}\pdv{r}+ \frac{1}{r^2}\left(\pdv{\phi}+\frac{i\xi}{2\pi}\right)^2\right)
 \end{equation}
 
 As an exercise, solve the Schrodinger equation after this transformation.

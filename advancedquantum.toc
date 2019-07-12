@@ -12,3 +12,4 @@
 \contentsline {subsection}{\numberline {3.2}Making Momentum Gauge Invariant}{16}% 
 \contentsline {subsubsection}{\numberline {3.2.1}Using Parallel Transport}{16}% 
 \contentsline {subsection}{\numberline {3.3}Free Particle in Two Dimensions}{18}% 
+\contentsline {subsection}{\numberline {3.4}Conclusions of Lecture 3}{19}% 
