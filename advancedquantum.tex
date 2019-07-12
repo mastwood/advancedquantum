@@ -75,7 +75,7 @@ Course Outline
 \end{center}
 \pagebreak
 \subsection{Motivation}
-In order to understand how to approach moving from a theory of single particles to a theory of many particles, it is important to understand the way in which physical quantum theories are developed. Figure 1 is a representation of how these theories are built. Consider the space of quantum theories (for the purposes of this, a quantum theory is a pair $\{\mathcal{H},\hat H\}$). Each of these theories has a space of states, $\mathcal{H}$, and an observable called a Hamiltonian ($\hat H$) which governs the dynamics of those states. When we measure these systems in real life, we are limited by our measurement apparatus. The objects we measure are subject to decoherence, and the apparatus is imperfect, and so through decoherence and imperfect measurement we end up observing something called a "classical limit", which corresponds to one of the many classical theories in the space of classical theories. A classical theory, similarly to a quantum theory, is given by a pair $\{\mathcal{M},H\}$ of a manifold (or some other topological space) $\mathcal{M}$ called the phase space along with the classical Hamiltonian $H$ governing the dynamics of the system. Quantization is the process of reversing this classical limit - we would like to take $\{\mathcal{M},H\}$ and find some $\{\mathcal{H},\hat H\}$ which matches the theory. The issue with this is that this process is not well posed - many quantum theories can describe the same classical limit, and we will see examples of this in the course. In order to simplify this task, one of the major tools at our disposal is symmetry! We would expect a quantum theory to have the same symmetries as the classical theory, so narrowing the potential quantum theories down to the ones with these properties is helpful when quantizing a theory. One of the most important symmetries for this course is the symmetry of particle exchange, and that's where we will commence this course.
+In order to understand how to approach moving from a theory of single particles to a theory of many particles, it is important to understand the way in which physical quantum theories are developed. Figure 1 is a representation of how these theories are built. Consider the space of quantum theories (for the purposes of this, a quantum theory is a pair $\{\mathcal{H},\hat H\}$). Each of these theories has a space of states, $\mathcal{H}$, and an observable called a Hamiltonian ($\hat H$) which governs the dynamics of those states. When we measure these systems in real life, we are limited by our measurement apparatus. The objects we measure are subject to decoherence, and the apparatus is imperfect, and so through decoherence and imperfect measurement we end up observing something called a "classical limit", which corresponds to one of the many classical theories in the space of classical theories. A classical theory, similarly to a quantum theory, is given by a pair $\{\mathcal{M},H\}$ of a manifold (or some other topological space) $\mathcal{M}$ called the phase space along with the classical Hamiltonian $H$ governing the dynamics of the system. Quantization is the process of reversing this classical limit - we would like to take $\{\mathcal{M},H\}$ and find some $\{\mathcal{H},\hat H\}$ which matches the theory. The issue with this is that this process is not well posed - many quantum theories can describe the same classical limit, and we will see examples of this in the course. In order to simplify this task, one of the major tools at our disposal is symmetry! We would expect a quantum theory to have the same symmetries as the classical theory, so narrowing the potential quantum theories down to the ones with these properties is helpful when quantizing a theory. One of the most important symmetries for this course is the symmetry of particle exchange, and that's where we will commence this course.\footnote{For a comprehensive description of "quantization" as a process, see Ali and Englis' review paper on the topic. This course will only cover the Canonical Quantization method in detail, but there is still more to learn in Canonical Quantization as well}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{Figures/fig1.png}
@@ -125,6 +125,8 @@ Here's a more specific example. Consider two particles moving in $\RR^2$. Then w
 \subsection{Classical Theory of Identical Particles II}
 We noticed in the last section that given a configuration space $\mathcal{M} \equiv (\RR^n)^{\times N}/\sim$, we could rewrite the space in the center-of-mass coordinates to find that $\mathcal{M} = \RR^n \times r(N,n)$, where $r(N,n)$ looks locally like $\RR^{n(N-1)}$ but with a few nasty extra features. The difference between the two manifests in the global (topological/geometric) properties of the spaces. Particularly in the analysis of \textit{parallel transport} and \textit{tangent vectors}. Though we haven't talked in detail about what a tangent vector is, for now we can use our intuition about velocity vectors - it is a vector valued object defined at each point along some curve or surface, and in this particular case we require the vector to be in some sense 'tangent' to the surface. You will see these notions defined in more detail in courses on general relativity or differential geometry, and the geometry of configuration spaces is very closely related to what we call 'gauge theories', which you will see later on as well. If you would like the full picture, it would be beneficial to spend some time studying what is called the \textit{tangent bundle} of a manifold.
 
+\subsubsection{Tangent Vectors}
+
 Let's now use our intuition about velocity to consider some configuration spaces. We say that a velocity vector $v$ is a 'tangent vector to the configuration space', meaning that there is some curve through $\mathcal{M}$ which has velocity $v$ at some point $x$. As an example, in $\RR^2$ a particle requires both position and velocity in order for you to fully specify its' state - we therefore say that the \textit{state} of the particle is the pair $(x,v)$. In a simple space such as $\RR^2$, comparing the velocities of particles is simple, but we often take for granted the process of adding vectors 'tip to tail'. This way of comparing velocities is where you take the velocities as vectors in $\RR^2$ and subtract them pointwise. This works in $\RR^n$ easily, but you have to be more careful when considering so-called 'tangent vectors', which exist in a more complicated space called the tangent space. The tangent space is defined separately at each point in the 'ambient space' (here being \textrm{M}). For $\RR^2$, this is simply $\RR^2$ everywhere. But for an arbitrary manifold $\mathcal{M}$, the tangent space may be different at each point. Therefore we would like a way to transport velocities between tangent spaces in a continuous/parallel way. This is called parallel transport.
 \pagebreak
 
@@ -145,6 +147,7 @@ The above diagram demonstrates this notion of parallel transport in $\RR^2$. Luc
 You will notice that if you draw vectors which \textit{stay tangent to the surface of the sphere}, then they change direction slightly as you move across the surface of the sphere. A vector (as shown in the diagram) which starts tangent to a line of latitude will eventually end up being perturbed by the motion.
 \pagebreak
 
+\subsubsection{Parallel Transport in Relative Space}
 Let's consider this parallel transport in our relative space $r(2,2)$, which we saw earlier could be represented as that sort of 'cone' shape. You can check that on an ordinary trajectory on the surface of this cone, vectors do not undergo any strange transformation. But consider when a vector is transported around the singularity. Suppose the trajectory begins at a point $x$, and crosses through the point $-x \sim x$. A vector held parallel along this trajectory is going to have to undergo the transformation $v \mapsto -v$ in order to satisfy the criteria for 'parallel transport'. You can see the reasoning behind this in more detail in any text on Differential Geometry.
 
 Now let's look at three dimensions. We consider the relative space $r(2,3) \cong \RP^2$ of two particles living in three spacial dimensions. A good way to visualize this space is as follows. Imagine the sphere, where each point $x$ is identified with the point on the opposite side of the sphere. As you move towards the equator, you need to identify points on opposite sides of the equator. In this way, it's sort of like the upper half of the sphere (of radius $d/2$, where $d$ is the distance between the particles). There are some great visualizations of this on wikipedia, if you look up 'real projective space'.
@@ -171,12 +174,17 @@ But there is an alternative interpretation to the word wavefunction, and it can 
 
 The space $\mathcal{M}$ is called the \textit{base space}. The space $\CC$ is called the \textit{fibre}. The space $F$ is called the \textit{fibre bundle}, and a choice of an element in $\CC$ for each point in $\mathcal{M}$ is called a \textit{section}. Since our fibre is $\CC$, we will just call this a $\CC$-bundle.
 
-\begin{defn}[$\CC$-Bundle]
-	Given a set $\mathcal{M}$, a $\CC$-Bundle is a triplet $(E,\mathcal{M},\pi)$ composed of $\mathcal{M}$, the set $E$ so that any element $h_x \in E$ has $h_x \cong \CC$, and a projection $\pi : E \to \mathcal{M}$ where $\pi(h_x) = x$. In shorthand, we just refer to $E$ as the bundle.
+\begin{defn}[Vector Bundle]
+Let $\mathcal{M}$ be a manifold. Suppose for each point $x \in \mathcal{M}$ we associate a vector space $h_x$. We define a vector bundle over $\mathcal{M}$ to be the disjoint union $\sqcup_x h_x = E$. This definition provides the existence of a projection $\pi : E \to \mathcal{M}$ given by $\pi(x,h_x)=x$.
 \end{defn}
 
+
 \begin{defn}[Section]
-	Given a $\CC$-bundle $(E,\mathcal{M},\pi)$, a section of the bundle is a map $\Psi : \mathcal{M} \mapsto h_x \in E$, so that $\Psi(x) = \psi(x)\chi_x$. The set of all sections of $E$ is denoted $\Gamma(E)$.
+	Suppose $E$ is a vector bundle over $\mathcal{M}$. A section of $E$ is a map $\Psi : \mathcal{M} \mapsto h_x \in E$, so that $\Psi(x) = \psi(x)\chi_x$. The set of all sections of $E$ is denoted $\Gamma(E)$.\footnote{In the case $E=T\mathcal{M}$ (the tangent bundle), we write $\Gamma(TM) = \mathfrak{X}(M)$}
+\end{defn}
+
+\begin{defn}[$\CC$-Bundle]
+	A $\CC$-bundle over a manifold $\mathcal{M}$ is a vector bundle $E$ where each $h_x \in E$ has $h_x \cong \CC$.
 \end{defn}
 
 So that's one interpretation of a wavefunction - it's a section of a $\CC$-bundle over a base space $\mathcal{M}$ (provided the section meets some continuity and differentiability requirements, which won't be discussed in depth). Why go through these complicated constructions with all this terminology? Because there are sometimes multiple nontrivial $\CC$-bundles over a space which are \textit{inequivalent}! We can even go further, as a nice example we can consider relatively simple spaces over which there are inequivalent $\RR$-bundles (fibre bundles where the fibre is $\RR$). We could consider "real" quantum mechanics, where every wave function is real-valued. There are some problems with the theory of real quantum mechanics (mostly with entanglement), but it's a perfectly respectible theory in many ways. So consider the base space $\mathcal{M} = S^1$, the circle. We will construct two different $\RR$-bundles over the circle, which are shown on the following page in a diagram from the Encyclopedia Britannica.
@@ -216,14 +224,56 @@ We want to understand how to keep our quantities invariant to our choice of basi
 \end{defn}
 \pagebreak
 
-\subsection{Momentum is not Gauge Invariant}
+\subsection{Making Momentum Gauge Invariant}
 
-Let's try to show that the momentum operator is not gauge invariant.
+Let's try to show that the momentum operator (that we learned about originally) is not gauge invariant. Recall that (in natural units) $\hat p = -i \pdv{x^k}$
 
+\[\hat p \Psi' = -i \lim_{\epsilon \to 0}\frac{e^{i\phi(x+e_k\epsilon)}\Psi(x+e_k\epsilon) - e^{i\phi(x)}\Psi(x)}{\epsilon}\]
 
+As we can see $\phi(x+e_k \epsilon) \neq \phi(x)$, and in the limit as $\epsilon \to 0$ it is not guaranteed that they are equal! We didn't require that $\phi$ be continuous. What this means is that we could set up an experiment to measure $\phi$ and recieve information about gauge, which means that this formulation is not independent of our choice of basis. The next step is to therefore develop a new notion of momentum.
 
+\subsubsection{Using Parallel Transport}
+
+As we saw in the previous section, parallel transport provides a nice way of comparing two tangent vectors (in this case the gauge $\chi_x$) in order to develop a new difference quotient. Let's look more closely at the precise definition of parallel transport. 
+
+Recall that to parallel transport a vector in a tangent space $h_x$ into a different space $h_y$. Therefore we'd like a map (preferably a linear one!) that transports these vectors. This map will of course depend on the path $\gamma(t)$ between $x$ and $y$, and we will denote it $P_\gamma(y,x)$\footnote{This map will also often be denoted $\Gamma(\gamma)_x^y$, for example on wikipedia.}.
+
+\begin{defn}[Parallel Transport Map] The parallel transport map is a linear map $P_\gamma(x,y) : h_x \to h_y$, with the following additional properties.
+\begin{itemize}\setlength\itemsep{0.5em}
+\item$ P_\gamma(x,x) = \mathbb{I}$
+\item$ P_\gamma(y,z) \circ P_\gamma(z,x) = P_\gamma(y,x)$
+\item$ P_\gamma(y,x)$ is an isomorphism (with $P_\gamma(x,y)=P^{-1}_\gamma(y,x)$)
+\end{itemize}
+\end{defn}
  
+We would like $P_\gamma(y,x)$ to be gauge invariant so that the following holds:
 
+\begin{equation}
+P_\gamma(y,x) \mapsto e^{-i\phi(y)}P_\gamma(y,x) e^{i\phi(x)}
+\end{equation}
+
+We would also like to see that $P_\gamma(y,x) \to \mathbb{I}$ as $y \to x$ as long as $\gamma$ is a sufficiently well behaved path (that is, it's the most "direct path" between the two points) \footnote{a minimal geodesic}. In other words, $P_\gamma(x+dx,x) \approx \mathbb{I} - i \dd x^k b_k(x)$, where $b_k$ are the relevant taylor expansion coefficients. 
+
+\pagebreak
+
+This discussion of parallel transport leads us to our next definition, the covariant derivative. This is a method of differentiating vector fields (ie, sections of vector bundles) which leaves the structure of a manifold intact.
+
+\begin{defn}[Covariant Derivative]
+Let $\mathcal{M}$ be a manifold with $\CC$-bundle $E$. Suppose there is a suitably well behaved parallel transporter $P$ on $E$, and that $\Psi \in \Gamma(E)$. The covariant derivative in the direction of $e^k$ is denoted $D_k$ and is defined as follows.
+\begin{align}
+D_k \Psi(x) &= \lim_{h \to 0} \frac{P_\gamma (x,x+h e^k) \Psi(x+he^k) - \Psi(x)}{h}\\
+	&= \lim_{h \to 0}\frac{(\mathbb{I} - i h e^k b_k(x))\Psi(x+ he^k) - \Psi(x)}{h}\\
+	&= \left[\pdv{x^k}-ib_k(x)\right]\Psi(x)
+\end{align} 
+\end{defn}
+
+Some exercises are as follows. First determine how $b_k(x)$ transforms under a gauge transformation. Then show that $D_k$ is gauge invariant. Third, show that for a single particle with spin, the Hamiltonian $\sum_k \frac{-1}{2m} D_k^2 = H$ is equivalent to that given by a static magnetic field (this tells us how such geometric changes could be induced experimentally). In the end, you will learn that these $b_k(x)$ are similar to the choice of magnetic field - they are related to the gauge field $A$.
+
+The issue with this is that we want particles to locally behave like free particles - we don't want particles on their own in the middle of nowhere to act as if they are in magnetic fields. So we need to choose $b_k(x)$ so that the 'ficticious' magnetic force is zero. For nontrivial geometries, there do exist choices of $b_k(x)$ so that the force field will vanish (that is - the curvature tensor associated with the ficticious field vanishes). You may recall this expression from electrodynamics (it essentially says that $A$ is curl-free, or that $B=0$).
+
+\begin{equation}
+f_{k\ell}(x) = i[D_k,D_\ell] = \pdv{b_\ell}{x^k} - \pdv{b_k}{x^\ell}=0
+\end{equation}
 
 
 
