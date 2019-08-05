@@ -200,7 +200,7 @@ So that's one interpretation of a wavefunction - it's a section of a $\CC$-bundl
 In order to describe wavefunctions as sections of these bundles, it's therefore important to consider the vector space properties of $\CC$, as you could choose some basis vector for the fibre and it will twist and turn as you move around the base space. The way we do this is to further generalize our fibre bundle. Let's just consider our base space $\mathcal{M}$, and for each point $x$ in $\mathcal{M}$ we will associate a fibre $h_x$. In our case, we will always be using $\CC = h_x$, but it's important to make this generalization so that we can write the following. We want to make some choice of (normalized) basis vector $\chi_x$ for each $h_x$, so that $\textrm{Span}(\chi_x) = h_x$. Thus any section $\Psi$ can be written so that you can evaluate $\Psi$ at a point: $\Psi(x) = \psi(x)\chi_x$. You could therefore change this basis vector as you move around the space! Such a choice of $\chi_x$ for each $h_x$ is called a choice of gauge, and it's the same gauge you refer to in gauge theory. Suppose you wanted to change your basis vectors, so that $\chi_x \mapsto e^{-i\varphi(x)}\chi'_x$. Then you'd require that $\psi'(x) \mapsto e^{i\varphi(x)}$ so that $\Psi$ is unchanged. This is called a gauge transformation. The fact that physical quantities should not depend on this choice of gauge (gauge invariance!) causes issues when defining your derivative operator, and we will talk about this in the next section.
 
 \pagebreak
-\section{Lecture 3}
+\section{Identical Particles: Foundations}
 \subsection{Quantization of Identical Quantum Particles II}
 We won't spend too long talking about the theory of $\CC$ bundles. In this lecture we will move towards understanding identical particles, types of identical particles, and how to describe them in quantum mechanics. Today is the last day we will talk about understanding how there can be more than one quantization for a given classical system, due to this description in terms of $\CC$ bundles. So let's get into it. Here's some recap of the previous section.
 
@@ -311,6 +311,58 @@ As an exercise, solve the Schrodinger equation after this transformation.
 
 This weirdness doesn't happen in three dimensions. The reason is that $\RP^{n-1}$ is doubly connected. Any curve $\gamma^2$ that goes around the singularity twice is contractible. Therefore we have $P_{\gamma^2}(x,x) = e^{2i\xi}=1$, so $\xi = 0$ or $\xi = \pi$. In the case that $\xi = \pi$, we have the dynamics of a fermion. In the case that $\xi = 0$ we have the dynamics of a boson! But what does it mean to go around the singularity once in $\RP^{n-1}$? It means you exchange the two particles. This is why fermions are antisymmetric under exchange, which is what causes the Pauli exclusion principle. We will see this in extreme detail in the following lectures.
 
+\section{Introduction to Fock Space}
+In the previous three lectures we've been looking at the quantum theory of identical particles in 3D. You can see what we've covered in these lectures as the tip of a very large iceberg, which we've only really begun to explore. What we have a good understanding of is the theory of identical point particles in 3 spacial dimensions or higher. What we have begun to uncover is the theory of extended, or membrane-like, interacting particles (ie, strings and so on). This falls under the title of "modular tensor categories". We will move on from this, but I wanted to make you aware before we move on that this field is still being studied extensively even now.
 
+Another subject, very closely related - being the tip of this iceberg, is the study of Fock space and 'second quantization'. This is what we will cover for the next few lectures.
 
+We've learned about single particles in our elementary quantum mechanics course. What we would like to do is work out the Hilbert space to assign to a system of multiple particles provided that each of the particles has some Hilbert space of states $H$. Well, what we do know is the Hilbert space for N distinguishable particles, let's call it $\mathcal{H}$.
+\begin{equation}
+\mathcal{H} = H^{\otimes N} =: \bigotimes_{i=1}^N H
+\end{equation}
+But this space is too big to be what we want for indistinguishable particles. There are states in this space which would be physically the same. As an example, if you consider these to be position states of particles, then exchanging two particles would produce a positive or negative sign - in the case of a Boson there would be degeneracy here as the states would be identical.
+
+We will use this information we learned - that $\ket{x_1,x_2} = \pm \ket{x_2, x_1}$ - and turn it into a way to reduce our Hilbert space to be something smaller. Of course, there is more information we could consider - such as when a particle has internal degrees of freedom such as spin. These are called parastatistics, but we won't cover them in this course.
+
+The best way to reduce our model is to find a subspace of $\mathcal{H}$ which corresponds to exactly the unique configurations. There is a direct connection here between quantum theory and the representation theory of $S_N$ on $N$ symbols. This motivates us to define a representation.
+
+\begin{defn}
+Suppose $G$ is a group. A representation $\rho$ of $G$ over some vector space $V$ is a group homomorphism $\rho:G \to B(V)$, where $B(V)$ is the group of bounded linear operators on $V$.
+\end{defn}
+
+There are multiple definitions of a representation, but it doesn't matter here. We will focus on unitary representations since in this course we will usually consider transformations which correspond to unitary representations of some group. That is to say, we would like $\rho(g)$ to be unitary for any $g \in G$. There is a natural action of $S_N$ on $H^{\otimes N}$ given as follows.
+
+\begin{equation}
+\rho(\sigma)\ket{x_1,...,x_N} = \ket{x_{\sigma(1)},...,x_{\sigma(N)}}
+\end{equation}
+
+This action extends by linearity to our entire space (ie $\rho(\sigma)(a\ket{\psi}+b\ket{\phi}) = a\rho(\sigma)\ket{\psi}+b\rho(\sigma)\ket{\phi}$). What we should do, even though it is a tedious exercise, is write down a matrix for an example and see where that takes us.
+
+Consider the permutation $\pi(1,2,3)=(3,1,2)$. We'd like to see the representation of this matrix on some space. Let's pick $\CC^2$ as our $H$, and $\mathcal{H}=H^{\otimes 3}$. Fix a basis $\ket{0},\ket{1}$ for the individual space. Then a basis for $\mathcal{H}$ is given as:
+\[\ket{000},\ket{001},\ket{010},\ket{011},\ket{100},\ket{101},\ket{111}\]
+
+Then a matrix representation for $\pi$ is given as follows.
+
+\[\rho(\pi) =  \begin{bmatrix}
+1&0&0&0&0&0&0&0\\
+0&0&1&0&0&0&0&0\\
+0&0&0&0&1&0&0&0\\
+0&0&0&0&0&0&1&0\\
+0&1&0&0&0&0&0&0\\
+0&0&0&1&0&0&0&0\\
+0&0&0&0&0&1&0&0\\
+0&0&0&0&0&0&0&1
+		\end{bmatrix}= \mathbb{I}\oplus
+\begin{bmatrix}
+0&1&0&0&0&0\\
+0&0&0&1&0&0\\
+0&0&0&0&0&1\\
+1&0&0&0&0&0\\
+0&0&1&0&0&0\\
+0&0&0&0&1&0
+\end{bmatrix}\oplus\mathbb{I}\]
+
+You will notice that this matrix was block diagonal (to an extent). It is usually nice to look for bases where our matrices decompose into direct sums (or bases where our matrices can't be decomposed at all!). Such a choice of basis where matrices can't be decomposed into blocks (ie, a choice of representation associated with that basis) is called an irreducible representation. Let's move on now.
+
+Since our particles are indistinguishable, there is no physically realizable experiment which could distinguish between two identical states. This means that for any observable $A$, we must have $\rho(\pi) A = A \rho(\pi)$ for all $\pi$. A very special role is played by vectors $\ket\psi$ such that $\rho(\pi) \ket{\psi} = \pm \ket{\psi}$.
 \end{document}
