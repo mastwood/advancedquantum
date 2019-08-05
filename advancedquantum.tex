@@ -18,6 +18,7 @@
 \DeclareMathOperator{\Nul}{\textrm{Nul}}
 \DeclareMathOperator{\Bb}{\mathcal{B}}
 \DeclareMathOperator{\Cc}{\mathcal{C}}
+\DeclareMathOperator{\Hh}{mathcal{Hh}}
 \DeclareMathOperator{\Dd}{\mathcal{D}}
 \DeclareMathOperator{\GL}{\textrm{GL}}
 \DeclareMathOperator{\RR}{\mathbb{R}}
@@ -76,7 +77,7 @@ Course Outline
 \end{center}
 \pagebreak
 \subsection{Motivation}
-In order to understand how to approach moving from a theory of single particles to a theory of many particles, it is important to understand the way in which physical quantum theories are developed. Figure 1 is a representation of how these theories are built. Consider the space of quantum theories (for the purposes of this, a quantum theory is a pair $\{\mathcal{H},\hat H\}$). Each of these theories has a space of states, $\mathcal{H}$, and an observable called a Hamiltonian ($\hat H$) which governs the dynamics of those states. When we measure these systems in real life, we are limited by our measurement apparatus. The objects we measure are subject to decoherence, and the apparatus is imperfect, and so through decoherence and imperfect measurement we end up observing something called a "classical limit", which corresponds to one of the many classical theories in the space of classical theories. A classical theory, similarly to a quantum theory, is given by a pair $\{\mathcal{M},H\}$ of a manifold (or some other topological space) $\mathcal{M}$ called the phase space along with the classical Hamiltonian $H$ governing the dynamics of the system. Quantization is the process of reversing this classical limit - we would like to take $\{\mathcal{M},H\}$ and find some $\{\mathcal{H},\hat H\}$ which matches the theory. The issue with this is that this process is not well posed - many quantum theories can describe the same classical limit, and we will see examples of this in the course. In order to simplify this task, one of the major tools at our disposal is symmetry! We would expect a quantum theory to have the same symmetries as the classical theory, so narrowing the potential quantum theories down to the ones with these properties is helpful when quantizing a theory. One of the most important symmetries for this course is the symmetry of particle exchange, and that's where we will commence this course.\footnote{For a comprehensive description of "quantization" as a process, see Ali and Englis' review paper on the topic. This course will only cover the Canonical Quantization method in detail, but there is still more to learn in Canonical Quantization as well}
+In order to understand how to approach moving from a theory of single particles to a theory of many particles, it is important to understand the way in which physical quantum theories are developed. Figure 1 is a representation of how these theories are built. Consider the space of quantum theories (for the purposes of this, a quantum theory is a pair $\{\mathcal{H},\hat H\}$). Each of these theories has a space of states, $\Hh$, and an observable called a Hamiltonian ($\hat H$) which governs the dynamics of those states. When we measure these systems in real life, we are limited by our measurement apparatus. The objects we measure are subject to decoherence, and the apparatus is imperfect, and so through decoherence and imperfect measurement we end up observing something called a "classical limit", which corresponds to one of the many classical theories in the space of classical theories. A classical theory, similarly to a quantum theory, is given by a pair $\{\mathcal{M},H\}$ of a manifold (or some other topological space) $\mathcal{M}$ called the phase space along with the classical Hamiltonian $H$ governing the dynamics of the system. Quantization is the process of reversing this classical limit - we would like to take $\{\mathcal{M},H\}$ and find some $\{\mathcal{H},\hat H\}$ which matches the theory. The issue with this is that this process is not well posed - many quantum theories can describe the same classical limit, and we will see examples of this in the course. In order to simplify this task, one of the major tools at our disposal is symmetry! We would expect a quantum theory to have the same symmetries as the classical theory, so narrowing the potential quantum theories down to the ones with these properties is helpful when quantizing a theory. One of the most important symmetries for this course is the symmetry of particle exchange, and that's where we will commence this course.\footnote{For a comprehensive description of "quantization" as a process, see Ali and Englis' review paper on the topic. This course will only cover the Canonical Quantization method in detail, but there is still more to learn in Canonical Quantization as well}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{Figures/fig1.png}
@@ -311,39 +312,41 @@ As an exercise, solve the Schrodinger equation after this transformation.
 
 This weirdness doesn't happen in three dimensions. The reason is that $\RP^{n-1}$ is doubly connected. Any curve $\gamma^2$ that goes around the singularity twice is contractible. Therefore we have $P_{\gamma^2}(x,x) = e^{2i\xi}=1$, so $\xi = 0$ or $\xi = \pi$. In the case that $\xi = \pi$, we have the dynamics of a fermion. In the case that $\xi = 0$ we have the dynamics of a boson! But what does it mean to go around the singularity once in $\RP^{n-1}$? It means you exchange the two particles. This is why fermions are antisymmetric under exchange, which is what causes the Pauli exclusion principle. We will see this in extreme detail in the following lectures.
 
-\section{Introduction to Fock Space}
+\section{Prelim to Fock Space}
 In the previous three lectures we've been looking at the quantum theory of identical particles in 3D. You can see what we've covered in these lectures as the tip of a very large iceberg, which we've only really begun to explore. What we have a good understanding of is the theory of identical point particles in 3 spacial dimensions or higher. What we have begun to uncover is the theory of extended, or membrane-like, interacting particles (ie, strings and so on). This falls under the title of "modular tensor categories". We will move on from this, but I wanted to make you aware before we move on that this field is still being studied extensively even now.
 
 Another subject, very closely related - being the tip of this iceberg, is the study of Fock space and 'second quantization'. This is what we will cover for the next few lectures.
 
-We've learned about single particles in our elementary quantum mechanics course. What we would like to do is work out the Hilbert space to assign to a system of multiple particles provided that each of the particles has some Hilbert space of states $H$. Well, what we do know is the Hilbert space for N distinguishable particles, let's call it $\mathcal{H}$.
+\subsection{Symmetric and Antisymmetric Representation}
+
+We've learned about single particles in our elementary quantum mechanics course. What we would like to do is work out the Hilbert space to assign to a system of multiple particles provided that each of the particles has some Hilbert space of states $H$. Well, what we do know is the Hilbert space for N distinguishable particles, let's call it $\Hh$.
 \begin{equation}
-\mathcal{H} = H^{\otimes N} =: \bigotimes_{i=1}^N H
+\Hh = H^{\otimes N} =: \bigotimes_{i=1}^N H
 \end{equation}
 But this space is too big to be what we want for indistinguishable particles. There are states in this space which would be physically the same. As an example, if you consider these to be position states of particles, then exchanging two particles would produce a positive or negative sign - in the case of a Boson there would be degeneracy here as the states would be identical.
 
 We will use this information we learned - that $\ket{x_1,x_2} = \pm \ket{x_2, x_1}$ - and turn it into a way to reduce our Hilbert space to be something smaller. Of course, there is more information we could consider - such as when a particle has internal degrees of freedom such as spin. These are called parastatistics, but we won't cover them in this course.
 
-The best way to reduce our model is to find a subspace of $\mathcal{H}$ which corresponds to exactly the unique configurations. There is a direct connection here between quantum theory and the representation theory of $S_N$ on $N$ symbols. This motivates us to define a representation.
+The best way to reduce our model is to find a subspace of $\Hh$ which corresponds to exactly the unique configurations. There is a direct connection here between quantum theory and the representation theory of $S_N$ on $N$ symbols. This motivates us to define a representation.
 
 \begin{defn}
-Suppose $G$ is a group. A representation $\rho$ of $G$ over some vector space $V$ is a group homomorphism $\rho:G \to B(V)$, where $B(V)$ is the group of bounded linear operators on $V$.
+Suppose $G$ is a group. A representation $U$ of $G$ over some vector space $V$ is a group homomorphism $U:G \to B(V)$, where $B(V)$ is the group of bounded linear operators on $V$.
 \end{defn}
 
-There are multiple definitions of a representation, but it doesn't matter here. We will focus on unitary representations since in this course we will usually consider transformations which correspond to unitary representations of some group. That is to say, we would like $\rho(g)$ to be unitary for any $g \in G$. There is a natural action of $S_N$ on $H^{\otimes N}$ given as follows.
+There are multiple definitions of a representation, but it doesn't matter here. We will focus on unitary representations since in this course we will usually consider transformations which correspond to unitary representations of some group. That is to say, we would like $U(g)$ to be unitary for any $g \in G$. There is a natural action of $S_N$ on $H^{\otimes N}$ given as follows.
 
 \begin{equation}
-\rho(\sigma)\ket{x_1,...,x_N} = \ket{x_{\sigma(1)},...,x_{\sigma(N)}}
+U(\sigma)\ket{x_1,...,x_N} = \ket{x_{\sigma(1)},...,x_{\sigma(N)}}
 \end{equation}
 
-This action extends by linearity to our entire space (ie $\rho(\sigma)(a\ket{\psi}+b\ket{\phi}) = a\rho(\sigma)\ket{\psi}+b\rho(\sigma)\ket{\phi}$). What we should do, even though it is a tedious exercise, is write down a matrix for an example and see where that takes us.
+This action extends by linearity to our entire space (ie $U(\sigma)(a\ket{\psi}+b\ket{\phi}) = aU(\sigma)\ket{\psi}+bU(\sigma)\ket{\phi}$). What we should do, even though it is a tedious exercise, is write down a matrix for an example and see where that takes us.
 
-Consider the permutation $\pi(1,2,3)=(3,1,2)$. We'd like to see the representation of this matrix on some space. Let's pick $\CC^2$ as our $H$, and $\mathcal{H}=H^{\otimes 3}$. Fix a basis $\ket{0},\ket{1}$ for the individual space. Then a basis for $\mathcal{H}$ is given as:
+Consider the permutation $\pi(1,2,3)=(3,1,2)$. We'd like to see the representation of this matrix on some space. Let's pick $\CC^2$ as our $H$, and $\Hh=H^{\otimes 3}$. Fix a basis $\ket{0},\ket{1}$ for the individual space. Then a basis for $\Hh$ is given as:
 \[\ket{000},\ket{001},\ket{010},\ket{011},\ket{100},\ket{101},\ket{111}\]
 
 Then a matrix representation for $\pi$ is given as follows.
 
-\[\rho(\pi) =  \begin{bmatrix}
+\[U(\pi) =  \begin{bmatrix}
 1&0&0&0&0&0&0&0\\
 0&0&1&0&0&0&0&0\\
 0&0&0&0&1&0&0&0\\
@@ -364,5 +367,79 @@ Then a matrix representation for $\pi$ is given as follows.
 
 You will notice that this matrix was block diagonal (to an extent). It is usually nice to look for bases where our matrices decompose into direct sums (or bases where our matrices can't be decomposed at all!). Such a choice of basis where matrices can't be decomposed into blocks (ie, a choice of representation associated with that basis) is called an irreducible representation. Let's move on now.
 
-Since our particles are indistinguishable, there is no physically realizable experiment which could distinguish between two identical states. This means that for any observable $A$, we must have $\rho(\pi) A = A \rho(\pi)$ for all $\pi$. A very special role is played by vectors $\ket\psi$ such that $\rho(\pi) \ket{\psi} = \pm \ket{\psi}$.
+Since our particles are indistinguishable, there is no physically realizable experiment which could distinguish between two identical states. This means that for any observable $A$, we must have $U(\pi) A = A U(\pi)$ for all $\pi$. A very special role is played by vectors $\ket\psi$ such that $U(\pi) \ket{\psi} = \pm \ket{\psi}$. If we rewrite this in a peculiar way: $U(\pi)\ket{\psi} = u(\pi)\ket{\psi}$, you will see that this is an eigenvalue equation. We are searching for subspaces of $H^{\otimes N}$ which are simultaneous eigenspaces of all the permutation operators. The first thing we should argue is that this $u(\pi)$ is itself a representation of $S_N$ on $\CC$. We argue this because you will note that $U(\pi_1\pi_2) = u(\pi_1)u(\pi_2)$. Our claim is that there are only two distinct one-dimensional representations of the symmetric group. The proof is as follows.
+
+Recall that every element of $S_N$ can be written as a product of other elements: $\pi = \tau_{ij} \circ ... \circ \tau_{k\ell}$ where each $\tau_{ij}$ is a 'transposition' (ie, for $\tau_{ij}(\ell)$ takes $i \to j$ and $j \to i$, and $\ell \to \ell$ if $j\neq \ell \neq i$). Thus we can deduce that for any one-dimensional representation of $S_N$ we have $u(\pi) = \prod_k u(\tau_{ij_k})$. This means that all one-dimensional representations are entirely characterized by the representations of the transpositions. We can try something else as well: note that $u(\pi)u(\tau_{ij})u(\pi^{-1}) = u(\pi\circ \tau_{ij}\circ \pi^{-1}) = u(\tau_{\pi(i)\pi(j)}) = u(\tau_{ij})$ (think about it for a minute). But for any $i,j$ there is some permutation so that $\pi(i,j) = (1,2)$! So we have completely characterized all representations by specifying $u(\tau_{12})$. We also know that $u(\tau_{12})^{2} = 1$, as transpositions are their own inverse, so there are only two possible solutions to this equation: $u(\tau_{12})=\pm1$. This completely determines all one-dimensional representations of $S_N$.
+\begin{defn}[Trivial Representation]
+The trivial 1D representation of $S_N$ is $u$ so that $u(\tau_{12}) = 1$. This means that $u(\pi) = 1$ for all $\pi \in S_N$.
+\end{defn}
+\begin{defn}[Antisymmetric Representation]
+The antisymmetric representation of $S_N$ is $u$ so that $u(\tau_{12}) = -1$. This means that for any $\pi \in S_N$ we have $u(\pi) = \sgn(\pi)$.
+\end{defn}
+
+There is a fancy notation we can use in order to cover both cases at the same time - this way we don't need to always worry about which representation to deal with. Let's define $s$ as follows.
+\[s(\pi)=\begin{cases}1 & u(\tau_{12})=1\\
+\textrm{sgn}(\pi) & u(\tau_{12})=-1
+\end{cases}\]
+\pagebreak
+
+\subsection{Antisymmetric/Symmetric Space}
+Now that we have some machinery developed to study Bosons and Fermions, let's look at the following construction.
+\begin{equation}
+P_{+} = \frac{1}{N!}\sum_{\sigma \in S_N} U(\sigma)
+\end{equation}
+\begin{equation}
+P_{-} = \frac{1}{N!}\sum_{\sigma \in S_N} \sgn(\sigma) U(\sigma)
+\end{equation}
+First of all, it's not clear what exactly these matrices are. What we see is that they are big sums of unitary matrices, but are they Hermitian? Unitary? What are they? We claim that these are both projections. That is: $P_{\pm}^2 = P_{\pm}$. We go through the proof of the first case, leaving the second as an exercise.
+\[P_+^2 = \frac{1}{(N!)^2} \sum_{\pi,\pi'}U(\pi)U(\pi') = \frac{1}{(N!)^2}\sum_{\pi,\pi'} U(\pi \circ \pi')\]
+Let $\sigma = \pi\circ \pi'$. Then we have:
+\[P_+^2 = \frac{1}{(N!)^2} \sum_{\sigma,\pi^{-1}}U(\sigma) = \frac{1}{(N!)^2}\sum_{\sigma}U(\sigma) \sum_{\pi^{-1}}1 = \frac{1}{N!}\sum_{\sigma} U(\sigma) = P_+\]
+
+Since these operators are projections, this tells us they have some associated invariant subspace $V$ where $P_\pm (V) = V$. Let's name these subspaces.
+\begin{defn}[Symmetric/Antisymmetric Space]
+We define the antisymmetric and the symmetric Hilbert spaces in the following formula.
+\begin{equation}
+\Hh_\pm^N = P_\pm(\Hh) = P_\pm(H^{\otimes N})
+\end{equation}
+\end{defn}
+We see the following properties arise from these subspaces. Let $\ket{\psi} \in H_-^N$. Then $U(\tau_{12}) \ket{\psi} = U(\tau_{12}) \frac{1}{N!}\sum_{\pi}\sgn(\pi)U(\pi) \ket{\psi}$. So...
+\[U(\tau_{12})\ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12}^{-1}\circ \pi')U(\pi') \ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12})\sgn(\pi')U(\pi')\ket{\psi}=-\ket{\psi}\] Similarly, for any $\psi \in \Hh_+^N$, $U(\pi)\ket{\psi} = \ket{\psi}$. This essentially gives us a way of defining Fermions and Bosons rigorously as elements of subspaces of an abstract Hilbert space.
+\pagebreak
+\section{Fock Space}
+Before we begin this next section, let's introduce some shorthand notation.
+\[H_s^N = \begin{cases}H_+^N & \textrm{ for bosons} \\ H_-^N & \textrm{ for fermions}\end{cases}\]
+With $s = +1$ when we talk about Bosons and vice versa for Fermions.
+\subsection{Definition of Fock Space}
+Now we would like to generalize from a space with $N$ particles to a space with arbitrary numbers of particles. This way we can introduce or remove particles from our system. In fact, we can even allow $N$ itself to be a quantum number, and allow superpositions of states with differing numbers of particles! This leads to a process commonly known as Second Quantization whereby the notion of a 'particle' itself changes significantly. The space which allows this is called Fock Space, with the following definition.
+
+\begin{defn}[Fock Space] We define the symmetric/antisymmetric Fock Space $\Gamma_s(\Hh)$ as the direct sum of all the individual Hilbert spaces.
+\begin{equation}
+\Gamma_s(\Hh) = \bigoplus_{N=0}^\infty \Hh_s^N =: \bigoplus_{N=0}^\infty \Gamma_{s,N}(\Hh)
+\end{equation}
+\end{defn}
+Note that we define $H_s^0$ to be $H_s^0=:\CC$. This is the 'vacuum' space, with basis vector $\ket{\Omega}$, which is the vacuum state. It is the state of the system when there are no particles at all.
+
+Recall that we can decompose a vector into it's components in a space. Let's do this for an arbitrary state $\ket{\psi} \in \Gamma_s(\Hh$. We see that $\ket{\psi} = \sum_{n=0}^\infty\sum_{i=0}^n \psi_n \ket{\phi_i}$, where each $\ket{\phi_i}$ is a basis vector from $\Gamma_{s,N}(\Hh)$. It is easy to see that $\Gamma_{s,N}(\Hh)$ is a separable space, but it remains to be shown that there is an inner product on this space. We will simply write $\ket{\psi} = \sum_{n=0}^\infty \ket{\psi_n}$ for the components of a vector in Fock space instead. Thus the scalar product on this space is $\braket{\psi}{\phi}=\sum_{n=0}^\infty \braket{\psi_n}{\phi_n}$. Now let's look at some observables on this space! What could we measure? The first one that comes to mind is the particle number operator $\hat N$.
+\begin{defn}[Number Operator]
+We define the particle number operator $\hat N$ as follows.
+\begin{equation}
+\hat N \ket{\psi_N} = N\ket{\psi_N} \forall \psi_N \in \Gamma_{s,N}(\Hh)
+\end{equation}
+\end{defn}
+This way, states of determinate particle number are states where the only components are members of a subspace comprised of states with exactly $N$ particles. 
+
+\subsection{Dynamics in Fock Space}
+Now we would like to see what happens when we change the space according to some dynamics. That is, we want to look at maps $A : \Hh_1 \to \Hh_2$ and extend them to maps between different Fock spaces. This will allow us to define time evolution and so on. Well, we know how to produce from $A$ a linear operator from $\Hh_1^{\otimes N} \to \Hh_2^{\otimes N}$. We just tensor $A$ together $N$ times.
+\[A^{\otimes N} : \Hh^{\otimes N}_1 \to \Hh_2^{\otimes N}\]
+It turns out that the tensor product of operators respects antisymmetry and symmetry. That is to say, $A^{\otimes N}(\Gamma_{s,N}(\Hh_1)) = \Gamma_{s,N}(\Hh_2)$. You may recall this from previous studies of tensors. This comes from the fact that $[U(\pi),A^{\otimes N}] = 0$. We introduce some notation now.
+\begin{equation}
+\Gamma_{s}(A) : \Gamma_{s}(\Hh_1) \to \Gamma_s(\Hh_2)
+\end{equation}
+This definition is given by the following:
+\begin{equation}
+\Gamma_s(A) = \bigoplus_{N=0}^\infty \Gamma_{s,N}(A) =: \bigoplus_{N=0}^\infty A^{\otimes N}
+\end{equation}
+Where $\otimes$ here is the matrix direct sum.
+
 \end{document}
