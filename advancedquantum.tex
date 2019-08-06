@@ -29,6 +29,7 @@
 \DeclareMathOperator{\RP}{\mathbb{RP}}
 \DeclareMathOperator{\ZZ}{\mathbb{Z}}
 \DeclareMathOperator{\CC}{\mathbb{C}}
+\newcommand{\ve}[1]{\mathbf{#1}}
 \renewcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hk}{\mathbin{\! \hbox{\vrule height0.3pt width5pt depth 0.2pt \vrule height5pt width0.4pt depth 0.2pt}}}
 \newtheorem{defn}{Definition}
@@ -478,4 +479,88 @@ Let $\Hh = \CC^2$ and $N = 3$. There are 8 basis vectors as before.
 We should also look at the symmetrization and antisymmetrization of this space. We compute the following.
 \[P_+\ket{000}=\ket{000}, P_+\ket{001}=\frac{1}{3}(\ket{001}+\ket{010}+\ket{100}), \]\[P_+\ket{011}=\frac{1}{3}(\ket{011}+\ket{101}+\ket{110}), P_+\ket{111}=\ket{111} \]
 On the other hand, $P_-\ket{\psi}=0$ for all $\ket{\psi}$! This is an effect we call the Pauli exclusion principle - no two fermions can occupy the same quantum state, so all occupation numbers have to be 1 or 0. There can't be any Fermion states in $\Hh^{\otimes 3}$ because of the pidgeonhole principle - two fermions will always have the same state, so one of the occupation numbers for a state will always either be 2 or 3.
+
+\section{Properties of Fock Space}
+\subsection{Finding a Basis}
+In the last lecture we started developing a basis for Fock space. The basic approach we were going to try was to apply $P_s$ to each basis vector of $\Hh^{\otimes N}$, $\ket{\mu_{i_1},...,\mu_{i_N}}$. The issue is that we don't know whether this is too large of a basis for $\Hh_s^N$ - this crisis would be averted if we could show that either $P_s$ is zero for particular elements, or if the basis is already exactly the right size. 
+
+We're going to prove something about these $\ket{\mu_{i_1},...,\mu_{i_N}}$ vectors. Suppose $\ket{\mu_{i_1},...,\mu_{i_N}}$ has occupation numbers $n_\nu(\mu_1,...,\mu_N)$. And suppose we have another ket $\ket{\mu'_{j_1},...,\mu'_{j_N}}$ with some occupation numbers. We would like to show that if these two kets have different occupation numbers then they are orthogonal.
+
+So if $n \neq n'$, then we have: $\bra{\mu_{i_1},...,\mu_{i_N}}P_s P_s \ket{\mu'_{j_1},...,\mu'_{j_N}} = 0$. The proof begins by noting that $P_s^2=P_s$. Then we expand $P_s$ into it's definition.
+
+\[\bra{\mu_{i_1},...,\mu_{i_N}}\frac{1}{N!} \sum_{\sigma} s(\sigma)U(\sigma) \ket{\mu'_{j_1},...,\mu'_{j_N}}\]
+
+But we see that $\bra{\mu_{i_1},...,\mu_{i_N}}U(\sigma)\ket{\mu'_{j_1},...,\mu'_{j_N}} = 0$ whenever $\mu_{i}$ can't be permuted into $\mu'_j$ . So therefore the whole inner product is zero as long as all the occupation numbers are different, because if all the occupation numbers are different there is no permutation which takes $\mu$ to $\mu'$. In what follows, we obtain a basis for $H_s^N$ from the occupation numbers. Allow $\ve{n}$ to be the vector of occupation numbers for a vector, then we define a basis:
+
+\begin{defn}[$H_s^N$ Basis]
+Let $\ket{\mu_{i_1},...,\mu_{i_N}}$ be a basis vector for $H^{\otimes N}$ with occupation numbers $\ve{n}$. These generate a basis $\ket{\ve{n}}$ for $H_s^N$ defined by:
+\begin{equation}
+\ket{\ve{n}} = \ket{n_{\nu_1},...,n_{\nu_N}} =: c_s(\ve{n})P_s\ket{\mu_{i_1},...,\mu_{i_N}}
+\end{equation}
+Where $c_s(\ve{n})$ is some normalization coefficient we will work out in the next step.
+\end{defn}
+
+It is important to check if this basis is well defined. If we have occupations $(1,2)$ for some state, then $\ket{\ve{n}}$ could correspond to either $P_s\ket{110}$ or $P_s\ket{011}$, and so on. It is an exercise to check that in fact these are the same vector (and by extension, check whether this holds up across the board). We will choose a canonical representative for each $\ket{\ve{n}}$ to be the one where we choose $\ket{\ve{n}} = c_s(\ve{n})P_s\ket{\mu_{i_1},...,\mu_{i_N}}$ to have $\mu_i$'s in ascending order. Now we work out the normalization coefficient:
+\begin{align}
+\braket{\ve{n}} &= |c_s(\ve{n})|^2 \bra{\mu_{i_1},...,\mu_{i_N}}P_s\ket{\mu_{i_1},...,\mu_{i_N}} = 1\\
+&=  |c_s(\ve{n})|^2 \bra{\mu_{i_1},...,\mu_{i_N}}\frac{1}{N!}\sum_\sigma s(\sigma)U(\sigma)\ket{\mu_{i_1},...,\mu_{i_N}}
+\end{align}
+
+For Bosons, we see that the inner product on the right is 1 whenever the two kets have the same occupation numbers. There are $\prod_{i=1}^N n_i!$ kets with occupation numbers $n_i$, so the normalization coefficient just becomes:
+\begin{equation}
+c_+(\ve{n}) = \sqrt{\frac{N!}{n_1!...n_N!}} =: \sqrt{{N\choose{\ve{n}}}}
+\end{equation}
+
+The right expression is called a generalized binomial symbol or a multinomial symbol. For Fermions the case is super duper easy. Any Fermion can only have occupation numbers $n_i \in \{0,1\}$. This is because if we had a Fermion with occupation number greater than one, we could find a transposition $\pi$ which exchanges two identical particles so that $\pi\ket{\ve{n}} = -\ket{\ve{n}} = \ket{\ve{n}}$. 
+
+We can see that when $\mu_{i_1}\leq\mu_{i_2}\leq...\leq\mu_{i_N}$, $\bra{\mu_{i_1},...,\mu_{i_N}}U(\sigma)\ket{\mu_{i_1},...,\mu_{i_N}}=1$ only when $U(\sigma) = 1$. Therefore we have:
+
+\begin{equation}
+c_-(\ve{n}) = \sqrt{N!} = \sqrt{{N\choose{\ve{n}}}}
+\end{equation}
+
+Note that the multinomial system works in both the Boson and Fermion cases! Now we should find the dimensions of these subspaces.
+
+\subsection{Dimension of $H_s^N$}
+
+Let $\dim(H)=d$. Let's look at the Fermion case first. We see that for $N$ particles, no two can occupy the same state, so there are only as many states as there are ways to pick $N$ configurations out of $d$ total available configurations without replacement.
+\begin{equation}
+\dim(H_{-}^N) = \begin{cases}  {d\choose N} & d\geq N \\ 0 & d < N\end{cases}
+\end{equation}
+
+For the Boson case, it is not so simple. The combinatorial argument is quite complicated, so we will construct a new object which maps directly to basis vectors so that we may count how many there could possibly be. This construction begins by assigning the symbol $*$ to the string $1,2,...,d$. For a basis vector $\ket{\mu_{i_1},...,\mu_{i_N}}$ we then rearrange $\mu_i$ into ascending order and construct the string $\mu_{1},...,\mu_{1},*,\mu_{2},...,\mu_{2},*,...,*,\mu_{d},...,\mu_d$ where each $\mu$ appears $n_\mu$ times in the sequence. Here are some examples.
+
+Let $d=2,N=5,n_1=3,n_2=2$. Then $\ket{\ve{n}} = c\ket{1,1,1,2,2}$. We then construct the sequence $1,1,1,*,2,2$.
+
+Or perhaps we have $\ket{1,2,2,3,3,1}$, $d=3,N=6,n_1=2,n_2=2,n_3=2$. Then we have the sequence $1,1,*,2,2,*,3,3$.
+
+Another example is $\ket{1,2,2,3,5,5}$, where some states have occupation number zero. Then we have the sequence $1,*,2,2,*,3,*,*,5,5$.
+
+The number of ways of generating these sequences is the same as the number of ways to place $d-1$ stars in $N+d-1$ places. This gives us the following.
+\begin{equation}
+\dim(H_+^N) = {{N+d-1}\choose{d-1}} =: (-1)^N {{-d}\choose N}
+\end{equation}
+The object on the right is the negative binomial symbol. This gives us a unified form to write our dimensions.
+
+\begin{equation}
+\dim(H_s^N) = (-s)^N {{(-s)d}\choose{N}}
+\end{equation}
+
+Now for the full space:
+
+\[\dim(\Gamma_s(H))=\dim\left(\bigoplus_{n=0}^\infty H_s^n\right) = \sum_{n=0}^\infty \dim(H_s^n)\]
+
+For $s=1$, this sum just blows up, but in the Fermion case, the sum is well defined. $\sum_{n=0}^d {d \choose n} = 2^d$ is a well known identity (prove this!)
+
+\begin{equation}
+\dim(\Gamma_s(H)) = \begin{cases}\infty & s = 1 \\ 2^d & s=-1\end{cases}
+\end{equation}
+
+\subsection{Creation and Annihilation Operators}
+Now we move on to discussing operators on Fock space. We will now introduce some operators which specify our possibly infinite-dimensional Fock space completely in a very compact way. We have good reason to believe these operators have direct representations physically in actions we can take in a real experiment. Fock space $\Gamma_s(H)$ can be successively built from the vacuum state by application of the creation operator defined so:
+\begin{defn}[Creation Operator]
+Let $\ket{\phi}$ be a single-particle state in $H$, and let $\ket{\Psi} \in \Gamma_{s,N-1}(H)$ be a multiparticle state. We define the following operator $a^\dagger_s(\ket\phi)$ on $\Gamma_{s,N-1}(H)$ as follows.
+\[a_s^\dagger(\ket\phi) \ket{\Psi} =: \sqrt{N} P_s \ket{\phi} \otimes \ket{\Psi}\]
+\end{defn}
+This collection of operators $a^\dagger_s$ extends by linearity to all of Fock space, with $a^\dagger_s(\ket{\phi})\ket{\Omega} = \ket{\phi}$. Repeated application of the creation operator to the vacuum state gives us a great alternative way to develop a basis for Fock space - although the previous method we used gave more insight into the dimensions of Fock space. We also see that $a_s^\dagger(\ket{\phi})a_s^\dagger(\ket{\psi}) = s a^\dagger_s(\ket{\psi}) a^\dagger_s(\ket{\phi})$, which is known as the canonical commutation relation that you are familiar with.
 \end{document}
