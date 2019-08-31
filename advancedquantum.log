@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.11)  4 AUG 2019 22:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.11)  31 AUG 2019 05:36
 entering extended mode
 **C:/Users/Michael/Documents/GitHub/advancedquantum/advancedquantum.tex
 (C:/Users/Michael/Documents/GitHub/advancedquantum/advancedquantum.tex
@@ -591,31 +591,61 @@ Package: xparse 2019-05-28 L3 Experimental document command parser
 \l__xparse_m_args_int=\count267
 \l__xparse_v_nesting_int=\count268
 ))
-\c@defn=\count269
-\c@thm=\count270
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometr
+y.sty"
+Package: geometry 2018/04/16 v5.8 Page Geometry
 
-(C:/Users/Michael/Documents/GitHub/advancedquantum\advancedquantum.aux)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf
+.sty"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifvte
+x.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/ifxetex\ifxete
+x.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count269
+\Gm@cntv=\count270
+\c@Gm@tempcnt=\count271
+\Gm@bindingoffset=\dimen157
+\Gm@wd@mp=\dimen158
+\Gm@odd@mp=\dimen159
+\Gm@even@mp=\dimen160
+\Gm@layoutwidth=\dimen161
+\Gm@layoutheight=\dimen162
+\Gm@layouthoffset=\dimen163
+\Gm@layoutvoffset=\dimen164
+\Gm@dimlist=\toks24
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometr
+y.cfg"))
+\c@defn=\count272
+\c@thm=\count273
+ (C:/Users/Michael/Documents/GitHub/advancedquantum\advancedquantum.aux)
 \openout1 = `advancedquantum.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 35.
-
-("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 41.
+ ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 41.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -623,17 +653,17 @@ Package caption Info: End \AtBeginDocument code.
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp
 -pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count271
-\scratchdimen=\dimen157
+\scratchcounter=\count274
+\scratchdimen=\dimen165
 \scratchbox=\box50
-\nofMPsegments=\count272
-\nofMParguments=\count273
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count274
-\MPscratchDim=\dimen158
-\MPnumerator=\count275
-\makeMPintoPDFobject=\count276
-\everyMPtoPDFconversion=\toks25
+\nofMPsegments=\count275
+\nofMParguments=\count276
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count277
+\MPscratchDim=\dimen166
+\MPnumerator=\count278
+\makeMPintoPDFobject=\count279
+\everyMPtoPDFconversion=\toks26
 )
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\epstopd
 f-base.sty"
@@ -676,11 +706,6 @@ Package ifluatex Info: LuaTeX not detected.
 xcmds.sty"
 Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
-
-("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\ifpdf
-.sty"
-Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
-)
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
@@ -693,20 +718,54 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-\c@lstlisting=\count277
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+\c@lstlisting=\count280
 
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd
 "
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
 
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd
 "
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+wasy on input line 36.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 42.
 
 ("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/wasysym\uwasy.fd
 "
@@ -720,26 +779,211 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 
 
 [2]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 76--77
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 82--83
  [] 
  []
 
 [3]
-! TeX capacity exceeded, sorry [grouping levels=255].
-<recently read> {
-                 
-l.80 ...these theories has a space of states, $\Hh
-                                                  $, and an observable calle...
-If you really absolutely need more capacity,
-you can ask a wizard to enlarge me.
+Missing character: There is no h in font MnSymbolS10!
+<Figures/fig1.png, id=16, 505.52866pt x 258.7266pt>
+File: Figures/fig1.png Graphic file (type png)
+<use Figures/fig1.png>
+Package pdftex.def Info: Figures/fig1.png  used on input line 89.
+(pdftex.def)             Requested size: 469.75502pt x 240.42767pt.
+ [4 <C:/Users/Michael/Documents/GitHub/advancedquantum/Figures/fig1.png>]
+<Figures/figure2.png, id=28, 505.52866pt x 258.7266pt>
+File: Figures/figure2.png Graphic file (type png)
+<use Figures/figure2.png>
+Package pdftex.def Info: Figures/figure2.png  used on input line 109.
+(pdftex.def)             Requested size: 469.75502pt x 240.42767pt.
 
- 
+[5]
+<Figures/rp1.png, id=38, 354.123pt x 408.68684pt>
+File: Figures/rp1.png Graphic file (type png)
+<use Figures/rp1.png>
+Package pdftex.def Info: Figures/rp1.png  used on input line 127.
+(pdftex.def)             Requested size: 234.8775pt x 271.07489pt.
+ [6 <C:/Users/Michael/Documents/GitHub/advancedquantum/Figures/figure2.png>] [7
+ <C:/Users/Michael/Documents/GitHub/advancedquantum/Figures/rp1.png>]
+<Figures/figure3.png, id=51, 505.52866pt x 258.7266pt>
+File: Figures/figure3.png Graphic file (type png)
+<use Figures/figure3.png>
+Package pdftex.def Info: Figures/figure3.png  used on input line 142.
+(pdftex.def)             Requested size: 469.75502pt x 240.42767pt.
+<Figures/spheretransport.png, id=52, 504.80595pt x 258.0039pt>
+File: Figures/spheretransport.png Graphic file (type png)
+<use Figures/spheretransport.png>
+Package pdftex.def Info: Figures/spheretransport.png  used on input line 149.
+(pdftex.def)             Requested size: 469.75502pt x 240.09862pt.
+
+[8 <C:/Users/Michael/Documents/GitHub/advancedquantum/Figures/figure3.png>]
+<Figures/trajectories_in_rp2.png, id=58, 505.52866pt x 258.7266pt>
+File: Figures/trajectories_in_rp2.png Graphic file (type png)
+<use Figures/trajectories_in_rp2.png>
+Package pdftex.def Info: Figures/trajectories_in_rp2.png  used on input line 16
+5.
+(pdftex.def)             Requested size: 469.75502pt x 240.42767pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <C:/Users/Michael/Documents/GitHub/advancedquantum/Figures/spheretransport.p
+ng>]
+LaTeX Font Info:    Try loading font information for U+euf on input line 189.
+
+("C:\Users\Michael\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\ueuf.fd
+"
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+) [10 <C:/Users/Michael/Documents/GitHub/advancedquantum/Figures/trajectories_i
+n_rp2.png>]
+<Figures/mobius_bundle.jpg, id=67, 401.5pt x 240.9pt>
+File: Figures/mobius_bundle.jpg Graphic file (type jpg)
+<use Figures/mobius_bundle.jpg>
+Package pdftex.def Info: Figures/mobius_bundle.jpg  used on input line 200.
+(pdftex.def)             Requested size: 469.75502pt x 281.8739pt.
+ [11 <C:/Users/Michael/Documents/GitHub/advancedquantum/Figures/mobius_bundle.j
+pg>] [12] [13] [14]
+<Figures/path_independence_gauge.png, id=90, 505.52866pt x 258.7266pt>
+File: Figures/path_independence_gauge.png Graphic file (type png)
+<use Figures/path_independence_gauge.png>
+Package pdftex.def Info: Figures/path_independence_gauge.png  used on input lin
+e 289.
+(pdftex.def)             Requested size: 469.75502pt x 240.42767pt.
+ [15 <C:/Users/Michael/Documents/GitHub/advancedquantum/Figures/path_independen
+ce_gauge.png>]
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+ [16] [17]
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+ [18]
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+ [19]
+Missing character: There is no h in font MnSymbolS7!
+Missing character: There is no h in font MnSymbolS7!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+ [20]
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 511.
+
+[21] [22] [23]
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+ [24]
+Missing character: There is no h in font MnSymbolS10!
+ [25]
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+ [26] [27]
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+Missing character: There is no h in font MnSymbolS10!
+
+Overfull \hbox (0.72858pt too wide) in paragraph at lines 740--742
+\OT1/cmr/m/n/10 We want to write this in terms of cre-ation and an-ni-hi-la-tio
+n op-er-a-tors: $d[] []\OMX/MnSymbolE/m/n/10 à\OML/cmm/m/it/10 V\OMX/MnSymbolE/
+m/n/10 ç \U/MnSymbolD/m/n/10   \OML/cmm/m/it/10 g\OMX/MnSymbolE/m/n/10 à\OML/cm
+m/m/it/10 a[]; a[]\OMX/MnSymbolE/m/n/10 ç$\OT1/cmr/m/n/10 . Any permutation-
+ []
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.745 
+      
+? 
+[28] (advancedquantum.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17359 strings out of 492895
- 302863 string characters out of 3122801
- 311019 words of memory out of 3000000
- 21145 multiletter control sequences out of 15000+200000
- 551270 words of font info for 92 fonts, out of 3000000 for 9000
+ 17958 strings out of 492895
+ 312355 string characters out of 3122801
+ 335103 words of memory out of 3000000
+ 21695 multiletter control sequences out of 15000+200000
+ 557963 words of font info for 115 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 255i,255n,762p,2279b,790s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 47i,10n,65p,2279b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Michael\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi60
+0\tcrm0500.pk> <C:\Users\Michael\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknap
+pen/ec/dpi600\tcti0700.pk> <C:\Users\Michael\AppData\Local\MiKTeX\2.9\fonts/pk/
+ljfour/jknappen/ec/dpi600\tcrm0700.pk>{C:/Users/Michael/AppData/Local/Programs/
+MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}{C:/Users/Michael/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbolC.enc} <C:\Users\Michae
+l\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\tcti1000.pk>{C:/U
+sers/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsymbol/MnSymbo
+lA.enc}{C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/mnsy
+mbol/MnSymbolE.enc}{C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/en
+c/dvips/mnsymbol/MnSymbolD.enc}{C:/Users/Michael/AppData/Local/Programs/MiKTeX 
+2.9/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}<C:/Users/Michael/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol10.pfb><C:/Users/Michael/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSymbol5.pfb><C:/U
+sers/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/mnsymbol/MnSy
+mbol6.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/mnsymbol/MnSymbol7.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/mnsymbol/MnSymbol8.pfb><C:/Users/Michael/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Michael/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users
+/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxt
+i10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Michael/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Michael/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Mic
+hael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmmi8.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Michael/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Michael/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users
+/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.
+pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr7.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmr8.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Michael/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Users/Michae
+l/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.
+pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/symbols/msbm7.pfb><C:/Users/Michael/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/wasy/wasy10.pfb>
+Output written on advancedquantum.pdf (28 pages, 729876 bytes).
+PDF statistics:
+ 260 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+

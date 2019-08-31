@@ -13,7 +13,7 @@
 \usepackage{physics}
 \usepackage{listings}
 \usepackage{amsmath}
-
+\usepackage[margin=1in]{geometry}
 \DeclareMathOperator{\Col}{\textrm{Col}}
 \DeclareMathOperator{\Nul}{\textrm{Nul}}
 \DeclareMathOperator{\Bb}{\mathcal{B}}
@@ -21,6 +21,7 @@
 \DeclareMathOperator{\Hh}{\mathcal{Hh}}
 \DeclareMathOperator{\Dd}{\mathcal{D}}
 \DeclareMathOperator{\GL}{\textrm{GL}}
+\DeclareMathOperator{\NN}{\mathbb{N}}
 \DeclareMathOperator{\RR}{\mathbb{R}}
 \DeclareMathOperator{\sgn}{\textrm{sgn}}
 \DeclareMathOperator{\II}{\mathbb{I}}
@@ -29,7 +30,10 @@
 \DeclareMathOperator{\RP}{\mathbb{RP}}
 \DeclareMathOperator{\ZZ}{\mathbb{Z}}
 \DeclareMathOperator{\CC}{\mathbb{C}}
+
 \newcommand{\ve}[1]{\mathbf{#1}}
+\newcommand{\create}[1]{a^\dagger_s(#1)}
+\newcommand{\annih}[1]{a_s(#1)}
 \renewcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\hk}{\mathbin{\! \hbox{\vrule height0.3pt width5pt depth 0.2pt \vrule height5pt width0.4pt depth 0.2pt}}}
 \newtheorem{defn}{Definition}
@@ -132,7 +136,6 @@ We noticed in the last section that given a configuration space $\mathcal{M} \eq
 \subsubsection{Tangent Vectors}
 
 Let's now use our intuition about velocity to consider some configuration spaces. We say that a velocity vector $v$ is a 'tangent vector to the configuration space', meaning that there is some curve through $\mathcal{M}$ which has velocity $v$ at some point $x$. As an example, in $\RR^2$ a particle requires both position and velocity in order for you to fully specify its' state - we therefore say that the \textit{state} of the particle is the pair $(x,v)$. In a simple space such as $\RR^2$, comparing the velocities of particles is simple, but we often take for granted the process of adding vectors 'tip to tail'. This way of comparing velocities is where you take the velocities as vectors in $\RR^2$ and subtract them pointwise. This works in $\RR^n$ easily, but you have to be more careful when considering so-called 'tangent vectors', which exist in a more complicated space called the tangent space. The tangent space is defined separately at each point in the 'ambient space' (here being \textrm{M}). For $\RR^2$, this is simply $\RR^2$ everywhere. But for an arbitrary manifold $\mathcal{M}$, the tangent space may be different at each point. Therefore we would like a way to transport velocities between tangent spaces in a continuous/parallel way. This is called parallel transport.
-\pagebreak
 
 \begin{figure}[ht]
     \centering
@@ -149,7 +152,6 @@ The above diagram demonstrates this notion of parallel transport in $\RR^2$. Luc
 \end{figure}
 
 You will notice that if you draw vectors which \textit{stay tangent to the surface of the sphere}, then they change direction slightly as you move across the surface of the sphere. A vector (as shown in the diagram) which starts tangent to a line of latitude will eventually end up being perturbed by the motion.
-\pagebreak
 
 \subsubsection{Parallel Transport in Relative Space}
 Let's consider this parallel transport in our relative space $r(2,2)$, which we saw earlier could be represented as that sort of 'cone' shape. You can check that on an ordinary trajectory on the surface of this cone, vectors do not undergo any strange transformation. But consider when a vector is transported around the singularity. Suppose the trajectory begins at a point $x$, and crosses through the point $-x \sim x$. A vector held parallel along this trajectory is going to have to undergo the transformation $v \mapsto -v$ in order to satisfy the criteria for 'parallel transport'. You can see the reasoning behind this in more detail in any text on Differential Geometry.
@@ -202,7 +204,6 @@ So that's one interpretation of a wavefunction - it's a section of a $\CC$-bundl
 
 In order to describe wavefunctions as sections of these bundles, it's therefore important to consider the vector space properties of $\CC$, as you could choose some basis vector for the fibre and it will twist and turn as you move around the base space. The way we do this is to further generalize our fibre bundle. Let's just consider our base space $\mathcal{M}$, and for each point $x$ in $\mathcal{M}$ we will associate a fibre $h_x$. In our case, we will always be using $\CC = h_x$, but it's important to make this generalization so that we can write the following. We want to make some choice of (normalized) basis vector $\chi_x$ for each $h_x$, so that $\textrm{Span}(\chi_x) = h_x$. Thus any section $\Psi$ can be written so that you can evaluate $\Psi$ at a point: $\Psi(x) = \psi(x)\chi_x$. You could therefore change this basis vector as you move around the space! Such a choice of $\chi_x$ for each $h_x$ is called a choice of gauge, and it's the same gauge you refer to in gauge theory. Suppose you wanted to change your basis vectors, so that $\chi_x \mapsto e^{-i\varphi(x)}\chi'_x$. Then you'd require that $\psi'(x) \mapsto e^{i\varphi(x)}$ so that $\Psi$ is unchanged. This is called a gauge transformation. The fact that physical quantities should not depend on this choice of gauge (gauge invariance!) causes issues when defining your derivative operator, and we will talk about this in the next section.
 
-\pagebreak
 \section{Identical Particles: Foundations}
 \subsection{Quantization of Identical Quantum Particles II}
 We won't spend too long talking about the theory of $\CC$ bundles. In this lecture we will move towards understanding identical particles, types of identical particles, and how to describe them in quantum mechanics. Today is the last day we will talk about understanding how there can be more than one quantization for a given classical system, due to this description in terms of $\CC$ bundles. So let's get into it. Here's some recap of the previous section.
@@ -226,7 +227,6 @@ We want to understand how to keep our quantities invariant to our choice of basi
 \begin{defn}[Gauge Transformation]
 	A gauge transformation $U$ is a choice of maps $U_x : h_x \to h_x$ with $U_x(\chi_x) = e^{-i\phi(x)}\chi_x$. This induces a transformation on sections of $E$ as so: $U[\Psi](x) = e^{i\phi(x)}\Psi(x) $
 \end{defn}
-\pagebreak
 
 \subsection{Making Momentum Gauge Invariant}
 
@@ -257,8 +257,6 @@ P_\gamma(y,x) \mapsto e^{-i\phi(y)}P_\gamma(y,x) e^{i\phi(x)}
 \end{equation}
 
 We would also like to see that $P_\gamma(y,x) \to \mathbb{I}$ as $y \to x$ as long as $\gamma$ is a sufficiently well behaved path (that is, it's the most "direct path" between the two points) \footnote{a minimal geodesic}. In other words, $P_\gamma(x+dx,x) \approx \mathbb{I} - i \dd x^k b_k(x)$, where $b_k$ are the relevant taylor expansion coefficients. 
-
-\pagebreak
 
 This discussion of parallel transport leads us to our next definition, the covariant derivative. This is a method of differentiating vector fields (ie, sections of vector bundles) which leaves the structure of a manifold intact.
 
@@ -310,12 +308,12 @@ H' = \frac{-1}{m}\left(\pdv[2]{r}+\frac{1}{r}\pdv{r}+ \frac{1}{r^2}\left(\pdv{\p
 
 As an exercise, solve the Schrodinger equation after this transformation.
 
-\subsection{Conclusions of Lecture 3}
+\subsection{Particle Statistics}
 
 This weirdness doesn't happen in three dimensions. The reason is that $\RP^{n-1}$ is doubly connected. Any curve $\gamma^2$ that goes around the singularity twice is contractible. Therefore we have $P_{\gamma^2}(x,x) = e^{2i\xi}=1$, so $\xi = 0$ or $\xi = \pi$. In the case that $\xi = \pi$, we have the dynamics of a fermion. In the case that $\xi = 0$ we have the dynamics of a boson! But what does it mean to go around the singularity once in $\RP^{n-1}$? It means you exchange the two particles. This is why fermions are antisymmetric under exchange, which is what causes the Pauli exclusion principle. We will see this in extreme detail in the following lectures.
 
-\section{Prelim to Fock Space}
-In the previous three lectures we've been looking at the quantum theory of identical particles in 3D. You can see what we've covered in these lectures as the tip of a very large iceberg, which we've only really begun to explore. What we have a good understanding of is the theory of identical point particles in 3 spacial dimensions or higher. What we have begun to uncover is the theory of extended, or membrane-like, interacting particles (ie, strings and so on). This falls under the title of "modular tensor categories". We will move on from this, but I wanted to make you aware before we move on that this field is still being studied extensively even now.
+\section{Preliminary to Fock Space}
+In the previous three lectures we've been looking at the quantum theory of identical particles in 3D. You can see what we've covered in these lectures as the tip of a very large iceberg, which as a society we've only really begun to explore. What we have a good understanding of is the theory of identical point particles in 3 spacial dimensions or higher. What we have begun to uncover is the theory of extended, or membrane-like, interacting particles (ie, strings and so on). This falls under the title of "modular tensor categories". We will move on from this, but I wanted to make you aware before we move on that this field is still being studied extensively even now.
 
 Another subject, very closely related - being the tip of this iceberg, is the study of Fock space and 'second quantization'. This is what we will cover for the next few lectures.
 
@@ -332,7 +330,7 @@ We will use this information we learned - that $\ket{x_1,x_2} = \pm \ket{x_2, x_
 The best way to reduce our model is to find a subspace of $\Hh$ which corresponds to exactly the unique configurations. There is a direct connection here between quantum theory and the representation theory of $S_N$ on $N$ symbols. This motivates us to define a representation.
 
 \begin{defn}
-Suppose $G$ is a group. A representation $U$ of $G$ over some vector space $V$ is a group homomorphism $U:G \to B(V)$, where $B(V)$ is the group of bounded linear operators on $V$.
+Suppose $G$ is a group.\footnote{A group $G$ is a set endowed with an operation which takes two elements of $G$ and produces a third. This operation must be invertible (in the sense that there exists $a^{-1}$ for every $a$, and there must be an identity. We also require this operation to be associative.} A representation $U$ of $G$ over some vector space $V$ is a group homomorphism $U:G \to B(V)$, where $B(V)$ is the group of bounded linear operators on $V$.
 \end{defn}
 
 There are multiple definitions of a representation, but it doesn't matter here. We will focus on unitary representations since in this course we will usually consider transformations which correspond to unitary representations of some group. That is to say, we would like $U(g)$ to be unitary for any $g \in G$. There is a natural action of $S_N$ on $H^{\otimes N}$ given as follows.
@@ -405,7 +403,9 @@ We define the antisymmetric and the symmetric Hilbert spaces in the following fo
 \Hh_\pm^N = P_\pm(\Hh) = P_\pm(H^{\otimes N})
 \end{equation}
 \end{defn}
-We see the following properties arise from these subspaces. Let $\ket{\psi} \in H_-^N$. Then $U(\tau_{12}) \ket{\psi} = U(\tau_{12}) \frac{1}{N!}\sum_{\pi}\sgn(\pi)U(\pi) \ket{\psi}$. So...
+We see the following properties arise from these subspaces. 
+
+Let $\ket{\psi} \in H_-^N$. Then $U(\tau_{12}) \ket{\psi} = U(\tau_{12}) \frac{1}{N!}\sum_{\pi}\sgn(\pi)U(\pi) \ket{\psi}$
 \[U(\tau_{12})\ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12}^{-1}\circ \pi')U(\pi') \ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12})\sgn(\pi')U(\pi')\ket{\psi}=-\ket{\psi}\] Similarly, for any $\psi \in \Hh_+^N$, $U(\pi)\ket{\psi} = \ket{\psi}$. This essentially gives us a way of defining Fermions and Bosons rigorously as elements of subspaces of an abstract Hilbert space.
 \pagebreak
 \section{Fock Space}
@@ -430,7 +430,6 @@ We define the particle number operator $\hat N$ as follows.
 \end{equation}
 \end{defn}
 This way, states of determinate particle number are states where the only components are members of a subspace comprised of states with exactly $N$ particles. 
-\pagebreak
 
 \subsection{Dynamics in Fock Space}
 Now we would like to see what happens when we change the space according to some dynamics. That is, we want to look at maps $A : \Hh_1 \to \Hh_2$ and extend them to maps between different Fock spaces. This will allow us to define time evolution and so on. Well, we know how to produce from $A$ a linear operator from $\Hh_1^{\otimes N} \to \Hh_2^{\otimes N}$. We just tensor $A$ together $N$ times.
@@ -559,8 +558,214 @@ For $s=1$, this sum just blows up, but in the Fermion case, the sum is well defi
 \subsection{Creation and Annihilation Operators}
 Now we move on to discussing operators on Fock space. We will now introduce some operators which specify our possibly infinite-dimensional Fock space completely in a very compact way. We have good reason to believe these operators have direct representations physically in actions we can take in a real experiment. Fock space $\Gamma_s(H)$ can be successively built from the vacuum state by application of the creation operator defined so:
 \begin{defn}[Creation Operator]
-Let $\ket{\phi}$ be a single-particle state in $H$, and let $\ket{\Psi} \in \Gamma_{s,N-1}(H)$ be a multiparticle state. We define the following operator $a^\dagger_s(\ket\phi)$ on $\Gamma_{s,N-1}(H)$ as follows.
-\[a_s^\dagger(\ket\phi) \ket{\Psi} =: \sqrt{N} P_s \ket{\phi} \otimes \ket{\Psi}\]
+Let $\ket{\phi}$ be a single-particle state in $H$, and let $\ket{\Psi} \in \Gamma_{s,N-1}(H)$ be a multiparticle state. We define the following operator $a^\dagger_s(\ket\phi)$ on $\Gamma_{s,N-1}(H)$ as follows. (The $i$'th component is given)
+\[(a_s^\dagger(\ket\phi) \ket{\Psi})_i =: \sqrt{N} P_s \ket{\phi} \otimes \ket{\Psi}_{i-1}\]
 \end{defn}
 This collection of operators $a^\dagger_s$ extends by linearity to all of Fock space, with $a^\dagger_s(\ket{\phi})\ket{\Omega} = \ket{\phi}$. Repeated application of the creation operator to the vacuum state gives us a great alternative way to develop a basis for Fock space - although the previous method we used gave more insight into the dimensions of Fock space. We also see that $a_s^\dagger(\ket{\phi})a_s^\dagger(\ket{\psi}) = s a^\dagger_s(\ket{\psi}) a^\dagger_s(\ket{\phi})$, which is known as the canonical commutation relation that you are familiar with.
+\pagebreak
+
+\section{Canonical (Anti)-Commutation Relations}
+\subsection{Annihilation Operator, Notation, and Matrix Elements}
+As in the end of last time, we are trying to discuss the operators on $\Gamma_s(H)$. The hard part is that these operators are going to be acting on an infinite-dimensional Hilbert space. To make this easier, we intoduce a preferred basis - one that we know and understand very very well. We will henceforth consider only linear combinations of the operators. This baiis is going to be the creation and annihilation operators.
+
+In Unsymmetrized Fock space (that is, $\bigoplus_{\NN} \Gamma(\Hh)$), the creation and annihilation operators are proportional to rather curious objects. We have $a^\dagger(\ket{e_j}) \propto o^*_j$, where $o_j^*$ are the generators of what is called the Cuntz Algebra $O_n$. This algebra has many remarkable properties, but sadly we will not be able to go into this in detail.
+
+We looked at the creation operator in the last lecture, so the task now is to describe it's adjoint. You will notice that we gave the creation operator a dagger in anticipation of taking the adjoint. 
+
+\begin{defn}[Annihilation Operator] We define the annihilation operator in terms of its action on a vector.
+\begin{equation}
+a_s(\ket{\phi})P_s(\ket{\psi_1}\otimes...\otimes\ket{\psi_N})
+= \frac{1}{\sqrt{N}}\sum_{k=1}^N s^{k-1} P_s(\ket{\psi_1}\otimes...\otimes\ket{\psi_{k-1}}\otimes\braket{\phi}{\psi_k}\ket{\psi_{k+1}}\otimes...\otimes\ket{\psi_N})
+\end{equation}
+\end{defn}
+
+It is an exercise to show that this is indeed the adjoint of the creation operator. Remind yourself that the adjoint is defined as the operator fulfilling $\braket{A\psi}{\phi}=\braket{\psi}{A^\dagger \phi}$ and use the fact that to extend the inner product to $\Gamma_s(\Hh)$ you need to sum over all the inner products of the components. This brings us to the algebra that was foreshadowed at the start of the lecture.
+
+Let $M = \annih{\ket{\phi_1}}\create{\ket{\phi_2}}$, and $M'=\create{\ket{\phi_1}}\annih{\ket{\phi_2}}$. These operators preseve the total number of particles, so when acting on some state $P_s(\ket{\psi_1}\otimes...\otimes\ket{\psi_N})$ we find the same result, differing by a sign.
+
+\[M=\braket{\phi_1}{\phi_2}\II+sM'\]
+
+To summarize, we have the following commutator (s-bracket) relation:
+
+\begin{equation}
+[\create{\ket{\phi_1}},\annih{\ket{\phi_2}}]_s=\braket{\phi_1}{\phi_2}\II
+\end{equation}
+
+Where $[\cdot,\cdot]_+$ is the anticommutator, and $[\cdot,\cdot]_-$ is the commutator.
+
+The algebras generated by these operators $a_s,a^\dagger_s$ are called the CAR (canonical anticommutation relation) algebra and the CCR (canonical commutation relation) algebra. There is a huge difference between the two algebras - the creation and annihilation operators are not bounded operators in the Boson case, so to generate the CCR algebra properly we need to take exponentials of the operators. 
+
+Something to keep in mind is that we typically have a specific basis in mind when using the operators, so we could use the following notation.
+\begin{equation}
+a_\mu =: a_s(\ket{\phi_\mu})
+\end{equation}
+\begin{equation}
+a_\mu^\dagger =: a_s^\dagger(\ket{\phi_\mu})
+\end{equation}
+We typically refer to the states $\phi_\mu$ as 'modes', or 'envelopes' due to the fact that much of the time we are describing waves. They are wavefunctions that specify a particle's state in a system, so it's natural to refer to them as modes when they are commonly sines, cosines, or sometimes Hermite polynomials. They almost always form a Fourier basis. 
+
+Because the map which takes $\ket{\phi} \mapsto a_s(\ket{\phi})$ is antilinear, we can express any creation and annihilation operator as a linear combination of the basis creation and annihilation operators:
+
+\begin{equation}
+a_s(\ket{\phi}) = \sum_{\mu \in B}\phi_\mu^*a_\mu
+\end{equation}
+
+Where $\ket{\phi} = \sum \phi_\mu \ket{e_\mu}$. This notation gives us the following CCRs and CARs:
+
+\[ [a_\mu,a_\nu]_s=[a_\mu^\dagger,a_\nu^\dagger]_s=0 \]
+\[ [a_\mu,a_\nu^\dagger]_s=\delta_{\mu\nu}\II \]
+
+In the occupation number basis we can work out the matrix elements of these operators. We start with the action on an occupation number state:
+
+\[a_\mu^\dagger \ket{n} = s(\pi) \sqrt{n_\mu+1}\ket{n_1,...,n_\mu+1,n_{\mu+1},...}\]
+\[a_\mu \ket{n} = s(\pi)\sqrt{n_\mu}\ket{n_1,...,n_\mu-1,...}\]
+
+Here, $\pi$ is the permutation which sorts the sequence $\mu,\nu_1,\nu_2,...$ into ascending order (with the $\nu_i$'s being the remaing states you can occupy besides the $\mu$'th one). This is enough information to generate the matrix elements quite easily. This is important because if you work with Fermions you will want to make sure you sort everything because you will pick up signs. Here's an example.
+
+Let $s = -1$, $H=\CC^3$, and $\Hh = H^{\otimes 3}$. Then we want to calculate $a_2^\dagger \ket{101}$. This should give some multiple of $\ket{111}$, but since $\ket{101}$ can be relabeled to give $-\ket{011}$  (which is in ascending order), we must introduce a negative sign. To clarify, this means that the permutation we are using is $\pi : (2,1,3)\mapsto (1,2,3)$, which is of odd parity. Therefore $a_2^\dagger \ket{101}=-\ket{111}$.
+
+What makes this tricky to work out on a computer is the $-1$ factors. It's worth it to do these calculations for Fermions, and for Bosons you might already see that these will look very similar to the Harmonic Oscillator ladder operators. There's a faster way to do this, since at a large amount of particles the brute force method will be too slow. This is called the Jordan-Wigner Transform.
+\subsection{Jordan-Wigner Transform}
+To compute the matrix elements of the creation/annihilation operators with this method, we will need to use the Pauli matrices (which you have seen in your previous courses). These are:
+\begin{equation}
+\sigma^x = \begin{bmatrix}0&1\\1&0\end{bmatrix}, \sigma^y = \begin{bmatrix}0&-i\\i&0\end{bmatrix}, \sigma^z = \begin{bmatrix}1&0\\0&-1\end{bmatrix}, \sigma^0 = I
+\end{equation}
+We also need the projection matrices:
+\begin{equation}
+\sigma^+ = \begin{bmatrix}0&0\\1&0\end{bmatrix}, \sigma^- = \begin{bmatrix}0&1\\0&0\end{bmatrix}
+\end{equation}
+
+The Jordan-Wigner transformation is given by the following. It's probably easy to see that for the first matrix we have the following:
+
+\[a_1^\dagger = \sigma_1^+\otimes \II_2\otimes...\otimes\II_n =: \sigma_0^\dagger \otimes \II_{2...n}\]
+\[a_1 = \sigma_1^- \otimes \II_{2...n}\]
+
+To get $a_2^\dagger$ we can't just insert a $\sigma_2^+$ into the tensor product, we need it to anticommute with $a_1^\dagger$. So we note that $\sigma_1^z$ anticommutes with $\sigma_1^+$. This gives:
+\[a_2^\dagger = \sigma_1^z \otimes \sigma_2^+\otimes \II_{3...n}\]
+\[a_2 = \sigma_1^z\otimes \sigma_2^- \otimes \II_{3...n}\]
+
+In general the transform is given by this:
+\begin{defn}[Jordan-Wigner Transform]
+The Jordan-Wigner Transform generates the CAR algebra in terms of the Pauli matrices as follows:
+\begin{equation}
+a_j^\dagger = \sigma_1^z\otimes\sigma_2^z\otimes...\otimes \sigma_{j-1}^z \otimes \sigma_j^+ \otimes \II_{j+1...n}
+\end{equation}
+\begin{equation}
+a_j = \sigma_1^z\otimes\sigma_2^z\otimes...\otimes \sigma_{j-1}^z \otimes \sigma_j^- \otimes \II_{j+1...n}
+\end{equation}
+\end{defn}
+
+The $2^n$ by $2^n$ matrices given by the Jordan-Wigner transform completely generate the CAR. Here's something to ponder: what if we wanted to get away with smaller matrices? You can't if you want to be exact, but what if you only need to be approximately correct (ie $\{a_\mu,a\nu\} \approx \delta_{\mu \nu}\II$)?
+
+\section{Dynamics in the CAR/CCR Algebra}
+
+One quick thing to define now is the number operator.
+\begin{defn}[Number Operator] We define the number operator as follows:
+\begin{equation}N_\mu =: a_\mu^\dagger a_\mu\end{equation}
+\end{defn}
+This has the effect that $N_\mu\ket{n} = n_\mu\ket{n}$. We will see that $\hat N = \sum N_\mu$, where $\hat N$ is the total particle number operator. This is easy to see, just apply the sum ot an arbitrary ket and factor the ket back out, leaving the sum of each of the $n_\mu$'s.
+
+\subsection{The CCR/CAR Algebra}
+Before continuing with the lecture material, I'll quickly define an algebra. You may recall us mentioning it earlier, but not quite caught what it meant.
+\begin{defn}[$F$-Algebra]
+An \textbf{$F$-algebra} $A$ is a vector space over $F$ which has been endowed with a  product $\cdot : A\times A \to A$. The product is not necessarily commutative, but does have the following properties.
+\begin{enumerate}
+\item (Right Distributive) $(\ve{x}+\ve{y})\cdot \ve{z} = \ve{x}\cdot \ve{z} + \ve{y}\cdot \ve{z}$
+\item (Left Distributive) $\ve{z}\cdot(\ve{x}+\ve{y}) = \ve{z}\cdot \ve{x} + \ve{z} \cdot \ve{y}$
+\item (Compatibility with Scalars) $a\ve{x}\cdot b\ve{y} = (ab)(\ve{x}\cdot \ve{y})$
+\end{enumerate}
+\end{defn}
+
+Here are some examples of algebras:
+\begin{enumerate}
+\item The matrix algebra $GL_n(F)$, where the product is matrix multiplication. This algebra is called \textit{unital} since there is an identity element.
+\item The algebra of continuous functions $C(K)$ over a set $K$, where the "product" is function composition.
+\end{enumerate}
+
+We say an $F$-algebra is \textit{generated} by a set $B \subseteq A$ if $A$ can be completely specified by polynomials of $B$ with coefficients in $F$.
+
+\begin{defn}[Generators of an Algebra] Some subset $\{b_1,...,b_n\}\subseteq A$ is called the set of generators of an $F$-Algebra $A$ if the following property holds.
+\begin{equation}
+A = F[b_1,...,b_n] = \left\{\sum_{i=1}^N a_i b_{j_1}...b_{j_M} | M, N \in \NN\right\}
+\end{equation}
+\end{defn}
+
+Then the CAR/CCR algebra is the one generated by subsets of $L(\Gamma(\Hh))$ which obey the CAR/CCRs. That is, their set of generators is the set of creation and annihilation operators.
+
+Let $A_{n,m} = \dyad{n}{m}$. Then let $M \in \mathcal{B}(\Gamma_s(\Hh))$. Then we can always write $M = \sum_{n,m} M(n,m) A_{n,m}$. But these coefficients aren't nearly as easy to find as the coefficients in terms of the generators $a_\mu^\dagger, a_\mu$. What we will do today is justify this a little bit. One might argue that this has something to do with locality, causality, etc. But some even think that the CAR/CCR generators we have might not be the best way to write our operators (the hot topic is Tensor Networks). It's an open question so far.
+
+\subsection{Hamiltonians in terms of Creation \& Annihilation Operators}
+Now we begin the task of expressing dynamics generated by Hamiltonians in terms of these creation and annihilation operators. There are many ways to do this, but here is a pretty slick way of doing things which doesn't take too long.
+
+\subsubsection{Simplest Dynamics}
+First, we're going to express the simplest dynamics we know. This is the dynamics on a single-particle space given by $U_t \ket{\mu} = e^{it}\ket{\mu}$. This time evolution operator is just this: \[U_t = e^{it}\dyad{\mu}+\sum_{\nu\neq\mu}\dyad{\nu}\]
+On the full Fock space, this operator is given by $\Gamma_s(U_t) = \bigoplus_{N=0}^\infty \Gamma_{s,N}(U_t)$ with $\Gamma_{s,N} = \bigotimes_{j=1}^N U_t$. This is pretty good, but we want this in terms of annihilation and creation operators, since it's a great building block for more complicated operators. We begin with $\Gamma_s(U_t) = f(a_\mu,a_\mu^\dagger)$. This function $f$ is unknown, but there's a clever way to derive it. First we differentiate this expression.
+\begin{align}
+\pdv{t} \Gamma_s(U_t) &= \pdv{t}f(a_\mu,a_\mu^\dagger)\\
+i\dd\Gamma_s(H)\Gamma_s(U_t) &= \pdv{t}f(a_\mu,a_\mu^\dagger)
+\end{align}
+Second, we act this on a Fock space element: $\Gamma_s(U_t)\ket{n} = \Gamma_s(U_t) \ket{n_1,...,n_\mu,...}$. We can expand this in terms of $\ket{n} = P_s\ket{e_1,...,e_\mu,...}$ and show that $\Gamma(U_t)\ket{n} = e^{in_\mu t} \ket{n}$. This follows from the linearity of $\Gamma_s(U_t)$, simply factor out the eigenvalues and add them up. We introduced earlier an operator which does something similar! The number operator gives us the number of particles in state $\mu$, so we may be able to write our Hamiltonian in terms of those operators.
+\begin{align}
+-i\pdv{t}\Gamma_s(U_t)\ket{n} &= \pdv{t} e^{in_\mu t}\ket{n}\\
+&=n_\mu e^{in_\mu t}\ket{n}\\
+&= \hat n_\mu \Gamma_s(U_t)\ket{n}
+\end{align}
+
+Combining this with (39) we see that $\dd \Gamma_s(H) = \hat n_\mu$, so that $\Gamma_s(U_t) = \exp(i\hat n_\mu t) = e^{i a_\mu^\dagger a_\mu t}$.
+
+\subsubsection{Non-Interacting Dynamics}
+The previous section told us that essentially that $\dd \Gamma_s(\dyad{\mu}) = \hat n_\mu$.  In an older notation, we have $\dd\Gamma_s(\dyad{\phi}) = a^\dagger(\ket{\phi}) a(\ket{\phi})$ for any $\phi$. This is a wealth of information. Using this, one can show that $\dd\Gamma_s(\dyad{\phi}{\psi}) = a^\dagger(\ket{\phi})a(\ket{\psi})$. (Warning, this is not Hermitian in general!)
+
+This gives a general formula:
+\begin{align}
+\dd \Gamma_s(H) &= \dd \Gamma_s(\sum_{\mu,\nu}H_{\mu\nu}\dyad{\mu}{\nu})\\
+&= \sum_{\mu,\nu}\bra{\mu}H\ket{\nu}a_\mu^\dagger a_\nu
+\end{align}
+
+Therefore our dynamics is completely specified by the following time evolution.
+\begin{equation}
+\Gamma_s(U_t) = \exp\left(i \sum_{\mu,\nu} \bra{\mu}H\ket{\nu}a^\dagger_\mu a_\nu\right)
+\end{equation}
+
+This is the most general formula for non-interacting dynamics. What will occupy the rest of today is interacting dynamics. We need to add a potential which depends on two or more particles. We will focus on the interactions between two particles for now.\pagebreak
+\subsubsection{Interacting Dynamics}
+The potential describing the interaction should be an operator which acts on the Hilbert space of two particles! This means that we have $V \in L(\Hh\otimes \Hh)$ (usually it's bounded). A good example is a contact potential:
+\[\Hh = L^2(\RR), V = \iint_{\RR^2} v(x-y)\dyad{x-y}\dd x \dd y\]
+Where $v(x-y) = |x-y|^{-1}$ would denote a Coulomb potential, $e^{-k|x-y|}$ denotes some kind of collision potential, and so on. This is good for two particles, but what happens when you have many particles interacting with each other? You want this to be extensive - when you add a particle you want the energy to increase linearly. You also want this to be compatible with Fock space - it can't desymmetrize states. We will write $V_N$ for the potential for $N$ particles. We want this operator to also commute with permutations - if you exchange particles around the potential doesn't change. We conjecture\footnote{The notation $\pi=(a b)$ means that $a$ and $b$ are exchanged under the permutation. This is called Cycle Notation.}:
+\begin{equation}
+V_N = \sum_{j\neq k = 1}^N U(\pi)^\dagger \left(V_{12} \otimes \II_{3,...,N}\right) U(\pi), \pi=(j 1)(k 2)
+\end{equation}
+It's easy to see that adding an extra particle into a system with $N$ particles will just add $N$ terms to $V_N$, so we see that the potential is extensive. This also obviously commutes with permutations. We declare the following notation.
+\[V_\infty =: \bigoplus_N V_N =: \dd^2 \Gamma_s(V)\]
+We want to write this in terms of creation and annihilation operators: $\dd^2\Gamma_s(V) = g(a_\mu^\dagger,a_\mu)$. Any permutation-invariant operator can be written as a linear combination of tensor products of the form $A \otimes A$. As an example, let $\Hh = \CC^2$. Let $V = U(\tau)$ with $\tau = (2,3)$. This operator looks like:
+\[(2,3) = \begin{bmatrix}1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{bmatrix}= \frac{1}{2}\left(\II\otimes \II + \sigma^x\otimes\sigma^x + \sigma^y\otimes\sigma^y + \sigma^z\otimes \sigma^z\right)\]
+
+Consider (46) again. We have:
+\[V_N = \sum_{j\neq k}V_{jk} = \sum_{j\neq k}\II\otimes...\otimes A_j\otimes ... \otimes A_k\otimes ... \otimes \II\]
+ Then we learn that $\dd^2\Gamma_s(A\otimes A) = \frac{1}{2}(\dd\Gamma_s(A)^2-\dd\Gamma_s(A^2))$. After substituting in and expanding, we have the following.
+\begin{align}
+\dd^2\Gamma_s(A\otimes A) &= \frac{1}{2}\sum_{\mu_1,\mu_2}\sum_{\nu_1,\nu_2}\mel{\mu_1}{A}{\nu_1}\mel{\mu_2}{A}{\nu_2}(a_{\mu_1}^\dagger a_{\nu_1} a_{\mu_2}^\dagger a_{\nu_2} - \delta_{\mu_2,\nu_1}a^\dagger_{\mu_1} a_{\nu_2})\\
+&= \frac{s}{2}\sum_{\mu_1,\mu_2,\nu_1,\nu_2}\mel{\mu_1,\mu_2}{A\otimes A}{\nu_1,\nu_2} a_{\mu_1}^\dagger a_{\mu_2}^\dagger a_{\nu_1} a_{\nu_2}
+\end{align}
+
+Extending by linearity, we have the final product.
+\begin{equation}
+\dd^2\Gamma_s(V) = \frac{1}{2}\sum_{\mu_1,\mu_2,\nu_1,\nu_2}\mel{\mu_1,\mu_2}{V}{\nu_1\nu_2} a_{\mu_1}^\dagger a_{\mu_2}^\dagger a_{\nu_1} a_{\nu_2}
+\end{equation}
+As an example. the "second-quantized" Hamiltonian for an ordinary nonrelativistic material is given by the following general formula:
+\begin{equation}
+\hat H = \dd \Gamma_s(-\frac{\hbar^2}{2m}\nabla^2) + \dd \Gamma_s(\int \dd \xi v_0(x)\dyad{x}) + \dd^2\Gamma_s(V)
+\end{equation}
+\begin{equation}
+V = -e^2\int \dd x_1 \dd x_2 \frac{1}{|x_1-x_2|}\dyad{x_1-x_2} 
+\end{equation}
+There are two ways to go about calculating the evolution of a system under this potential. The first way is to use perturbation theory, where you exploit the fact that the elementary charge $e$ is quite small. The second approach is to take asymptotic limits - this is what we will do when we look at scattering.
+
 \end{document}
+
+
+
+
+
+
+
