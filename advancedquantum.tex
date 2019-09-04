@@ -14,6 +14,15 @@
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
 \DeclareMathOperator{\Col}{\textrm{Col}}
 \DeclareMathOperator{\Nul}{\textrm{Nul}}
 \DeclareMathOperator{\Bb}{\mathcal{B}}
@@ -761,6 +770,111 @@ As an example. the "second-quantized" Hamiltonian for an ordinary nonrelativisti
 V = -e^2\int \dd x_1 \dd x_2 \frac{1}{|x_1-x_2|}\dyad{x_1-x_2} 
 \end{equation}
 There are two ways to go about calculating the evolution of a system under this potential. The first way is to use perturbation theory, where you exploit the fact that the elementary charge $e$ is quite small. The second approach is to take asymptotic limits - this is what we will do when we look at scattering.
+
+\pagebreak
+\section{Nonrelativistic Quantum Fields}
+\subsection{Definition of a Quantum Field}
+Up until now we've been concerned with writing Hamiltonians in terms of the creation and annihilation operators. Recall that these are operators $a_\mu =: a_s(\ket{\phi_\mu})$ given by a countable basis for the single-particle states $\ket{\phi_\mu})$. These operators obey the CAR/CCRs (depending on the Hilbert space). Here, the creation of an arbitrary state is given by $a^\dagger_s(\ket{\psi}) = \sum_\mu \overline \psi_\mu a_\mu^\dagger$ (where $\psi_\mu = \braket{\phi_\mu}{\psi}$). Presumably, these states must be delocalized over some physical region - so we might want to look at whether the properties of these operators make complete sense.
+
+An example to keep in mind is a box in three dimensions. Let's say the side length is $L$ and that the box has periodic boundary conditions\footnote{This means that when you walk through one face of the box you come out of the opposite face}. It's a bit hard to imagine living in this box, which is why we refer you to the most excellent movie Interstellar. This configuration space is basically $L^2(S^1 \times S^1 \times S^1)$.
+
+So when solving the Schrodinger equation for a free particle in this box, we get plane wave solutions (this is quite a simple exercise).
+\[\phi_{\vec{k}}(x) = \frac{1}{\sqrt{V}}e^{i\vec{k}\cdot\vec{x}},  k_j =\frac{2\pi n_j}{L} \]
+We replace the label $\mu$ with this $\vec{k}$, as these plane waves form an orthonormal basis for our Hilbert space. If we take the probability amplitude of one of these $\phi_{\vec{k}}$ we get the same probability of finding the particle anywhere in the box. How do we describe the process which inserts a particle localized near $\vec{x}$ in this box? Informally, we can create a creation operator which looks something like $\hat\Psi(\vec{x}) "=" a_s^\dagger(\delta(\vec{x}))$. This isn't very well defined however - the Dirac delta is not an element of our Hilbert space so we can't assume that this operator exists. Here's an argument for why these states are ill defined:
+\begin{align}
+\bra{x}\ket{x}&= \bra{x}\II\ket{x}\\
+1 &= \bra{x}(-i)[\hat x, \hat p]\ket{x}\\
+1 &= \bra{x}(-i\hat x\hat p) + (i\hat p \hat x)\ket(x)\\
+1 &= -ix\expval{\hat p} + ix\expval{\hat p} \\
+1 &= 0
+\end{align}
+Why is this argument valid? Because position eigenstates are \textit{not} defined! They aren't honest residents of Hilbert space. What we can do instead is deal with gaussian states, or tightly localized but non-delta states. In order to make creating particles in localized states nice, we should define a Quantum Field.
+
+\begin{defn}[Quantum Field]
+Let $\Hh = L^2(\RR^3)$ or $\Hh = L^2(S^1\times S^1 \times S^1)$. A quantum field $\hat\Psi(x)$ on on $\Hh$ defined as follows. Let $\phi_\mu(x)$ be an orthonormal basis of wave functions.
+\begin{equation}
+\hat \Psi(x)= \sum_{\mu}\phi_\mu(x)a_\mu
+\end{equation}
+\begin{equation}
+\hat \Psi^\dagger(x)= \sum_{\mu}\overline\phi_\mu(x)a^\dagger_\mu
+\end{equation}
+\end{defn}
+
+These $\hat \Psi(x)$ operators are not quite the same kind of operators we are used to. Instead they are what are called "distribution-valued" operators. What this means is that $\hat\Psi(x)$ does not actually operate on a state in $\Gamma_s(\Hh)$, instead it takes as an argument a smooth rapidly decaying function on $\Hh$ and returns an unbounded operator on $\Gamma_s(\Hh)$ given by the following formula.
+\begin{equation}
+\int \dd^3 x f(x) \hat \Psi(x) =: \hat \Psi(f) = a_s(\ket{f})
+\end{equation}
+So in principle, the "Quantum Field Operator" is given by the integral operator $\int_{\Hh }\hat\Psi$.
+
+We can derive the commutation relations for this operator as follows.
+\begin{align}
+[\hat\Psi(x),\hat\Psi(y)]_s &= \sum_{\mu,\nu} \phi_\mu(x) \overline \phi_\nu(y)[a_s(\ket{\phi_\mu}),a_s^\dagger(\ket{\phi_\nu})]\\
+&= \sum_{\mu,\nu} \phi_\mu(x)\overline\phi_\nu(y) \II\\
+&= \delta(x-y)\II
+\end{align}
+If you try to define a quantum field according to $a_s(\delta(x))$ then you don't get a nice commutation relation - so already this definition works quite well. It gets really worthwhile to use these quantum fields when you are rewriting $\dd \Gamma_s(H)$ in terms of them. Here's an example:
+
+Consider the Hamiltonian $\hat J = \sum_{\mu,\nu} \bra{\phi_\mu}\hat J\ket{\phi_\nu} a_\mu^\dagger a_\nu$. This is an operator which shows up quite a lot. It turns out you can rewrite this in terms of $\hat \Psi(x)$.
+\begin{align}
+\hat J &= \sum_{\mu,\nu} \bra{\phi_\mu}\hat J\ket{\phi_\nu} a_\mu^\dagger a_\nu\\
+&= \sum_{\mu,\nu}\int \dd^3 x \overline \phi_\mu(x) J(x)\phi_\nu(x) a^\dagger_\mu a_\nu\\
+&= \int \dd^3 x \hat \Psi^\dagger(x) J(x) \hat \Psi(x)
+\end{align}
+Where $J(x) = \expval{J}{x}$. We'll now do a more specific example.
+\begin{defn}[Number Density Operator] Define $J(y) = \delta(y-x)$. If you want, this is the potential of a particle which is super duper localized. If we subsitute this in, we get the number density operator.
+\begin{equation}
+\hat{n}(x) = \int \dd^3 y \hat\Psi^\dagger (y)\delta(y-x) \hat \Psi(y) = \hat \Psi^\dagger(x) \hat\Psi(x)
+\end{equation}
+\end{defn}
+The number density gives you the total particle number operator.
+\[\hat N = \int \dd^3 x \hat n(x)\]
+
+Now, are these quantum fields any good for writing out interaction potentials? The answer is yes! Recall the Hamiltionian for an interaction:
+\[H = \sum_{\mu,\nu}\bra{\phi_\mu}(T+V_0)\ket{\phi_\nu} + \frac{1}{2}\sum_{\mu_1,\mu_2}\sum_{\nu_1,\nu_2}\mel{\mu_1,\mu_2}{V}{\nu_1\nu_2} a_{\mu_1}^\dagger a_{\mu_2}^\dagger a_{\nu_1} a_{\nu_2}\]
+
+We have already completed half of this - just replace $J$ by $T-V_0$. What is left is calculating the interaction potential. This is a very simple exercise, it's the exact same procedure as the kinetic term so we will just write out the answer.
+\begin{equation}
+H = \int \dd^3 x \hat \Psi^\dagger(x) \left( \frac{-\hbar^2}{2m}\nabla^2 + V_0(x) \right) \hat \Psi(x) + \frac{1}{2}\int \dd^3 x \dd^3 y \hat \Psi^\dagger(x) \hat \Psi^\dagger(y) V(x,y) \hat\Psi(x) \hat\Psi(y)
+\end{equation}
+
+\section{Examples of Multi-Particle Systems}
+What we're going to do now is work out a few examples. Both examples will be gases. This Fock space formalism is really good for situations where we don't know how many particles there are. This happens often when you have gases, such as dilute atomic gases, or when you have so many particles that there is no hope of knowing how many there are. This is common in solids, plasmas, and so on. 
+
+\subsection{Dilute Neutral Atomic Gas}
+This example is fantastic because it gives us an opportunity to study calculations using both Perturbation Theory and through the variational method. The potential in this case is going to be given by something along the lines of $V(x,y) = g\delta^3(x-y)$, with $g = \frac{4\pi\hbar N a}{m}$. This $a$ is something called the s-wave scattering cross section which we will learn more about later in the course. What we want to know is how to simulate the dynamics in this system. The two options are to perturb the system in $g$ since $g$ is pretty small. This works when the gas is extremely dilute. In the case when the gas is just a bit too dense, then you need to use the variational method. 
+
+\subsubsection{Variational Method}
+Here we choose some subset of your full Fock space. This subset will be called the variational set and is denoted $V \subset \Gamma_s(\Hh)$. Full Fock space is pretty hard to program into a computer, it's got a lot of badly behaved states and it's infinite dimensional. What we do to find the ground states in our system is take the infimum over the expectation values in the variational set.
+\begin{equation}
+E(V) = \inf_{\ket{\phi}\in V}\expval{H}{\phi} \geq E_0
+\end{equation}
+This is always an upper bound to the ground state energy due to the maximum principle, so as we expand our variational set our approximation becomes better and better. The way you choose $V$ doesn't have to be particularly clever, you just have to be a little informed about the ground state.
+
+The variational set we are going to work with first is called the set of Coherent states. Recall the definition of a mode (where $\hat a, \hat a^\dagger$ are single-particle creation/annihilation operators). The coherent states in a single particle system are given by the states $\ket{\alpha}$ so that $\hat a\ket{\alpha} = \alpha\ket{\alpha}$.
+
+\begin{defn}[Coherent State] A Coherent state $\ket{\alpha}$ is given by the following rule.
+\begin{equation}
+a_s\ket{\alpha} = \alpha\ket{\alpha} = e^{-\frac{|\alpha|^2}{2}}\sum_{n=0}^\infty\frac{\alpha^n}{\sqrt{n!}}\ket{n}
+\end{equation}
+\end{defn}
+An equivalent definition is using an object called the Weyl operator (or displacement operator).
+\begin{defn}[Weyl Operator] We define the Weyl operator $D$ as follows.
+\begin{equation}D(a,\alpha) = e^{\alpha a^\dagger - \overline\alpha a}\end{equation}
+\end{defn}
+This operator is unitary, and is a generator for coherent states:
+\[D(a,\alpha)\ket{0} = \ket{\alpha}\]
+The coherent states are an overcomplete basis, so they are not necessarily orthogonal. One could prove the following formula.
+\[\II=\frac{1}{\pi}\int \dd^2 \alpha \dyad{\alpha}\]
+
+But what we want to really deal with are multimode states - systems with multiple particles. In this case, the coherent states are given by the following. 
+\begin{defn}[Multimode Coherent State] Let $[a_\mu,a_\nu^\dagger]=\II$. Let $\alpha = (\alpha_1,...)$. We define the Coherent states as follows.
+\begin{equation}
+a_\mu\ket{\alpha} = \alpha_\mu\ket{\alpha} = \alpha_\mu \exp\left(\sum_{\mu} (\alpha_\mu a_\mu^\dagger - \overline\alpha_\mu a_\mu)\right)\ket{\Omega}
+\end{equation}
+\end{defn}
+It's easy to see that $ \exp\left(\sum_{\mu} (\alpha_\mu a_\mu^\dagger - \overline\alpha_\mu a_\mu)\right) = \prod_\mu D(a_\mu,\alpha_\mu)$.
+
+We can calculate the moments and expectation values for coherent states with Wick's Theorem.
 
 \end{document}
 
