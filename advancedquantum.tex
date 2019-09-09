@@ -40,6 +40,8 @@
 \DeclareMathOperator{\ZZ}{\mathbb{Z}}
 \DeclareMathOperator{\CC}{\mathbb{C}}
 
+\captionsetup{belowskip=-30pt}
+
 \newcommand{\ve}[1]{\mathbf{#1}}
 \newcommand{\create}[1]{a^\dagger_s(#1)}
 \newcommand{\annih}[1]{a_s(#1)}
@@ -213,7 +215,6 @@ So that's one interpretation of a wavefunction - it's a section of a $\CC$-bundl
 
 In order to describe wavefunctions as sections of these bundles, it's therefore important to consider the vector space properties of $\CC$, as you could choose some basis vector for the fibre and it will twist and turn as you move around the base space. The way we do this is to further generalize our fibre bundle. Let's just consider our base space $\mathcal{M}$, and for each point $x$ in $\mathcal{M}$ we will associate a fibre $h_x$. In our case, we will always be using $\CC = h_x$, but it's important to make this generalization so that we can write the following. We want to make some choice of (normalized) basis vector $\chi_x$ for each $h_x$, so that $\textrm{Span}(\chi_x) = h_x$. Thus any section $\Psi$ can be written so that you can evaluate $\Psi$ at a point: $\Psi(x) = \psi(x)\chi_x$. You could therefore change this basis vector as you move around the space! Such a choice of $\chi_x$ for each $h_x$ is called a choice of gauge, and it's the same gauge you refer to in gauge theory. Suppose you wanted to change your basis vectors, so that $\chi_x \mapsto e^{-i\varphi(x)}\chi'_x$. Then you'd require that $\psi'(x) \mapsto e^{i\varphi(x)}$ so that $\Psi$ is unchanged. This is called a gauge transformation. The fact that physical quantities should not depend on this choice of gauge (gauge invariance!) causes issues when defining your derivative operator, and we will talk about this in the next section.
 
-\section{Identical Particles: Foundations}
 \subsection{Quantization of Identical Quantum Particles II}
 We won't spend too long talking about the theory of $\CC$ bundles. In this lecture we will move towards understanding identical particles, types of identical particles, and how to describe them in quantum mechanics. Today is the last day we will talk about understanding how there can be more than one quantization for a given classical system, due to this description in terms of $\CC$ bundles. So let's get into it. Here's some recap of the previous section.
 
@@ -321,7 +322,7 @@ As an exercise, solve the Schrodinger equation after this transformation.
 
 This weirdness doesn't happen in three dimensions. The reason is that $\RP^{n-1}$ is doubly connected. Any curve $\gamma^2$ that goes around the singularity twice is contractible. Therefore we have $P_{\gamma^2}(x,x) = e^{2i\xi}=1$, so $\xi = 0$ or $\xi = \pi$. In the case that $\xi = \pi$, we have the dynamics of a fermion. In the case that $\xi = 0$ we have the dynamics of a boson! But what does it mean to go around the singularity once in $\RP^{n-1}$? It means you exchange the two particles. This is why fermions are antisymmetric under exchange, which is what causes the Pauli exclusion principle. We will see this in extreme detail in the following lectures.
 
-\section{Preliminary to Fock Space}
+\section{Fock Space}
 In the previous three lectures we've been looking at the quantum theory of identical particles in 3D. You can see what we've covered in these lectures as the tip of a very large iceberg, which as a society we've only really begun to explore. What we have a good understanding of is the theory of identical point particles in 3 spacial dimensions or higher. What we have begun to uncover is the theory of extended, or membrane-like, interacting particles (ie, strings and so on). This falls under the title of "modular tensor categories". We will move on from this, but I wanted to make you aware before we move on that this field is still being studied extensively even now.
 
 Another subject, very closely related - being the tip of this iceberg, is the study of Fock space and 'second quantization'. This is what we will cover for the next few lectures.
@@ -417,8 +418,7 @@ We see the following properties arise from these subspaces.
 Let $\ket{\psi} \in H_-^N$. Then $U(\tau_{12}) \ket{\psi} = U(\tau_{12}) \frac{1}{N!}\sum_{\pi}\sgn(\pi)U(\pi) \ket{\psi}$
 \[U(\tau_{12})\ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12}^{-1}\circ \pi')U(\pi') \ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12})\sgn(\pi')U(\pi')\ket{\psi}=-\ket{\psi}\] Similarly, for any $\psi \in \Hh_+^N$, $U(\pi)\ket{\psi} = \ket{\psi}$. This essentially gives us a way of defining Fermions and Bosons rigorously as elements of subspaces of an abstract Hilbert space.
 \pagebreak
-\section{Fock Space}
-Before we begin this next section, let's introduce some shorthand notation.
+Let's introduce some shorthand notation.
 \[H_s^N = \begin{cases}H_+^N & \textrm{ for bosons} \\ H_-^N & \textrm{ for fermions}\end{cases}\]
 With $s = +1$ when we talk about Bosons and vice versa for Fermions.
 \subsection{Definition of Fock Space}
@@ -488,8 +488,7 @@ We should also look at the symmetrization and antisymmetrization of this space. 
 \[P_+\ket{000}=\ket{000}, P_+\ket{001}=\frac{1}{3}(\ket{001}+\ket{010}+\ket{100}), \]\[P_+\ket{011}=\frac{1}{3}(\ket{011}+\ket{101}+\ket{110}), P_+\ket{111}=\ket{111} \]
 On the other hand, $P_-\ket{\psi}=0$ for all $\ket{\psi}$! This is an effect we call the Pauli exclusion principle - no two fermions can occupy the same quantum state, so all occupation numbers have to be 1 or 0. There can't be any Fermion states in $\Hh^{\otimes 3}$ because of the pidgeonhole principle - two fermions will always have the same state, so one of the occupation numbers for a state will always either be 2 or 3.
 
-\section{Properties of Fock Space}
-\subsection{Finding a Basis}
+\subsection{Number Occupation States}
 In the last lecture we started developing a basis for Fock space. The basic approach we were going to try was to apply $P_s$ to each basis vector of $\Hh^{\otimes N}$, $\ket{\mu_{i_1},...,\mu_{i_N}}$. The issue is that we don't know whether this is too large of a basis for $\Hh_s^N$ - this crisis would be averted if we could show that either $P_s$ is zero for particular elements, or if the basis is already exactly the right size. 
 
 We're going to prove something about these $\ket{\mu_{i_1},...,\mu_{i_N}}$ vectors. Suppose $\ket{\mu_{i_1},...,\mu_{i_N}}$ has occupation numbers $n_\nu(\mu_1,...,\mu_N)$. And suppose we have another ket $\ket{\mu'_{j_1},...,\mu'_{j_N}}$ with some occupation numbers. We would like to show that if these two kets have different occupation numbers then they are orthogonal.
@@ -666,8 +665,6 @@ a_j = \sigma_1^z\otimes\sigma_2^z\otimes...\otimes \sigma_{j-1}^z \otimes \sigma
 
 The $2^n$ by $2^n$ matrices given by the Jordan-Wigner transform completely generate the CAR. Here's something to ponder: what if we wanted to get away with smaller matrices? You can't if you want to be exact, but what if you only need to be approximately correct (ie $\{a_\mu,a\nu\} \approx \delta_{\mu \nu}\II$)?
 
-\section{Dynamics in the CAR/CCR Algebra}
-
 One quick thing to define now is the number operator.
 \begin{defn}[Number Operator] We define the number operator as follows:
 \begin{equation}N_\mu =: a_\mu^\dagger a_\mu\end{equation}
@@ -771,9 +768,7 @@ V = -e^2\int \dd x_1 \dd x_2 \frac{1}{|x_1-x_2|}\dyad{x_1-x_2}
 \end{equation}
 There are two ways to go about calculating the evolution of a system under this potential. The first way is to use perturbation theory, where you exploit the fact that the elementary charge $e$ is quite small. The second approach is to take asymptotic limits - this is what we will do when we look at scattering.
 
-\pagebreak
-\section{Nonrelativistic Quantum Fields}
-\subsection{Definition of a Quantum Field}
+\subsection{Nonrelativistic Quantum Fields}
 Up until now we've been concerned with writing Hamiltonians in terms of the creation and annihilation operators. Recall that these are operators $a_\mu =: a_s(\ket{\phi_\mu})$ given by a countable basis for the single-particle states $\ket{\phi_\mu})$. These operators obey the CAR/CCRs (depending on the Hilbert space). Here, the creation of an arbitrary state is given by $a^\dagger_s(\ket{\psi}) = \sum_\mu \overline \psi_\mu a_\mu^\dagger$ (where $\psi_\mu = \braket{\phi_\mu}{\psi}$). Presumably, these states must be delocalized over some physical region - so we might want to look at whether the properties of these operators make complete sense.
 
 An example to keep in mind is a box in three dimensions. Let's say the side length is $L$ and that the box has periodic boundary conditions\footnote{This means that when you walk through one face of the box you come out of the opposite face}. It's a bit hard to imagine living in this box, which is why we refer you to the most excellent movie Interstellar. This configuration space is basically $L^2(S^1 \times S^1 \times S^1)$.
@@ -838,10 +833,16 @@ H = \int \dd^3 x \hat \Psi^\dagger(x) \left( \frac{-\hbar^2}{2m}\nabla^2 + V_0(x
 \end{equation}
 
 \section{Examples of Multi-Particle Systems}
-What we're going to do now is work out a few examples. Both examples will be gases. This Fock space formalism is really good for situations where we don't know how many particles there are. This happens often when you have gases, such as dilute atomic gases, or when you have so many particles that there is no hope of knowing how many there are. This is common in solids, plasmas, and so on. 
+What we're going to do now is work out a few examples. Both examples will be gases. This Fock space formalism is really good for situations where we don't know how many particles there are. This happens often when you have gases, such as dilute atomic gases, or when you have so many particles that there is no hope of knowing how many there are. This is common in solids, plasmas, and so on. There are a bunch of methods for calculating energies, eigenstates, and so on of these systems:
+\begin{enumerate}
+\item Exact Solution 
+\item Variational Method
+\item Perturbation Theory
+\item Everything else... (Bethe Ansatz, Semiclassical method, etc)
+\end{enumerate}
 
 \subsection{Dilute Neutral Atomic Gas}
-This example is fantastic because it gives us an opportunity to study calculations using both Perturbation Theory and through the variational method. The potential in this case is going to be given by something along the lines of $V(x,y) = g\delta^3(x-y)$, with $g = \frac{4\pi\hbar N a}{m}$. This $a$ is something called the s-wave scattering cross section which we will learn more about later in the course. What we want to know is how to simulate the dynamics in this system. The two options are to perturb the system in $g$ since $g$ is pretty small. This works when the gas is extremely dilute. In the case when the gas is just a bit too dense, then you need to use the variational method. 
+This example is fantastic because it gives us an opportunity to study calculations using both Perturbation Theory and through the variational method. The potential in this case is going to be given by something along the lines of $V(x,y) = g\delta^3(x-y)$, with $g = \frac{4\pi\hbar N a}{m}$. This $a$ is something called the s-wave scattering cross section which we will learn more about later in the course. What we want to know is how to simulate the dynamics in this system. The two options are to perturb the system in $g$ since $g$ is pretty small. This works when the gas is extremely dilute. In the case when the gas is just a bit too dense, then you need to use the variational method. The two models we will see for the dilute atomic gas are the Bose-Hubbard model and the full quantum field model using the variational method. We also derive the time-independent Gross-Pitaevskii equation for a gas with collisions.
 
 \subsubsection{Variational Method}
 Here we choose some subset of your full Fock space. This subset will be called the variational set and is denoted $V \subset \Gamma_s(\Hh)$. Full Fock space is pretty hard to program into a computer, it's got a lot of badly behaved states and it's infinite dimensional. What we do to find the ground states in our system is take the infimum over the expectation values in the variational set.
@@ -854,7 +855,7 @@ The variational set we are going to work with first is called the set of Coheren
 
 \begin{defn}[Coherent State] A Coherent state $\ket{\alpha}$ is given by the following rule.
 \begin{equation}
-a_s\ket{\alpha} = \alpha\ket{\alpha} = e^{-\frac{|\alpha|^2}{2}}\sum_{n=0}^\infty\frac{\alpha^n}{\sqrt{n!}}\ket{n}
+a_+\ket{\alpha} = \alpha\ket{\alpha} = e^{-\frac{|\alpha|^2}{2}}\sum_{n=0}^\infty\frac{\alpha^n}{\sqrt{n!}}\ket{n}
 \end{equation}
 \end{defn}
 An equivalent definition is using an object called the Weyl operator (or displacement operator).
@@ -867,15 +868,124 @@ The coherent states are an overcomplete basis, so they are not necessarily ortho
 \[\II=\frac{1}{\pi}\int \dd^2 \alpha \dyad{\alpha}\]
 
 But what we want to really deal with are multimode states - systems with multiple particles. In this case, the coherent states are given by the following. 
-\begin{defn}[Multimode Coherent State] Let $[a_\mu,a_\nu^\dagger]=\II$. Let $\alpha = (\alpha_1,...)$. We define the Coherent states as follows.
+\begin{defn}[Multimode Coherent State] Let $[a_\mu,a_\nu^\dagger]=\delta_{\mu\nu}\II$. Let $\alpha = (\alpha_1,...)$. We define the Coherent states as follows.
 \begin{equation}
 a_\mu\ket{\alpha} = \alpha_\mu\ket{\alpha} = \alpha_\mu \exp\left(\sum_{\mu} (\alpha_\mu a_\mu^\dagger - \overline\alpha_\mu a_\mu)\right)\ket{\Omega}
 \end{equation}
 \end{defn}
 It's easy to see that $ \exp\left(\sum_{\mu} (\alpha_\mu a_\mu^\dagger - \overline\alpha_\mu a_\mu)\right) = \prod_\mu D(a_\mu,\alpha_\mu)$.
 
-We can calculate the moments and expectation values for coherent states with Wick's Theorem.
+We can calculate the moments and expectation values for coherent states with Wick's Theorem, which we will see a bit later.  So coherent states are ground states of models of the following form.
+\begin{equation}
+H=\sum_{\mu,\nu}a_\mu^\dagger k_{\mu\nu}a_\nu + \sum_{\mu}\left(\overline k_\mu a_\mu + k_\mu a_\mu^\dagger\right) + \textrm{Const}
+\end{equation}
+This is true for fermions and bosons, but we won't actually deal with fermions in this course. Lots of models have this form, so this is quite a nice set of states. Let's try this on a different model before returning to the dilute atomic gas. 
+\subsubsection{Bose-Hubbard Model}
+Consider the following non-trivial Hamiltonian.
+\begin{equation}
+H_{\textrm{BHM}} = -t \sum_{j=0}^{N-1}( a_{j+1}^\dagger a_j + a_j^\dagger a_{j+1}) + J\sum_{j=0}^{N-1}a_j^\dagger a_j(a_j^\dagger a_j - \II) + \mu\sum_{j=0}^{N-1}a_j^\dagger a_j
+\end{equation}
+What is this Hamiltonian? Suppose you have a ring with a periodic potential, and bosons living on the ring. The following figure demonstrates this. 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/bose_hubbard.png}
+    \caption*{}
+    \label{fig:bhub}
+\end{figure}
 
+In this system we set the number of minima ('valleys') in the potential to be $N$. We then make lots of approximations to the general form of the Hamiltonian:
+\[H = \int \dd^3 x \Psi^\dagger(x)(T-V_0)\Psi(x) + \iint \dd^3 x \dd^3 y \Psi^\dagger(x)\Psi^\dagger(y)V\Psi(x)\Psi(y)\]
+The first term is the kinetic energy of the particle - particles may tunnel between minima. The second term in the Hamiltonian, $J\sum_{j=0}^{N-1}a_j^\dagger a_j(a_j^\dagger a_j - \II)$, is the repulsion term - it represents Bosons being pushed away from the potential. The third term, $ \mu\sum_{j=0}^{N-1}a_j^\dagger a_j$. is the chemical potential term which tells you that particles will want to enter the system from the outside. If you want eternal fame and glory you could try and exactly solve this model, but you might not learn a lot! It turns out that the variational method and perturbation theory have taught us an extraordinary amount about this model. So let's try this with the variational method. I can say safely that there are thousands of papers on the solutions of this model.
+
+Okay, so let's start with the variational class. $V =\{\ket{\alpha}:\alpha=(\alpha_1,...,\alpha_N);\alpha_j \in \CC;j\leq N\}$. Then we set:
+\[E^* = \inf_{\ket{\alpha} \in V}\expval{H_{\textrm{BHM}}}{\alpha}\]
+We can exploit the fact that under $j\mapsto j+1$ we have $H \mapsto H$ due to the rotational symmetry here. It's reasonable to expect that the useful kets in $V$ will respect that symmetry. So we will use $V_{TI}\subset V$ where we have $V_{TI} = \{\ket{\alpha}:\alpha=(\alpha_0,\alpha_0,...\alpha_0);\alpha_0\in\CC\}$. These are the kets which are rotationally invariant in this system. You have to be very careful about adding these symmetries to the Variational method - sometimes there is symmetry breaking! But we claim that this variational class is a good start to looking at this model. Okay, let's compute the expectation value now. We will break it into steps.
+\begin{align}
+\expval{-t\sum_{j=0}^{N-1}a_{j+1}^\dagger a_j}{\alpha} &= -t\sum_{j=0}^{N-1}|\alpha|^2\\
+&= -2Nt|\alpha|^2
+\end{align}
+\begin{align}
+\expval{a_j^\dagger a_j a_j^\dagger a_j}{\alpha} &= |\alpha|^2 \expval{a_j a^\dagger_j}{\alpha}\\
+&= |\alpha|^2 \expval{\II + a_j^\dagger a_j}{\alpha} \\
+&= |\alpha|^2 (1+|\alpha|^2)
+\end{align}
+All together now, we get the following value (the chemical potential term is the same difficulty to calculate as the first term).
+\begin{equation}
+\expval{H}{\alpha} = -2Nt|\alpha|^2 + NJ(|\alpha|^2(1+|\alpha|^2)) - JN|\alpha|^2 + \mu N |\alpha|^2
+\end{equation}
+Now we take the infimum over all $\alpha$. This is easier if we choose polar coordinates, $\alpha = re^{i\theta}$.
+\begin{align}
+E^* &= \inf \expval{H}{\alpha}\\
+&= \inf_{r\in \RR^+} \left(-2Ntr^2 +NJ(r^2+r^4) - JNr^2 +\mu Nr^2 \right)\\
+&= \inf_{x\in \RR^+} \left(-2Ntx +NJ(x+x^2) - JNx +\mu Nx \right)\\
+&= \inf_{x\in \RR^+} \left((-2Nt+\mu N)x + NJx^2\right)\\
+&= N \inf_{x\in \RR^+} x(Jx - 2t+\mu)
+\end{align}
+\begin{align}
+\pdv{x}( x(Jx+2t-\mu))&=-(-Jx+2t-\mu)+Jx\\
+&=0\\
+\implies x &= \frac{2t-\mu}{2J}
+\end{align}
+This is very easy! It's just the minimization of a quadratic. This isn't going to be as easy as a quadratic - but in general you can just use an optimization program to reduce this problem. What this tells us is that as long as $\mu>2t$ (that is: the chemical potential is large enough to place bosons into the system) we have a solution for the approximate ground state, which we can find the remaining states from through applying orthogonality. It is:
+\[\alpha = \left(\frac{2t-\mu}{2J}\right)^{1/2}e^{i\theta}\]
+\subsubsection{Coherent States for Quantum Fields}
+\begin{defn}[Displacement Operator]
+We define the Displacement Operator as follows. Let $\phi : \RR^3 \to \CC$ (this is essentially the Fourier series version of $\ket{\alpha}$ with $\alpha_i$ as coefficients).
+\begin{equation}D(\hat\Psi,\phi) = \exp\left(\int \dd^3 x \phi(x)\hat\Psi^\dagger(x) - \overline \phi(x)\hat\Psi(x)\right)\end{equation}
+\end{defn}
+\begin{defn}[Field Coherent State]
+A field coherent state is then
+\begin{equation}\ket{\phi} = D(\hat\Psi,\phi)\ket{\Omega}\end{equation}
+\end{defn}
+
+What we hope is that somehow these are eigenstates of the quantum field operators:
+\begin{equation}
+\hat\Psi(x)\ket{\phi} = \phi(x) \ket{\phi}
+\end{equation}
+To see this, begin with the commutator $[\hat\Psi(x),D(\hat\Psi,\phi)]$. Then apply the fact that $\hat\Psi(x)\ket{\Omega}=0$. We look at $\hat\Psi(s,x) = D^{\dagger s}\hat \Psi(x)D^s$ (where $s \in [0,1]$). We then set up a differential equation:
+\begin{align*}
+\pdv{s}\hat\Psi(s,x) &= \pdv{s}\left(\exp{-s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)} \hat\Psi(x) \exp{s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)}\right)\\
+&= -\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) \left(\exp{-s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)} \hat\Psi(x) \exp{s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)}\right)\\
+&+\left(\exp{-s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)}\hat\Psi(x)  \int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) \exp{s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)}\right)\\
+&= -\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) D^{\dagger s} \hat\Psi(x)D^s+ D^{\dagger s}\hat\Psi(x)\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)D^s
+\end{align*}
+Note that $[\exp(A),A] = 0$ from the following identity:
+\[[A,\exp{B}]= \int_0^1 \dd s \exp{(1-s)B}[A,B]\exp{sB}\]
+Then we have the following.
+\begin{align*}
+\pdv{s}\hat\Psi(s,x) &= -\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) D^{\dagger s} \hat\Psi(x)D^s+ D^{\dagger s}\hat\Psi(x)\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)D^s\\
+&= D^{\dagger s} [\hat\Psi(x),\int \dd^3 y \phi(y)\hat\Psi^\dagger(y)-\overline\phi(y)\hat\Psi(y)]D^s\\
+[\hat\Psi(x),\int \dd^3 y \phi(y)\hat\Psi^\dagger(y)-\overline\phi(y)\hat\Psi(y)] &= \int \dd^3 y \hat\Psi(x)\phi(y)\hat\Psi^\dagger(y)-\hat\Psi(x)\overline\phi(y)\hat\Psi(y)\\
+&= \int\dd^3 y \phi(y)([\hat\Psi(x),\hat\Psi^\dagger(y)]-[\hat\Psi(x),\hat\Psi(y)]\\
+&= \int \dd^3 y \phi(y)(0-\delta(x-y))\\
+&= -\phi(x)
+\end{align*}
+Putting this together tells us:
+\begin{equation}
+\Psi(1,x)=D^\dagger \hat\Psi(x) D = -\phi(x)\hat\Psi(x)
+\end{equation}
+\[[\hat\Psi,D(\hat\Psi,\phi)] = (\phi-1)D(\hat\Psi,\phi)\hat\Psi\]
+\[\implies [\hat\Psi,D(\hat\Psi,\phi)]\ket{\Omega} = (\phi-1)D(\hat\Psi,\phi)\hat\Psi\ket{\Omega}\]
+\begin{align}
+\implies \hat\Psi(x) D(\hat\Psi(x),\phi(x))\ket{\Omega} - D(\hat\Psi(x),\phi(x))\hat\Psi(x)\ket{\Omega} &= (\phi(x)-1)\ket{\phi}\\
+\hat\Psi(x)\ket{\phi}-\ket{\phi}=(\phi(x)-1)\ket{\phi}\\
+\hat\Psi(x)\ket{\phi}=\phi(x)\ket{\phi}
+\end{align}
+Now we begin the variational calculation using these states. Let our variational class to be all field coherent states which are twice differentiable.
+\begin{align}
+E^* &= \inf_{\ket{\phi}\in V} \expval{\dd^3 x \hat\Psi^\dagger(x)(T(x)-V_0(x))\hat\Psi(x) + \frac{1}{2}\iint\dd^3 x \dd^3 y \hat\Psi^\dagger(x)\hat\Psi^\dagger(y)V(x,y)\hat\Psi(x)\hat\Psi(y)}{\phi}\\
+&= \inf_{\phi}\int \dd^3 x\overline\phi(x) (T(x)-V_0(x))\phi(x)+\frac{1}{2} \iint \dd^3 x \dd^3 y \overline\phi(x)\overline\phi(y)V(x,y)\phi(x)\phi(y)
+\end{align}
+This is a functional of some $\phi$! This means that this is now just a problem in the calculus of variations. We needed $\phi$ to be twice differentiable because $T = \frac{-\hbar^2}{2m}\nabla^2$. So now we let our Action be the following.
+\[S(\phi,\partial_x \phi, \partial_x^2 \phi =\int \dd^3 x\overline\phi(x) (T(x)-V_0(x))\phi(x)+\frac{1}{2} \iint \dd^3 x \dd^3 y \overline\phi(x)\overline\phi(y)V(x,y)\phi(x)\phi(y)\]
+Which gives us the Euler-Lagrange equations:
+\begin{equation}
+\pdv{S}{\phi}-\pdv{x}\pdv{S}{\partial_x\phi} = 0
+\end{equation}
+As a simple example, we can take $V(x,y) = \kappa \delta^{(3)}(x-y)$. This gives a very special form for the equations of motion: the Time-Independent Gross-Pitaevskii Equation.
+\begin{equation}
+L[\phi]=0\implies \left(\frac{-\hbar^2}{2m}\nabla^2 + V_0(x)\right)\phi(x) + \kappa|\phi(x)|^2 \phi(x)=0
+\end{equation}
 \end{document}
 
 
