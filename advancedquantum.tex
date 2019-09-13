@@ -977,7 +977,7 @@ E^* &= \inf_{\ket{\phi}\in V} \expval{\dd^3 x \hat\Psi^\dagger(x)(T(x)-V_0(x))\h
 &= \inf_{\phi}\int \dd^3 x\overline\phi(x) (T(x)-V_0(x))\phi(x)+\frac{1}{2} \iint \dd^3 x \dd^3 y \overline\phi(x)\overline\phi(y)V(x,y)\phi(x)\phi(y)
 \end{align}
 This is a functional of some $\phi$! This means that this is now just a problem in the calculus of variations. We needed $\phi$ to be twice differentiable because $T = \frac{-\hbar^2}{2m}\nabla^2$. So now we let our Action be the following.
-\[S(\phi,\partial_x \phi, \partial_x^2 \phi =\int \dd^3 x\overline\phi(x) (T(x)-V_0(x))\phi(x)+\frac{1}{2} \iint \dd^3 x \dd^3 y \overline\phi(x)\overline\phi(y)V(x,y)\phi(x)\phi(y)\]
+\[S[\phi,\partial_x \phi, \partial_x^2 \phi] =\int \dd^3 x\overline\phi(x) (T(x)-V_0(x))\phi(x)+\frac{1}{2} \iint \dd^3 x \dd^3 y \overline\phi(x)\overline\phi(y)V(x,y)\phi(x)\phi(y)\]
 Which gives us the Euler-Lagrange equations:
 \begin{equation}
 \pdv{S}{\phi}-\pdv{x}\pdv{S}{\partial_x\phi} = 0
