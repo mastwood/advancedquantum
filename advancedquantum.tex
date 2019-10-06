@@ -1,10 +1,13 @@
 \documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{caption}
 
+
+% ---------------- Metadata-----------------------------
 \title{Advanced Quantum Theory}
 \author{Tobias Osborne}
 \date{Transcribed by Michael Astwood}
+% ------------------------------------------------------
+
+% ---------------- Packages ----------------------------
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{amsfonts}
@@ -15,6 +18,13 @@
 \usepackage{amsmath}
 \usepackage[margin=1in]{geometry}
 \usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+\usepackage{caption}
+\captionsetup{belowskip=-30pt}
+\usepackage{hyperref}
+\usepackage[backend=biber]{biblatex}
+\bibliography{bib}
+% ------------------------------------------------------
 
 \setcounter{secnumdepth}{4}
 
@@ -40,8 +50,6 @@
 \DeclareMathOperator{\ZZ}{\mathbb{Z}}
 \DeclareMathOperator{\CC}{\mathbb{C}}
 
-\captionsetup{belowskip=-30pt}
-
 \newcommand{\ve}[1]{\mathbf{#1}}
 \newcommand{\create}[1]{a^\dagger_s(#1)}
 \newcommand{\annih}[1]{a_s(#1)}
@@ -50,11 +58,15 @@
 \newtheorem{defn}{Definition}
 \newtheorem{thm}{Theorem}
 \begin{document}
-\maketitle
+%\maketitle
+\include{titlepage}
+
 \pagebreak
+
 \tableofcontents
 
 \pagebreak
+
 \section{Introductions}
 Instead of "Advanced Quantum Theory", you could call this course "From one to many". The principle goal of this course is to take the quantum mechanics of a single particle, and apply this quantum mechanics to the theory of many particles.
 \subsection{Course Structure}
@@ -94,7 +106,7 @@ Course Outline
 \end{center}
 \pagebreak
 \subsection{Motivation}
-In order to understand how to approach moving from a theory of single particles to a theory of many particles, it is important to understand the way in which physical quantum theories are developed. Figure 1 is a representation of how these theories are built. Consider the space of quantum theories (for the purposes of this, a quantum theory is a pair $\{\mathcal{H},\hat H\}$). Each of these theories has a space of states, $\Hh$, and an observable called a Hamiltonian ($\hat H$) which governs the dynamics of those states. When we measure these systems in real life, we are limited by our measurement apparatus. The objects we measure are subject to decoherence, and the apparatus is imperfect, and so through decoherence and imperfect measurement we end up observing something called a "classical limit", which corresponds to one of the many classical theories in the space of classical theories. A classical theory, similarly to a quantum theory, is given by a pair $\{\mathcal{M},H\}$ of a manifold (or some other topological space) $\mathcal{M}$ called the phase space along with the classical Hamiltonian $H$ governing the dynamics of the system. Quantization is the process of reversing this classical limit - we would like to take $\{\mathcal{M},H\}$ and find some $\{\mathcal{H},\hat H\}$ which matches the theory. The issue with this is that this process is not well posed - many quantum theories can describe the same classical limit, and we will see examples of this in the course. In order to simplify this task, one of the major tools at our disposal is symmetry! We would expect a quantum theory to have the same symmetries as the classical theory, so narrowing the potential quantum theories down to the ones with these properties is helpful when quantizing a theory. One of the most important symmetries for this course is the symmetry of particle exchange, and that's where we will commence this course.\footnote{For a comprehensive description of "quantization" as a process, see Ali and Englis' review paper on the topic. This course will only cover the Canonical Quantization method in detail, but there is still more to learn in Canonical Quantization as well}
+In order to understand how to approach moving from a theory of single particles to a theory of many particles, it is important to understand the way in which physical quantum theories are developed. Figure 1 is a representation of how these theories are built. Consider the space of quantum theories (for the purposes of this, a quantum theory is a pair $\{\mathcal{H},\hat H\}$). Each of these theories has a space of states, $\Hh$, and an observable called a Hamiltonian ($\hat H$) which governs the dynamics of those states. When we measure these systems in real life, we are limited by our measurement apparatus. The objects we measure are subject to decoherence, and the apparatus is imperfect, and so through decoherence and imperfect measurement we end up observing something called a "classical limit", which corresponds to one of the many classical theories in the space of classical theories. A classical theory, similarly to a quantum theory, is given by a pair $\{\mathcal{M},H\}$ of a manifold (or some other topological space) $\mathcal{M}$ called the phase space along with the classical Hamiltonian $H$ governing the dynamics of the system. Quantization is the process of reversing this classical limit - we would like to take $\{\mathcal{M},H\}$ and find some $\{\mathcal{H},\hat H\}$ which matches the theory. The issue with this is that this process is not well posed - many quantum theories can describe the same classical limit, and we will see examples of this in the course. In order to simplify this task, one of the major tools at our disposal is symmetry! We would expect a quantum theory to have the same symmetries as the classical theory, so narrowing the potential quantum theories down to the ones with these properties is helpful when quantizing a theory. One of the most important symmetries for this course is the symmetry of particle exchange, and that's where we will commence this course.\footnote{For a comprehensive description of "quantization" as a process, see Ali and Englis' review paper on the topic \cite{ali2005quantization}. This course will only cover the Canonical Quantization method in detail, but there is still more to learn in Canonical Quantization as well}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{Figures/fig1.png}
@@ -167,14 +179,15 @@ You will notice that if you draw vectors which \textit{stay tangent to the surfa
 \subsubsection{Parallel Transport in Relative Space}
 Let's consider this parallel transport in our relative space $r(2,2)$, which we saw earlier could be represented as that sort of 'cone' shape. You can check that on an ordinary trajectory on the surface of this cone, vectors do not undergo any strange transformation. But consider when a vector is transported around the singularity. Suppose the trajectory begins at a point $x$, and crosses through the point $-x \sim x$. A vector held parallel along this trajectory is going to have to undergo the transformation $v \mapsto -v$ in order to satisfy the criteria for 'parallel transport'. You can see the reasoning behind this in more detail in any text on Differential Geometry.
 
-Now let's look at three dimensions. We consider the relative space $r(2,3) \cong \RP^2$ of two particles living in three spacial dimensions. A good way to visualize this space is as follows. Imagine the sphere, where each point $x$ is identified with the point on the opposite side of the sphere. As you move towards the equator, you need to identify points on opposite sides of the equator. In this way, it's sort of like the upper half of the sphere (of radius $d/2$, where $d$ is the distance between the particles). There are some great visualizations of this on wikipedia, if you look up 'real projective space'.
+Now let's look at three dimensions. We consider the relative space $r(2,3) \cong \RP^2$ of two particles living in three spacial dimensions. A good way to visualize this space (Figure \ref{fig:23} may help in this task) is as follows: imagine the sphere, where each point $x$ is identified with the point on the opposite side of the sphere. As you move towards the equator, you need to identify points on opposite sides of the equator. In this way, it's sort of like the upper half of the sphere (of radius $d/2$, where $d$ is the distance between the particles). There are some great visualizations of this on wikipedia, if you look up 'real projective space'.
 
 The next thing to do would be to try to look at trajectories in this space, so let's consider a few different trajectories, as shown in the next figure.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{Figures/trajectories_in_rp2.png}
-    \caption*{}
+    \captionsetup{belowskip=-15pt}
+    \caption{Graphical representation of $ \mathbb{RP}^2 $}
     \label{fig:23}
 \end{figure}
 
@@ -986,6 +999,8 @@ As a simple example, we can take $V(x,y) = \kappa \delta^{(3)}(x-y)$. This gives
 \begin{equation}
 L[\phi]=0\implies \left(\frac{-\hbar^2}{2m}\nabla^2 + V_0(x)\right)\phi(x) + \kappa|\phi(x)|^2 \phi(x)=0
 \end{equation}
+
+\printbibliography
 \end{document}
 
 
