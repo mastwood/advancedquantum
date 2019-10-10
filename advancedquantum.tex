@@ -999,6 +999,46 @@ As a simple example, we can take $V(x,y) = \kappa \delta^{(3)}(x-y)$. This gives
 L[\phi]=0\implies \left(\frac{-\hbar^2}{2m}\nabla^2 + V_0(x)\right)\phi(x) + \kappa|\phi(x)|^2 \phi(x)=0
 \end{equation}
 
+Next we will consider another system, the degenerate electron gas. This is appropriate for a plasma or a metal.
+
+\subsection{Degenerate Electron Gas}
+We will begin with electrons in a box with periodic boundary conditions. Eventually we will take the side length of the box to infinity, but we must be careful to not get divergences.
+
+In the single particle basis we have the following wave functions:
+\[\phi_{k,\alpha}(x)=\frac{1}{V}\exp\left(ik\cdot x\right)\eta_\alpha\]
+\[\eta_+ = (1,0), \eta_-=(0,1)\]
+We know that for these plane waves the $k_i$ components must be proportional to integers: $k_i =\frac{2\pi}{L}n$. We have chosen the label $\eta$ for the internal degree of freedom for the particle (here being spin). Now we will find the second quantized Hamiltonian for this system. This is a very elegant example - we will simply add the coulomb potential as a perturbation and immediately get numbers comparable with experiment. Our Hamiltonian will look something like the following.
+\begin{equation}
+    H = H_{electrons}+H_{background}+H_{interaction}
+\end{equation}
+To do this calculation correctly, we need to pick a background. The background is chosen to make the system electrically neutral. We are going to be thinking about a lot of electrons, in fact, we will think about the number of electrons in the system going to infinity. To model real world materials we must always take into account that the electrons are moving in a background potential such as a lattice of atoms. This background makes the system stable - imagine a $1$-Farad capacitor, charged completely. If you short this capacitor you will see a blinding flash! A huge kablam. This is not desirable, because this is quite an unstable effect. Let's choose the background to be a classical field for a decent approximation, so that we can focus on $H_{el}$. This is going to be a kinetic energy term plus a potential energy term as usual. We start with the kinetic energy:
+\[T = \sum_{\alpha, \beta}\int \dd^3 x \dd^3 y \hat\Psi^\dagger_\alpha(x)\left(\frac{-\hbar^2\nabla^2}{2m}\right)\hat\Psi_\beta(y)\]
+Here $\alpha$ and $\beta$ label spin.
+\[V = \sum_{\alpha_1,...,\alpha_4}\int \dd^3 x\dd^3 y \hat\Psi_{\alpha_1}^\dagger(x)\hat\Psi_{\alpha_2}^\dagger(y)\hat\Psi_{\alpha_3}(y)\hat\Psi_{\alpha_4}(x)V_{\alpha}(x,y)\]
+This $V$ is given by some kind of coulomb interaction. We won't deal with relativistic effects, so we assume the interaction happens instantaneously. Classically, this is the potential (we will later take $\mu \to 0$):
+\[V_c(x,y)=\frac{\exp(-\mu|x-y|)}{|x-y|}\delta_{\alpha_1\alpha_4}\delta_{\alpha_2\alpha_3}\]
+The right approach is to first take the system to be finite, then take the size of the box to be large, then set the constant $\mu$ to zero. We will take the background to be pretty much constant - the atoms are so heavy relative to the electrons that they don't move around very much, so by an Adiabatic approximation we will just assume that they don't change. There are occasionally situations where the response of the atoms are crucial - such as in superconductivity. The reason superconductivity occurs is that electrons can interact with the low energy phonons in a substance - hence the motion of atoms is significant. This background interaction Hamiltonian is given by the following.
+\begin{equation}
+    H_{interaction} = -e^2 \int \dd^3 x \dd^3 y  n_b(x) \frac{\exp(-\mu|x-y|)}{|x-y|}n_e(y)
+\end{equation}
+As an exercise, prove that this Hamiltonian reduces to a constant:
+\[H_{interaction} = e^2\frac{N^2}{V}\frac{4\pi}{\mu^2}\]
+Where $N$ is the number of electrons. Note that we assume this is definite for this case. Similarly, the background itself is given by the following:
+\begin{equation}
+H_b = \frac{1}{2}e^2\int\dd^3 x \dd^3 y n_b(x) n_b(y)\frac{\exp(-\mu|x-y|)}{|x-y|}
+\end{equation}
+Note that we choose $n_b(x)$ to be translation invariant so it is just a number. You should also prove that the second integral reduces to the following.
+\[\frac{1}{2}e^2 \frac{N^2}{V}\frac{4\pi}{\mu^2}\]
+Let's work out the matrix elements of the last term now, as they will allow us to work out the full second quantized Hamiltonian. The kinetic energy matrix elements are pretty simple:
+\[\mel{\phi}{T}{\phi'}=\mel{\phi}{-\frac{\hbar^2\nabla^2}{2m}}{\phi'} = \frac{1}{2mV}\int \dd^3 x e^{-ikx}\eta_\alpha^* T \eta_\beta e^{i\ell x} = |\ell|^2\frac{-1}{2mV}\hbar^2\int \exp(i(\ell x - kx))\delta_{\alpha \beta} = \frac{\hbar^2}{2m}|k|^2\delta_{\alpha \beta}\delta_{k \ell}\]
+\begin{equation}
+T =\sum_{k,\alpha} \frac{\hbar^2 |k|^2}{2m}a^\dagger_{k,\alpha}a_{k,\alpha}
+\end{equation}
+Some notation we will see often is $|\vec{k}|^2 = k^2$. We will next compute the potential energy elements:
+\[\bra{\phi_{k_1,\alpha}}\bra{\phi_{k_2,\beta}}V\ket{\phi_{k_3,\gamma}}\ket{\phi_{k_4,\delta}}= \frac{e^2}{V^2}\int\dd^3 x\dd^3 y e^{-i(k_1-k_2)x}(\eta_\alpha^\dagger \otimes \eta_\beta^\dagger)\frac{e^{-\mu|x-y|}}{|x-y|}(\eta_\gamma\otimes \eta_\delta)e^{-i(k_3-k_4)y}\]
+To compute this integral, first we make a change of variables $z = x-y$:
+\[\bra{\phi_{k_1,\alpha}}\bra{\phi_{k_2,\beta}}V\ket{\phi_{k_3,\gamma}}\ket{\phi_{k_4,\delta}}= \frac{e^2}{V^2}\delta_{\alpha \gamma}\delta_{\beta \delta'}\int \dd^3 y \dd^3 z e^{-i(k_1+k_2-k_3-k_4)y}e^{i(k_3-k_1)z}\frac{e^{-\mu|z|}}{|z|}\]
+
 \printbibliography
 \end{document}
 
