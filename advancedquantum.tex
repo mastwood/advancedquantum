@@ -11,6 +11,7 @@
 \usepackage{listings}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{MnSymbol,wasysym}
 \usepackage{physics}
 \usepackage{listings}
@@ -31,6 +32,11 @@
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph}
 {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+% ---------------- Exercise environment ----------------
+\newtheorem{exercise}{Exercise}[section]
+% ------------------------------------------------------
 
 \DeclareMathOperator{\Col}{\textrm{Col}}
 \DeclareMathOperator{\Nul}{\textrm{Nul}}
@@ -297,7 +303,16 @@ D_k \Psi(x) &= \lim_{h \to 0} \frac{P_\gamma (x,x+h e^k) \Psi(x+he^k) - \Psi(x)}
 \end{align} 
 \end{defn}
 
-Some exercises are as follows. First determine how $b_k(x)$ transforms under a gauge transformation. Then show that $D_k$ is gauge invariant. Third, show that for a single particle with spin, the Hamiltonian $\sum_k \frac{-1}{2m} D_k^2 = H$ is equivalent to that given by a static magnetic field (this tells us how such geometric changes could be induced experimentally). In the end, you will learn that these $b_k(x)$ are similar to the choice of magnetic field - they are related to the gauge field $A$.
+\begin{exercise}
+	Determine how $b_k(x)$ transforms under a gauge transformation $ \chi_x' = e^{-i\phi(x)}\chi_x $ 
+\end{exercise}
+\begin{exercise}
+	Show that $D_k$ is gauge invariant.
+\end{exercise}
+
+\begin{exercise}
+	Show that for a single particle with spin, the Hamiltonian $\sum_k \frac{-1}{2m} D_k^2 = H$ is equivalent to that given by a static magnetic field (this tells us how such geometric changes could be induced experimentally). In the end, you will learn that these $b_k(x)$ are similar to the choice of magnetic field - they are related to the gauge field $A$.
+\end{exercise}
 
 The issue with this is that we want particles to locally behave like free particles - we don't want particles on their own in the middle of nowhere to act as if they are in magnetic fields. So we need to choose $b_k(x)$ so that the 'ficticious' magnetic force is zero. For nontrivial geometries, there do exist choices of $b_k(x)$ so that the force field will vanish (that is - the curvature tensor associated with the ficticious field vanishes). You may recall this expression from electrodynamics (it essentially says that $A$ is curl-free, or that $B=0$).
 
@@ -307,14 +322,13 @@ f_{k\ell}(x) = i[D_k,D_\ell] = \pdv{b_\ell}{x^k} - \pdv{b_k}{x^\ell}=0
 
 As long as equation 5 is imposed everywhere (except singularities, such as is the case on $\mathcal{M}=r(2,2)$) we will have freedom in choosing the $b_k$ terms. This freedom at the singularities allows us to pick nontrivial $b_k$ terms, which gives rise to interesting phenomena in 2-d materials. Due to $b_k$ being curl free, we also now know that $P_\gamma(y,x)$ is path independent as long as $\gamma$ does not encircle the singularity.
 
-Let's study what happens when you go in a loop around the singularity. You can see that $P_\gamma(x,x)$ should just be some number $e^{i\xi}$ for some $\xi \in [0,2\pi)$, as $h_x \cong \CC$ and $\dim(\CC)=1$. However, this $\xi$ turns out to be independent of $x$! To demonstrate this, see the followng figure. 
-
-\pagebreak
+Let's study what happens when you go in a loop around the singularity. You can see that $P_\gamma(x,x)$ should just be some number $e^{i\xi}$ for some $\xi \in [0,2\pi)$, as $h_x \cong \CC$ and $\dim(\CC)=1$. However, this $\xi$ turns out to be independent of $x$! Consider now Figure \ref{fig:31}. 
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{Figures/path_independence_gauge.png}
-    \caption*{}
+    \captionsetup{belowskip=-15pt}
+    \caption{The two paths $ \gamma $ and $ \gamma' $ belong to the same homotopy class and then the above identity must hold.}
     \label{fig:31}
 \end{figure}
 
@@ -328,13 +342,20 @@ Now let's consider the free particle in two dimensions. We will neglect center o
 H = \frac{-1}{m}\left(\pdv[2]{r}+\frac{1}{r}\pdv{r}+ \frac{1}{r^2}\pdv[2]{\phi}\right)
 \end{equation}
 
-When you have this property that wavefunctions pick up a phase of $e^{i\xi}$ when you go around the singularity, you impose a nontrivial boundary condition: $\Psi(r,\phi+2\pi) = e^{i\xi}\Psi(r,\phi)$. This is what gives us strange dynamics - polar coordinates no longer gives us nice symmetry. There is, however, a transformation you can make to the Schrodinger equation that makes it easier to solve. The strategy is to replace $\Psi$ with $\Psi'(r,\phi) = e^{i\frac{\xi}{2\pi}\phi}\Psi(r,\phi)$. Then the Hamiltonian transforms as $H' = e^{-i\frac{\xi}{2\pi}\phi}H e^{i\frac{\xi}{2\pi}\phi}$. This gives $H\Psi = H'\Psi'$, so the solutions to the Schrodinger equation are unchanged. But observe what happens:
+When you have this property that wavefunctions pick up a phase of $e^{i\xi}$ when you go around the singularity, you impose a nontrivial boundary condition: $\Psi(r,\phi+2\pi) = e^{i\xi}\Psi(r,\phi)$. This is what gives us strange dynamics - polar coordinates no longer gives us nice symmetry. 
+
+\paragraph*{Alternative approach}
+
+There is, however, a transformation you can make to the Schrodinger equation that makes it easier to solve. The strategy is to replace $\Psi$ with $\Psi'(r,\phi) = e^{i\frac{\xi}{2\pi}\phi}\Psi(r,\phi)$. Then the Hamiltonian transforms as $H' = e^{-i\frac{\xi}{2\pi}\phi}H e^{i\frac{\xi}{2\pi}\phi}$. This gives $H\Psi = H'\Psi'$, so the solutions to the Schrodinger equation are unchanged. But observe what happens:
 
 \begin{equation}
 H' = \frac{-1}{m}\left(\pdv[2]{r}+\frac{1}{r}\pdv{r}+ \frac{1}{r^2}\left(\pdv{\phi}+\frac{i\xi}{2\pi}\right)^2\right)
+\label{eq:Hamiltonian_gauge_invariant}
 \end{equation}
 
-As an exercise, solve the Schrodinger equation after this transformation.
+\begin{exercise}
+	Solve the Schr\"odinger equation for $ H $ (via $ H' $ in Eq. \eqref{eq:Hamiltonian_gauge_invariant}).
+\end{exercise}
 
 \subsection{Particle Statistics}
 
@@ -1045,6 +1066,7 @@ Some notation we will see often is $|\vec{k}|^2 = k^2$. We will next compute the
 To compute this integral, first we make a change of variables $z = x-y$:
 \[\bra{\phi_{k_1,\alpha}}\bra{\phi_{k_2,\beta}}V\ket{\phi_{k_3,\gamma}}\ket{\phi_{k_4,\delta}}= \frac{e^2}{V^2}\delta_{\alpha \gamma}\delta_{\beta \delta'}\int \dd^3 y \dd^3 z e^{-i(k_1+k_2-k_3-k_4)y}e^{i(k_3-k_1)z}\frac{e^{-\mu|z|}}{|z|}\]
 
+\nocite{*}
 \printbibliography
 \end{document}
 
