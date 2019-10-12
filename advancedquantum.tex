@@ -225,7 +225,9 @@ So that's one interpretation of a wavefunction - it's a section of a $\CC$-bundl
     \label{fig:24}
 \end{figure}
 
-In order to describe wavefunctions as sections of these bundles, it's therefore important to consider the vector space properties of $\CC$, as you could choose some basis vector for the fibre and it will twist and turn as you move around the base space. The way we do this is to further generalize our fibre bundle. Let's just consider our base space $\mathcal{M}$, and for each point $x$ in $\mathcal{M}$ we will associate a fibre $h_x$. In our case, we will always be using $\CC = h_x$, but it's important to make this generalization so that we can write the following. We want to make some choice of (normalized) basis vector $\chi_x$ for each $h_x$, so that $\textrm{Span}(\chi_x) = h_x$. Thus any section $\Psi$ can be written so that you can evaluate $\Psi$ at a point: $\Psi(x) = \psi(x)\chi_x$. You could therefore change this basis vector as you move around the space! Such a choice of $\chi_x$ for each $h_x$ is called a choice of gauge, and it's the same gauge you refer to in gauge theory. Suppose you wanted to change your basis vectors, so that $\chi_x \mapsto e^{-i\varphi(x)}\chi'_x$. Then you'd require that $\psi'(x) \mapsto e^{i\varphi(x)}$ so that $\Psi$ is unchanged. This is called a gauge transformation. The fact that physical quantities should not depend on this choice of gauge (gauge invariance!) causes issues when defining your derivative operator, and we will talk about this in the next section.
+In order to describe wavefunctions as sections of these bundles, it's therefore important to consider the vector space properties of $\CC$, as you could choose some basis vector for the fibre and it will twist and turn as you move around the base space. The way we do this is to further generalize our fibre bundle. Let's just consider our base space $\mathcal{M}$, and for each point $x$ in $\mathcal{M}$ we will associate a fibre $h_x$. In our case, we will always be using $\CC = h_x$, but it's important to make this generalization so that we can write the following. We want to make some choice of (normalized) basis vector $\chi_x$ for each $h_x$, so that $\textrm{Span}(\chi_x) = h_x$. Thus any section $\Psi$ can be written so that you can evaluate $\Psi$ at a point: $\Psi(x) = \psi(x)\chi_x$. You could therefore change this basis vector as you move around the space! Such a choice of $\chi_x$ for each $h_x$ is called a choice of gauge, and it's the same gauge you refer to in gauge theory. Suppose you wanted to change your basis vectors, so that 
+\[\left\{\chi_x \right\} \mapsto \left\{\chi_x'=e^{-i\varphi(x)}\chi_x\right\}.\] 
+Then you'd require that $\psi'(x) \mapsto e^{i\varphi(x)}$ so that $\Psi$ is unchanged. This is called a gauge transformation. The fact that physical quantities should not depend on this choice of gauge (gauge invariance!) causes issues when defining your derivative operator, and we will talk about this in the next section.
 
 \subsection{Quantization of Identical Quantum Particles II}
 We won't spend too long talking about the theory of $\CC$ bundles. In this lecture we will move towards understanding identical particles, types of identical particles, and how to describe them in quantum mechanics. Today is the last day we will talk about understanding how there can be more than one quantization for a given classical system, due to this description in terms of $\CC$ bundles. So let's get into it. Here's some recap of the previous section.
@@ -244,7 +246,10 @@ Let $h_x$ be the fibre at the point $x \in \mathcal{M}$. Then we can choose a no
 
 Once we've chosen this basis $\chi_x$ then we could write $\Psi(x) = \psi(x) \chi_x$.
 
-We want to understand how to keep our quantities invariant to our choice of basis. So let's recall the \textit{Gauge Transformations}, which are transformations of the form $\chi'_x = e^{-i\phi(x)}\chi_x$. Under a gauge transformation, $\Psi$ is transformed by $\Psi'(x) = \Psi(x) \exp(i\phi(x))$. The clear example of a gauge invariant quantity is the probability amplitude $\overline{\Psi(x)}\Psi(x) = p(x)$. This is expected. But we'd also like to look at other quantities, such as our position and momentum operator.
+We want to understand how to keep our quantities invariant to our choice of basis. So let's recall the \textit{Gauge Transformations}, which are transformations of the form $\chi'_x = e^{-i\phi(x)}\chi_x$. Under a gauge transformation, $\Psi$ is transformed by $\Psi'(x) = \Psi(x) \exp(i\phi(x))$. The clear example of a gauge invariant quantity is the probability amplitude $p(x)$; we have, in fact, 
+\[p'(x)= \overline{\Psi'(x)}\Psi'(x)= \overline{\Psi(x)} e^{-i\phi(x)}e^{i\phi(x)}\Psi(x)=\overline{\Psi(x)}\Psi(x)=p(x)  \]
+
+ This is expected. But we'd also like to look at other quantities, such as our position and momentum operator.
 
 \begin{defn}[Gauge Transformation]
 	A gauge transformation $U$ is a choice of maps $U_x : h_x \to h_x$ with $U_x(\chi_x) = e^{-i\phi(x)}\chi_x$. This induces a transformation on sections of $E$ as so: $U[\Psi](x) = e^{i\phi(x)}\Psi(x) $
@@ -256,7 +261,8 @@ Let's try to show that the momentum operator (that we learned about originally) 
 
 \[\hat p \Psi' = -i \lim_{\epsilon \to 0}\frac{e^{i\phi(x+e_k\epsilon)}\Psi(x+e_k\epsilon) - e^{i\phi(x)}\Psi(x)}{\epsilon}\]
 
-As we can see $\phi(x+e_k \epsilon) \neq \phi(x)$, and in the limit as $\epsilon \to 0$ it is not guaranteed that they are equal! We didn't require that $\phi$ be continuous. What this means is that we could set up an experiment to measure $\phi$ and recieve information about gauge, which means that this formulation is not independent of our choice of basis. The next step is to therefore develop a new notion of momentum.
+We remark that $\phi(x+e_k \epsilon)$ and $ \phi(x)$ are completely uncorrelated and in the limit of $\epsilon \to 0$ it is not guaranteed that they are equal! 
+We didn't require $\phi$ to be continuous. What this means is that we could set up an experiment to measure $\phi$ and recieve information about gauge, which means that this formulation is not independent of our choice of basis. The next step is to therefore develop a new notion of momentum.
 
 \subsubsection{Using Parallel Transport}
 
