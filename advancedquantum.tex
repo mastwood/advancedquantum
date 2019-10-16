@@ -379,7 +379,7 @@ We will use this information we learned - that $\ket{x_1,x_2} = \pm \ket{x_2, x_
 The best way to reduce our model is to find a subspace of $\Hh$ which corresponds to exactly the unique configurations. There is a direct connection here between quantum theory and the representation theory of $S_N$ on $N$ symbols. This motivates us to define a representation.
 
 \begin{defn}
-Suppose $G$ is a group.\footnote{A group $G$ is a set endowed with an operation which takes two elements of $G$ and produces a third. This operation must be invertible (in the sense that there exists $a^{-1}$ for every $a$, and there must be an identity. We also require this operation to be associative.} A representation $U$ of $G$ over some vector space $V$ is a group homomorphism $U:G \to B(V)$, where $B(V)$ is the group of bounded linear operators on $V$.
+Suppose $G$ is a group.\footnote{A group $G$ is a set endowed with an operation which takes two elements of $G$ and produces a third. This operation must be invertible (in the sense that there exists $a^{-1}$ for every $a$), and there must be an identity. We also require this operation to be associative.} A representation $U$ of $G$ over some vector space $V$ is a group homomorphism $U:G \to B(V)$, where $B(V)$ is the group of bounded linear operators on $V$.
 \end{defn}
 
 There are multiple definitions of a representation, but it doesn't matter here. We will focus on unitary representations since in this course we will usually consider transformations which correspond to unitary representations of some group. That is to say, we would like $U(g)$ to be unitary for any $g \in G$. There is a natural action of $S_N$ on $H^{\otimes N}$ given as follows.
@@ -455,9 +455,7 @@ We define the antisymmetric and the symmetric Hilbert spaces in the following fo
 We see the following properties arise from these subspaces. 
 
 Let $\ket{\psi} \in H_-^N$. Then $U(\tau_{12}) \ket{\psi} = U(\tau_{12}) \frac{1}{N!}\sum_{\pi}\sgn(\pi)U(\pi) \ket{\psi}$
-\[U(\tau_{12})\ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12}^{-1}\circ \pi')U(\pi') \ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12})\sgn(\pi')U(\pi')\ket{\psi}=-\ket{\psi}\] Similarly, for any $\psi \in \Hh_+^N$, $U(\pi)\ket{\psi} = \ket{\psi}$. This essentially gives us a way of defining Fermions and Bosons rigorously as elements of subspaces of an abstract Hilbert space.
-\pagebreak
-Let's introduce some shorthand notation.
+\[U(\tau_{12})\ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12}^{-1}\circ \pi')U(\pi') \ket{\psi} = \frac{1}{N!}\sum_{\pi'}\sgn(\tau_{12})\sgn(\pi')U(\pi')\ket{\psi}=-\ket{\psi}\] Similarly, for any $\psi \in \Hh_+^N$, $U(\pi)\ket{\psi} = \ket{\psi}$. This essentially gives us a way of defining Fermions and Bosons rigorously as elements of subspaces of an abstract Hilbert space. Let's introduce some shorthand notation.
 \[H_s^N = \begin{cases}H_+^N & \textrm{ for bosons} \\ H_-^N & \textrm{ for fermions}\end{cases}\]
 With $s = +1$ when we talk about Bosons and vice versa for Fermions.
 \subsection{Definition of Fock Space}
@@ -1039,7 +1037,7 @@ We know that for these plane waves the $k_i$ components must be proportional to 
     H = H_{electrons}+H_{background}+H_{interaction}
 \end{equation}
 To do this calculation correctly, we need to pick a background. The background is chosen to make the system electrically neutral. We are going to be thinking about a lot of electrons, in fact, we will think about the number of electrons in the system going to infinity. To model real world materials we must always take into account that the electrons are moving in a background potential such as a lattice of atoms. This background makes the system stable - imagine a $1$-Farad capacitor, charged completely. If you short this capacitor you will see a blinding flash! A huge kablam. This is not desirable, because this is quite an unstable effect. Let's choose the background to be a classical field for a decent approximation, so that we can focus on $H_{el}$. This is going to be a kinetic energy term plus a potential energy term as usual. We start with the kinetic energy:
-\[T = \sum_{\alpha, \beta}\int \dd^3 x \dd^3 y \hat\Psi^\dagger_\alpha(x)\left(\frac{-\hbar^2\nabla^2}{2m}\right)\hat\Psi_\beta(y)\]
+\[T = \sum_{\alpha, \beta}\int \dd^3 X \hat\Psi^\dagger_\alpha(x)\left(\frac{-\hbar^2\nabla^2}{2m}\right)\hat\Psi_\beta(x)\]
 Here $\alpha$ and $\beta$ label spin.
 \[V = \sum_{\alpha_1,...,\alpha_4}\int \dd^3 x\dd^3 y \hat\Psi_{\alpha_1}^\dagger(x)\hat\Psi_{\alpha_2}^\dagger(y)\hat\Psi_{\alpha_3}(y)\hat\Psi_{\alpha_4}(x)V_{\alpha}(x,y)\]
 This $V$ is given by some kind of coulomb interaction. We won't deal with relativistic effects, so we assume the interaction happens instantaneously. Classically, this is the potential (we will later take $\mu \to 0$):
@@ -1062,10 +1060,60 @@ Let's work out the matrix elements of the last term now, as they will allow us t
 T =\sum_{k,\alpha} \frac{\hbar^2 |k|^2}{2m}a^\dagger_{k,\alpha}a_{k,\alpha}
 \end{equation}
 Some notation we will see often is $|\vec{k}|^2 = k^2$. We will next compute the potential energy elements:
-\[\bra{\phi_{k_1,\alpha}}\bra{\phi_{k_2,\beta}}V\ket{\phi_{k_3,\gamma}}\ket{\phi_{k_4,\delta}}= \frac{e^2}{V^2}\int\dd^3 x\dd^3 y e^{-i(k_1-k_2)x}(\eta_\alpha^\dagger \otimes \eta_\beta^\dagger)\frac{e^{-\mu|x-y|}}{|x-y|}(\eta_\gamma\otimes \eta_\delta)e^{-i(k_3-k_4)y}\]
+\[\bra{\phi_{k_1,\alpha_1}}\bra{\phi_{k_2,\alpha_2}}V\ket{\phi_{k_3,\alpha_3}}\ket{\phi_{k_4,\alpha_4}}= \frac{e^2}{V^2}\int\dd^3 x\dd^3 y e^{-i(k_1-k_2)x}(\eta_{\alpha_2}^\dagger \otimes \eta_{\alpha_2}^\dagger)\frac{e^{-\mu|x-y|}}{|x-y|}(\eta_{\alpha_3}\otimes \eta_{\alpha_4})e^{-i(k_3-k_4)y}\]
 To compute this integral, first we make a change of variables $z = x-y$:
-\[\bra{\phi_{k_1,\alpha}}\bra{\phi_{k_2,\beta}}V\ket{\phi_{k_3,\gamma}}\ket{\phi_{k_4,\delta}}= \frac{e^2}{V^2}\delta_{\alpha \gamma}\delta_{\beta \delta'}\int \dd^3 y \dd^3 z e^{-i(k_1+k_2-k_3-k_4)y}e^{i(k_3-k_1)z}\frac{e^{-\mu|z|}}{|z|}\]
+\begin{align}\bra{\phi_{k_1,\alpha}}\bra{\phi_{k_2,\beta}}V\ket{\phi_{k_3,\gamma}}\ket{\phi_{k_4,\delta}} &= \frac{e^2}{V^2}\delta_{\alpha_1 \alpha_3}\delta_{\alpha_2\alpha_4}\int \dd^3 y \dd^3 z e^{-i(k_1+k_2-k_3-k_4)y}e^{i(k_3-k_1)z}\frac{e^{-\mu|z|}}{|z|}
+\label{eq:degenerate_electron_gas_ex1}
+\end{align}
+\begin{exercise}
+Show that equation \eqref{eq:degenerate_electron_gas_ex1} reduces to the following:
+\[\frac{e^2}{2V}\delta_{\alpha_1 \alpha_3}\delta_{\alpha_2\alpha_4}\delta_{k_1+k_2,k_3+k_4}\frac{4\pi}{(k_1-k_3)^2+\mu^2}\]
+(Hint, this integral follows from the Fourier transform of $\exp(-\mu|z|)/|z|$)
+\end{exercise}
+It follows from the previous exercise that\dots
+\begin{align}
+    H&=\frac{-1}{2}\frac{e^2 N^2}{V}\frac{4\pi}{\mu^2} +
+    \sum_{k,\alpha}\frac{\hbar^2 k^2}{2\mu}a_{k,\alpha}^\dagger a_{k,\alpha} \\ (\ast) & + \frac{e^2}{2V}\sum_{\alpha_1,\alpha_2}\sum_{\alpha_3,\alpha_4}\sum_k \delta_{\alpha_1,\alpha_3}\delta_{\alpha_2,\alpha_4}\delta_{k_1+k_3,k_2+k_4}\frac{4\pi}{(k_1-k_3)^2+\mu^2}a_{k_1,\alpha_1}^\dagger a_{k_2,\alpha_2}^\dagger a_{k_3,\alpha_3}a_{k_4,\alpha_4}
+\end{align}
+We can exploit these Kronecker deltas by introducing some new variables.
+\begin{align*}
+k_1=k+q\\
+k_2=p-q\\
+k_3=k\\
+k_4=p
+\end{align*}
+Now our nasty Hamiltonian gets reduced to the following.
+\[(\ast) = \frac{e^2}{2V}\sum_{k,p,q}\sum_{\alpha_1,\alpha_2}\frac{4\pi}{q^2+\mu^2}a_{k+q,\alpha_1}^\dagger a_{p-q,\alpha_2}^\dagger a_{p,\alpha_2}a_{k,\alpha_1}\]
 
+If you only have this term here, you will end up with a divergence for your potential energy in the limit where you add tons of charged particles - this is why we have the background term. You will only really have $10^23$ particles, but we allow our system to go to infinity so that we can do calculations with calculus, so we can see how our system behaves as we add more things to the system, and so on. That's the real reason why we take thermodynamic limits - so that we can see how the system responds to a change in size.
+\begin{exercise}
+    Show that the above equation $(\ast)$ can be rewritten as the following, and hence show that the first term in $H$ is cancelled.
+    \[(\ast) = \frac{e^2}{2V}\sum_{k,p,q, q\neq 0} \frac{4\pi}{q^2+\mu^2}a_{k+q,\alpha_1}^\dagger a_{p-q,\alpha_2}^\dagger a_{p,\alpha_2}a_{k,\alpha_1} + \frac{e^2}{2V}\frac{4\pi}{\mu^2}(\hat N^2-\hat N)\]
+\end{exercise}
+In the limit $L\to \infty$, then $\mu \to 0$, with fixed $N$ the $N$ term cancels in the above equation. We finally obtain the Hamiltionian:
+\begin{equation}H = \sum_{k,\alpha}\frac{\hbar^2 k^2}{2m}a_{k,\alpha}^\dagger a_{k,\alpha} + \frac{e^2}{2V} \sum_{k,p,q, q\neq 0}\sum_{\alpha_1,\alpha_2}\frac{4\pi}{q^2} a_{k+q,\alpha_1}^\dagger a_{p-q,\alpha_2}^\dagger a_{p,\alpha_2}a_{k,\alpha_1}\end{equation}
+In order to show that the second term is a perturbation of the first, we want to define some dimensionless quantities. If you write the single particle Schrodinger equation with a Coulomb potential, you might think that the smallness of $e$ makes the potential a perturbation - but this is not true if we change our units! So we need to break this unit-scaling invariance by making our system dilute, we will see this with the following quantities.
+\begin{align}r_0 &= \left[\frac{3V}{4\pi N}\right]^{\frac{1}{3}}\\
+a_0 &= \frac{\hbar^2}{\mu e^2}\\
+r_s &= \frac{r_0}{a_0}\end{align}
+\[V \mapsto r_0^{-3}V, k \mapsto r_0 k, p\mapsto r_0 p, q\mapsto r_0 q \]
+These are certainly measurable quantities for a material. If you write everything in terms of these new variables, we find:
+\[H = (i) \frac{e^2}{a_0 r_s^2}\left(\sum_{k,\alpha}\frac{1}{2}k^2 a_{k,\alpha}^\dagger a_{k,\alpha} + (ii) \frac{r_s}{2V} \sum_{k,p,q,q\neq 0} \frac{4\pi}{q^2}a_1^\dagger a_2^\dagger a_2 a_1\right)\]
+Here we see where the perturbation comes from. The potential energy is now a perturbation as long as $r_s \to 0$, which happens as the density increases (rather than when it decreases!) Now we want to work out the ground state of this Hamiltonian. It's quite simple, since it's just the regular old perturbation theory.
+\[E = E^{(0)} + E^{(1)} + ...\]
+At first order there are no divergences, but there's actually a logarithmic divergence in second order - so perturbation is a little bit questionable for this problem. Regardless, let's see what we get for the first order shifts. The ground state of $H_0$ is given by something called the Fermi sea - this is from the Pauli exclusion principle, we get the energy when we fill up all available momentum states up to some cutoff $p_F = \hbar k_F$. Let's name this state $\ket{F}$ for "Fermi". We will exploit the fact that $L\to \infty$ so that we can replace all the combinatorics with integrals. $\sum_k f(k) \mapsto \frac{V}{(2\pi)^3}\int \dd^3 k f(k)$. This is a good approximation. Now:
+\[N = \expval{\hat N}{F} = \frac{V}{8\pi^3}\sum_\alpha \int \dd^3 k \theta(k_F - k) = \frac{V k_F^3}{3\pi^2}\]
+\[\implies k_{F} = \left[\frac{3\pi^2 N}{V}\right]^{\frac{1}{3}} \approx 1.92 r_0^{-1}\]
+Now we get the expected kinetic energy:
+\begin{equation}E^{(0)} = \expval{T}{F} = \frac{2.21 e^2 N}{2a_0 r_s^2} \eqref{eq:ground_state_electron_gas}\end{equation}
+\begin{exercise} Show equation \ref{eq:ground_state_electron_gas}\end{exercise}
+The next exercise is a very important one. Please sit down and do it in full, since it's one of the most interesting exercises in the course. Nothing captures the physics of many bodies as well as this calculation. Once you do this, you can do any of the Feynman diagram exercises in Solid State physics, in QFT, etc.
+\begin{exercise}Fill in the gaps in the following calculation.
+\[E^{(1)} = \expval{(ii)}{F} = \frac{-e^2}{2a_0}\frac{0.916 N}{r_s}\]\end{exercise}
+Finally, we get the ground state energy of the degenerate electron gas:
+\[E = \frac{e^2 N}{2a_0}\left(\frac{2.21}{rs^2}-\frac{0.916}{r_s}+...\right)\]
+The way you really look at this quantity in experiments is by looking at the pressure $\pdv{E}{V}$. This is where we will bid farewell to second quantization, and now we move on to scattering theory.
+\pagebreak
 \nocite{*}
 \printbibliography
 \end{document}
