@@ -1130,10 +1130,10 @@ There's a picture that will help us a lot when describing these incoming and out
     \label{fig:in_out_states}
 \end{figure}
 One of the things that characterizes this system is that the system in the far past looks like a free trajectory, as does the system in the far future. We write these as "in" and "out" asymptotes. Since this is a particle in a classical potential it will obey Newton's equations:
-\begin{equation}\ddot \vec{x} = -\nabla V(\vec{x})\end{equation}
+\begin{equation}\ddot{\vec{x}} = -\nabla V(\vec{x})\end{equation}
 As $t \to \infty$, $x(t) \to x_o(t)$, and as $t \to -\infty$, $x(t)\to x_i(t)$. Like any good physics problem, we decide to throw away all the degrees of freedom we do not care about - here we disregard temporal degrees of freedom by not caring about what happens in the interaction range. This is okay, because the system is well characterized by the asymptotes. Just think about a particle collider - the particles collide very very briefly, and since they're going so fast they're essentially along that asymptote within microseconds!
-\[x(t) \xrightarrow[t\to -\infty] x_i(t) = a_i + v_i t\]
-\[x(t) \xrightarrow[t\to \infty] x_o(t) = a_o + v_o t\]
+\[x(t) \xrightarrow[t\to -\infty]{} x_i(t) = a_i + v_i t\]
+\[x(t) \xrightarrow[t\to \infty]{} x_o(t) = a_o + v_o t\]
 
 What fully describes the scattering experiment is $a_o(a_i,v_i)$ and $v_o(a_i,v_i)$ as functions of the in state. This dependence is captured by something called the S-matrix, which we will meet when we talk about this in the quantum setting.
 
@@ -1143,12 +1143,12 @@ Of course it's not always the case that a particle goes in and comes out again. 
 How do we describe a particle scattering from a potential $V$? This is just the single-particle Schrodinger equation again! Here is our Hamiltonian and Hilbert space:
 \[H = \frac{p^2}{2m}+V(x)\]
 \[\Hh = L^2(\RR^3)\]
-We let the propogator $U(t) = \exp(-itH)$ be the solution to the time dependent Schrodinger equation (in the Heisenberg picture). We then let $U_0(t) = \exo(-itH_0)$ be the solution for a free trajectory where $V=0$. If we suppose $U(t)\ket{\psi}$ describes the evolution of a system in a scattering experiment, what does that mean in terms of the state $\ket{\psi}$?
-\[(i) U(t)\ket{\psi}\xrightarrow[t\to -\infty] U_0(t)\ket{\psi_{in}}\]
-\[(ii) U(t)\ket{\psi}\xrightarrow[t\to \infty] U_0(t)\ket{\psi_{out}}\]
+We let the propogator $U(t) = \exp(-itH)$ be the solution to the time dependent Schrodinger equation (in the Heisenberg picture). We then let $U_0(t) = \exp(-itH_0)$ be the solution for a free trajectory where $V=0$. If we suppose $U(t)\ket{\psi}$ describes the evolution of a system in a scattering experiment, what does that mean in terms of the state $\ket{\psi}$?
+\[(i)\hspace{1em} U(t)\ket{\psi}\xrightarrow[t\to -\infty]{} U_0(t)\ket{\psi_{in}}\]
+\[(ii) \hspace{1em}U(t)\ket{\psi}\xrightarrow[t\to \infty]{} U_0(t)\ket{\psi_{out}}\]
 We can't let this $\ket{\psi_{in}}$ state (which we will call the in-asymptote) be localized near the potential, it should be localized (have position expectation value) some distance away from the potential. We can construct nasty pathological examples where there are bound states, etc. What we should do is prove that whenever we have an in-asymptote that according to some assumptions, the out-asymptote exists. Our assumptions are the following:
 \begin{itemize}
-\item $V$ is spherically symmetric\\
+\item $V$ is spherically symmetric
 \item $V(r) = O(r^{-3-\epsilon})$ as $r\to \infty$
 \item $V(r) = O(r^{-\frac{3}{2}+\epsilon})$ as $r\to 0$
 \item There are a finite number of discontinuities for $r\in (0,\infty)$
