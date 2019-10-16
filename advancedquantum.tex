@@ -1112,7 +1112,70 @@ The next exercise is a very important one. Please sit down and do it in full, si
 \[E^{(1)} = \expval{(ii)}{F} = \frac{-e^2}{2a_0}\frac{0.916 N}{r_s}\]\end{exercise}
 Finally, we get the ground state energy of the degenerate electron gas:
 \[E = \frac{e^2 N}{2a_0}\left(\frac{2.21}{r_s^2}-\frac{0.916}{r_s}+...\right)\]
-The way you really look at this quantity in experiments is by looking at the pressure $\pdv{E}{V}$. This is where we will bid farewell to second quantization, and now we move on to scattering theory.
+The way you really look at this quantity in experiments is by looking at the pressure $\pdv{E}{V}$. The numbers from this calculation match up remarkably well!
+
+\pagebreak
+
+\section{Scattering Theory}
+\subsection{In/Out States}
+\subsubsection{Motivation}
+Up until now we've studied the dynamics of many particles, but now we will move to a different limit of these dynamics - rather than dealing with lots of particles and weak interactions we will now deal with only a few particles but with strong interactions. The way we work with this is through a short range potential. What we can say about this process is that far away at the beginning of time the particles are not interacting, and far away at the end of time the particles are not interacting. However, we know that stuff happens in the middle - this can be nearly ignored by inferring the interactions from the difference between the incoming and outgoing states.
+
+\subsubsection{Classical In/Out States}
+There's a picture that will help us a lot when describing these incoming and outgoing states. Moving to relative coordinates (see the introductory sections) will help a lot, since we can reduce the problem of two particles to one particle in a central potential.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/in_out_states.png}
+    \caption*{}
+    \label{fig:in_out_states}
+\end{figure}
+One of the things that characterizes this system is that the system in the far past looks like a free trajectory, as does the system in the far future. We write these as "in" and "out" asymptotes. Since this is a particle in a classical potential it will obey Newton's equations:
+\begin{equation}\ddot \vec{x} = -\nabla V(\vec{x})\end{equation}
+As $t \to \infty$, $x(t) \to x_o(t)$, and as $t \to -\infty$, $x(t)\to x_i(t)$. Like any good physics problem, we decide to throw away all the degrees of freedom we do not care about - here we disregard temporal degrees of freedom by not caring about what happens in the interaction range. This is okay, because the system is well characterized by the asymptotes. Just think about a particle collider - the particles collide very very briefly, and since they're going so fast they're essentially along that asymptote within microseconds!
+\[x(t) \xrightarrow[t\to -\infty] x_i(t) = a_i + v_i t\]
+\[x(t) \xrightarrow[t\to \infty] x_o(t) = a_o + v_o t\]
+
+What fully describes the scattering experiment is $a_o(a_i,v_i)$ and $v_o(a_i,v_i)$ as functions of the in state. This dependence is captured by something called the S-matrix, which we will meet when we talk about this in the quantum setting.
+
+Of course it's not always the case that a particle goes in and comes out again. We will come up with a definition of something called a scattering orbit - where in and out asymptotes always exist. This excludes bound states such as closed orbits in a Newtonian setting, or when a particle falls in a black hole, or when they form a chemical bond, or if they collide just right, and so on. One might hope that bound states and scattering orbits together form all of the possible states - however, sometimes (such as with the Coulomb potential) the potential is so long range that there are no scattering orbits! Sometimes, there are even more types of states than bound/scattering states. We will only really consider situations where we can deal with the scattering orbits on their own. One interesting scattering problem is that of the magnetic monopole's interactions, we don't know (as of writing this) that magnetic monopoles exist, so it's a natural human instinct to throw things at something new.
+
+\subsubsection*{Existence Theorem for Quantum Scattering Orbits}
+How do we describe a particle scattering from a potential $V$? This is just the single-particle Schrodinger equation again! Here is our Hamiltonian and Hilbert space:
+\[H = \frac{p^2}{2m}+V(x)\]
+\[\Hh = L^2(\RR^3)\]
+We let the propogator $U(t) = \exp(-itH)$ be the solution to the time dependent Schrodinger equation (in the Heisenberg picture). We then let $U_0(t) = \exo(-itH_0)$ be the solution for a free trajectory where $V=0$. If we suppose $U(t)\ket{\psi}$ describes the evolution of a system in a scattering experiment, what does that mean in terms of the state $\ket{\psi}$?
+\[(i) U(t)\ket{\psi}\xrightarrow[t\to -\infty] U_0(t)\ket{\psi_{in}}\]
+\[(ii) U(t)\ket{\psi}\xrightarrow[t\to \infty] U_0(t)\ket{\psi_{out}}\]
+We can't let this $\ket{\psi_{in}}$ state (which we will call the in-asymptote) be localized near the potential, it should be localized (have position expectation value) some distance away from the potential. We can construct nasty pathological examples where there are bound states, etc. What we should do is prove that whenever we have an in-asymptote that according to some assumptions, the out-asymptote exists. Our assumptions are the following:
+\begin{itemize}
+\item $V$ is spherically symmetric\\
+\item $V(r) = O(r^{-3-\epsilon})$ as $r\to \infty$
+\item $V(r) = O(r^{-\frac{3}{2}+\epsilon})$ as $r\to 0$
+\item There are a finite number of discontinuities for $r\in (0,\infty)$
+\end{itemize}
+We arrive at the \textbf{asymptotic condition}: if $V$ satisfies these conditions, then for all possible free trajectories $\ket{\psi_{in}}$ there is some $\ket{\psi}$ such that $U(t)\ket{\psi} - U_0(t)\ket{\psi_{in}} \to 0$ as $t\to -\infty$. The nice thing about scattering theory is that it's very rigorous, but the proofs require lots of functional analysis and are quite difficult. What we will do here is provide a proof sketch, which can be filled in by reading Reed \& Simon Volume 3 \cite{reed1979scattering}.
+\subsubsection{Proof Sketch of Existence Theorem}
+First we multiply by $U^\dagger(t)$ (we are assuming that $U$ is unitary, which is not obvious). The desired condition is that:
+\[\ket{\psi}-U^\dagger(t)U_0(t)\ket{\psi_{in}}\to 0\]
+That is, we need to show that $U^\dagger(t)U_0(t)\ket{\psi_{in}}$ has a limit in the first place, then we need to show that its' limit is $\ket{\psi}$. Let's focus on the existence of the limit itself. One trick people use very often is to differentiate and then integrate:
+\begin{equation}\label{scattering_exercise_1}U^\dagger(t)U_o(t) = \II+ \int_0^t \dd s U^\dagger(s) \hat V U_0(s) \end{equation}
+We then require that $\ket{\psi_{in}}+ \int_0^t \dd s U^\dagger(s) \hat V U_0(s)\ket{\psi_{in}}$ has a limit at $t\to -\infty$. A sufficient condition is that the norm of the integral is bounded:
+\[\int_{-\infty}^0 \dd s \norm{U^\dagger(s) \hat V U_0(s) \ket{\psi_{in}}} < \infty\]
+Something useful is that Unitary transformations preserve norm!
+\[\implies \int_{-\infty}^0 \dd s \norm{U^\dagger(s) \hat V U_0(s) \ket{\psi_{in}}}  = \int_{-\infty}^0 \dd s \norm{\hat V U_0(s) \ket{\psi_{in}}}\]
+We're going to first restrict our attention to when $\psi_{in}$ is a Gaussian, that is:
+\[\bra{x}\ket{\psi_{in}} \propto \exp\left[-\frac{\norm{x-a}^2}{2\xi^2}\right]\]
+We know from the Schrodinger equation that this evolves as follows:
+\begin{equation} |\bra{x}U_0(s)\ket{\psi_{in}}|^2= \left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{2}}\exp\left[-\frac{\norm{x-a}^2}{\xi^2+\frac{s^2}{m^2\xi^4}}\right]\end{equation}
+So that now,
+\begin{align} \norm{\hat V U_0(s)\ket{\psi_{in}}}^2 &= \int \dd^3 x |V(x)|^2\left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{2}}\exp\left[-\frac{\norm{x-a}^2}{\xi^2+\frac{s^2}{m^2\xi^4}}\right] \\
+& \leq \left(\int \dd ^3 x|V(x)|\right)^{\frac{1}{2}}\int_{-\infty}^0 \dd s \left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{4}}<\infty \label{scattering_exericse_2}\end{align}
+Note that Gaussians are an overcomplete basis, since Gaussians come from coherent states which are overcomplete. So now we are basically done besides some subtleties. In the following,
+\[\ket{\psi_{in}} = \int \dd^3 y \Psi_{in}(y)\ket{G(y)}\]
+The $\Psi$ might be ill behaved! So the solution is to restrict ourselves to smooth and rapidly decaying input states. Another subtlety is that the Gaussians have some phase factor, which is some momentum $e^{ikx}$ multiplied by the Gaussian, but that can be accounted for. If we wanted to relax a few of our assumptions, that won't be super hard - spherical symmetry can be relaxed if our potential is bounded, and so on. However, we can't allow our systems to be discrete! It turns out that $H$ needs to have a continuous spectrum, otherwise there are no in/out states because the system will always return to its original configuration. This is called a revival, and every quantum system with discrete spectrum will experience a revival after some (astronomically long) time.
+\begin{exercise} Show equations \eqref{scattering_exercise_1} and \eqref{scattering_exericse_2}\end{exercise}
+
+
 \pagebreak
 \nocite{*}
 \printbibliography
