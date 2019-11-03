@@ -1,0 +1,76 @@
+Let's introduce some shorthand notation.
+\[H_s^N = \begin{cases}H_+^N & \textrm{ for bosons} \\ H_-^N & \textrm{ for fermions}\end{cases}\]
+With $s = +1$ when we talk about Bosons and vice versa for Fermions.
+\subsection{Definition of Fock Space}
+Now we would like to generalize from a space with $N$ particles to a space with arbitrary numbers of particles. This way we can introduce or remove particles from our system. In fact, we can even allow $N$ itself to be a quantum number, and allow superpositions of states with differing numbers of particles! This leads to a process commonly known as Second Quantization whereby the notion of a 'particle' itself changes significantly. The space which allows this is called Fock Space, with the following definition.
+
+\begin{defn}[Fock Space] We define the symmetric/antisymmetric Fock Space $\Gamma_s(\Hh)$ as the direct sum of all the individual Hilbert spaces.
+\begin{equation}
+\Gamma_s(\Hh) = \bigoplus_{N=0}^\infty \Hh_s^N =: \bigoplus_{N=0}^\infty \Gamma_{s,N}(\Hh)
+\end{equation}
+\end{defn}
+Note that we define $H_s^0$ to be $H_s^0=:\CC$. This is the 'vacuum' space, with basis vector $\ket{\Omega}$, which is the vacuum state. It is the state of the system when there are no particles at all.
+
+Recall that we can decompose a vector into it's components in a space. Let's do this for an arbitrary state $\ket{\psi} \in \Gamma_s(\Hh$. We see that $\ket{\psi} = \sum_{n=0}^\infty\sum_{i=0}^n \psi_n \ket{\phi_i}$, where each $\ket{\phi_i}$ is a basis vector from $\Gamma_{s,N}(\Hh)$. It is easy to see that $\Gamma_{s,N}(\Hh)$ is a separable space, but it remains to be shown that there is an inner product on this space. We will simply write $\ket{\psi} = \sum_{n=0}^\infty \ket{\psi_n}$ for the components of a vector in Fock space instead. Thus the scalar product on this space is $\braket{\psi}{\phi}=\sum_{n=0}^\infty \braket{\psi_n}{\phi_n}$. Now let's look at some observables on this space! What could we measure? The first one that comes to mind is the particle number operator $\hat N$.
+\begin{defn}[Number Operator]
+We define the particle number operator $\hat N$ as follows.
+\begin{equation}
+\hat N \ket{\psi_N} = N\ket{\psi_N} \forall \psi_N \in \Gamma_{s,N}(\Hh)
+\end{equation}
+\end{defn}
+This way, states of determinate particle number are states where the only components are members of a subspace comprised of states with exactly $N$ particles. 
+
+\subsection{Dynamics in Fock Space}
+Now we would like to see what happens when we change the space according to some dynamics. That is, we want to look at maps $A : \Hh_1 \to \Hh_2$ and extend them to maps between different Fock spaces. This will allow us to define time evolution and so on. Well, we know how to produce from $A$ a linear operator from $\Hh_1^{\otimes N} \to \Hh_2^{\otimes N}$. We just tensor $A$ together $N$ times.
+\[A^{\otimes N} : \Hh^{\otimes N}_1 \to \Hh_2^{\otimes N}\]
+It turns out that the tensor product of operators respects antisymmetry and symmetry. That is to say, $A^{\otimes N}(\Gamma_{s,N}(\Hh_1)) = \Gamma_{s,N}(\Hh_2)$. You may recall this from previous studies of tensors. This comes from the fact that $[U(\pi),A^{\otimes N}] = 0$. We introduce some notation now.
+\begin{equation}
+\Gamma_{s}(A) : \Gamma_{s}(\Hh_1) \to \Gamma_s(\Hh_2)
+\end{equation}
+This definition is given by the following:
+\begin{equation}
+\Gamma_s(A) = \bigoplus_{N=0}^\infty \Gamma_{s,N}(A) =: \bigoplus_{N=0}^\infty A^{\otimes N}
+\end{equation}
+Where $\oplus$ here is the matrix direct sum. If you think of $A$ as performing some kind of operation on vectors, say a rotation or something. Then we can think of $\Gamma_{s,N}(A)$ as performing the same operation to each of the particles in the space independently. This is a reminder of the simple formula $A\otimes B(\ket{a}\otimes\ket{b}) = (A\ket{a})\otimes(B\ket{b})$ from undergrad quantum mechanics.
+
+There are some observations to make of the norms of these operators. We know that $\norm{A^{\otimes N}} \leq \norm{A}^N$. This means that if $\norm{A} \leq 1$ then $\norm{A^{\otimes N}} \leq 1$, and you could even show that $\norm{\Gamma_s(A)} \leq 1$.
+
+It can also be seen that $\Gamma_s(\mathbb{I}_{\Hh}) = \mathbb{I}_{\Gamma_s(\Hh)}$, and that $\Gamma_s(A^\dagger) = \Gamma_s(A)^\dagger$. It's also true that $\Gamma_s(AB) = \Gamma_s(A)\Gamma_s(B)$.
+
+Let $U : \Hh \to \Hh$ be some unitary change of basis. Then $\Gamma_s(U)$ is unitary as well, and performs the same change of basis on each component space of the Fock space individually and independently. All of this follows from the definition of the direct sum and the definition of the tensor product. This is a very powerful tool.
+
+There's one particular change of basis that is important - the time evolution operator. So if we have some unitary $U$ which depends on $t$ so that $U(t) =: e^{-itH}$, then $\Gamma_s(U(t))$ is a possible time evolution operator in Fock space. The Hamiltonian corresponding to this time evolution operator is the following.
+
+\[\dd\Gamma_s(H) = H\otimes \II \otimes \cdots \otimes \II + \II \otimes H \otimes \cdots \otimes \II +\cdots+ \II \otimes \cdots \otimes \II \otimes H\]
+
+So that the Schrodinger equation can be written as the following.
+\begin{equation}
+\dv{t}\Gamma_s(U_t) = -i\dd \Gamma_s(H)\Gamma_s(U_t)
+\end{equation}
+
+This Hamiltonian follows from the Leibniz property of the derivative. That is: Let $U_t = e^{itH}$, then $\dv{t} U_t^{\otimes N} =  (\dv{t} U_t) \otimes U_t \otimes \dots \otimes U_t + \dots$. As an exercise, fill in the rest of the proof. The object $\dd \Gamma_s$ which you apply is called the "differential second quantization operation", and is sometimes written $\Lambda$.
+
+Here's an example. Let $H = \II$. Then $\dd \Gamma_s(\II) = \hat N$ (trivially). So the number operator is indeed an observable. You can't observe the absolute phase of the particles, but you can do an interference experiment and determine the relative phase between the particles, which will tell you the number of particles in your system. The idea is that the partles undergo a phase change as time goes on according to the number of particles in the whole system. You could consider the identity operator itself! $\II$ is a perfectly acceptible Hamiltonian, but it is not of the form $\dd \Gamma_s(H)$ for any $H$, so it's not physically observable since $U_t = e^{it}$ provides the same phase change to every particle.
+
+Here's another useful identity: $\dd \Gamma_s([H,K]) = [\dd\Gamma_s(H),\dd\Gamma_s(K)]$.
+
+\subsection{The Number Basis}
+We would like to find a nice basis for Fock space, since we need one whenever we do computations on a computer. It's fairly straightforward to build a basis for $H^{\otimes N}$. Such a basis is just given by $\ket{e_{i_1},...,e_{i_N}}$. To find a basis for $\Gamma_{s,N}(\Hh)$ we could take $P_s\ket{e_{i_1},...,e_{i_N}}$. We will relabel $\ket{e_{i_1},...,e_{i_N}} to \ket{\mu_1,...,\mu_N}$ for simplicity. We will see that $P_s \ket{\mu_1,...,\mu_N} = \pm \ket{\nu_1,...,\nu_N}$ whenever $\nu$ is a permutation of $\mu$. Thus the possible basis vectors for $\Gamma_{s,N}(\Hh)$ are characterized by the possible sets $\{\mu_i\}$. You could mark each of these sets with something called an occupation number. 
+
+\begin{defn}[Occupation Number] The occupation number for a state $\nu$ is defined as $n_\nu(\mu_1,...,\mu_N) = |\{j:\mu_j=\nu\}|$.\end{defn} 
+
+The occupation number counts how many particles in the multi-particle state are occupying the same quantum state. As an example, if you had photons in some discrete configuration, the number of photons in each state provides the occupation number for that state. We can summarize these numbers in a tuple $n = (n_1,n_2...,)$, that is a possibly infinite dimensional vector, depending on the dimension of the basis of our space.  
+
+\begin{example}
+Let $\Hh = \CC^2$ and $N = 3$. There are 8 basis vectors as before. 
+\[\ket{000},\ket{001},\ket{010},\ket{011},\ket{100},\ket{101},\ket{111}\in \Hh^{\otimes 3}\]
+
+The operator $ n_i(\mathbf{n}) $ is essentially counting how many times $ i $ appears in $ \mathbf{n} $. We'll have then that
+\begin{align*}
+	n_0(000)=3,\quad  n_0 (001)=2,\quad  n_0(011) = 1,\quad  n_0 (111)=0 \\
+	n_1(000)=0,\quad  n_1(001) = 1,\quad  n_1(011) = 2,\quad n_1(111)= 3 
+\end{align*}
+We should also look at the symmetrization and antisymmetrization of this space. We compute the following.
+\[P_+\ket{000}=\ket{000}, P_+\ket{001}=\frac{1}{3}(\ket{001}+\ket{010}+\ket{100}), \]\[P_+\ket{011}=\frac{1}{3}(\ket{011}+\ket{101}+\ket{110}), P_+\ket{111}=\ket{111} \]
+On the other hand, $P_-\ket{\psi}=0$ for all $\ket{\psi}$! This is an effect we call the Pauli exclusion principle - no two fermions can occupy the same quantum state, so all occupation numbers have to be 1 or 0. There can't be any Fermion states in $\Hh^{\otimes 3}$ because of the pidgeonhole principle - two fermions will always have the same state, so one of the occupation numbers for a state will always either be 2 or 3.
+\end{example}
