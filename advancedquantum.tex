@@ -499,14 +499,15 @@ It can also be seen that $\Gamma_s(\mathbb{I}_{\Hh}) = \mathbb{I}_{\Gamma_s(\Hh)
 Let $U : \Hh \to \Hh$ be some unitary change of basis. Then $\Gamma_s(U)$ is unitary as well, and performs the same change of basis on each component space of the Fock space individually and independently. All of this follows from the definition of the direct sum and the definition of the tensor product. This is a very powerful tool.
 
 There's one particular change of basis that is important - the time evolution operator. So if we have some unitary $U$ which depends on $t$ so that $U(t) =: e^{-itH}$, then $\Gamma_s(U(t))$ is a possible time evolution operator in Fock space. The Hamiltonian corresponding to this time evolution operator is the following.
-\[\dd\Gamma_s(H) = H\otimes \II \otimes ... \otimes \II + \II \otimes H \otimes ... \otimes \II +...+ \II \otimes ... \otimes \II \otimes H\]
+
+\[\dd\Gamma_s(H) = H\otimes \II \otimes \cdots \otimes \II + \II \otimes H \otimes \cdots \otimes \II +\cdots+ \II \otimes \cdots \otimes \II \otimes H\]
 
 So that the Schrodinger equation can be written as the following.
 \begin{equation}
 \dv{t}\Gamma_s(U_t) = -i\dd \Gamma_s(H)\Gamma_s(U_t)
 \end{equation}
 
-This Hamiltonian follows from the Leibniz property of the derivative. That is: Let $U_t = e^{itH}$, then $\dv{t} U_t^{\otimes N} =  (\dv{t} U_t) \otimes U_t \otimes ... \otimes U_t + ...$. As an exercise, fill in the rest of the proof. The object $\dd \Gamma_s$ which you apply is called the "differential second quantization operation", and is sometimes written $\Lambda$.
+This Hamiltonian follows from the Leibniz property of the derivative. That is: Let $U_t = e^{itH}$, then $\dv{t} U_t^{\otimes N} =  (\dv{t} U_t) \otimes U_t \otimes \dots \otimes U_t + \dots$. As an exercise, fill in the rest of the proof. The object $\dd \Gamma_s$ which you apply is called the "differential second quantization operation", and is sometimes written $\Lambda$.
 
 Here's an example. Let $H = \II$. Then $\dd \Gamma_s(\II) = \hat N$ (trivially). So the number operator is indeed an observable. You can't observe the absolute phase of the particles, but you can do an interference experiment and determine the relative phase between the particles, which will tell you the number of particles in your system. The idea is that the partles undergo a phase change as time goes on according to the number of particles in the whole system. You could consider the identity operator itself! $\II$ is a perfectly acceptible Hamiltonian, but it is not of the form $\dd \Gamma_s(H)$ for any $H$, so it's not physically observable since $U_t = e^{it}$ provides the same phase change to every particle.
 
