@@ -55,6 +55,8 @@
 \DeclareMathOperator{\ZZ}{\mathbb{Z}}
 \DeclareMathOperator{\CC}{\mathbb{C}}
 
+\DeclareMathOperator{\diag}{\textrm{diag}}
+
 \newcommand{\ve}[1]{\mathbf{#1}}
 \newcommand{\create}[1]{a^\dagger_s(#1)}
 \newcommand{\annih}[1]{a_s(#1)}
@@ -673,7 +675,7 @@ What makes this tricky to work out on a computer is the $-1$ factors. It's worth
 \subsection{Jordan-Wigner Transform}
 To compute the matrix elements of the creation/annihilation operators with this method, we will need to use the Pauli matrices (which you have seen in your previous courses). These are:
 \begin{equation}
-\sigma^x = \begin{bmatrix}0&1\\1&0\end{bmatrix}, \sigma^y = \begin{bmatrix}0&-i\\i&0\end{bmatrix}, \sigma^z = \begin{bmatrix}1&0\\0&-1\end{bmatrix}, \sigma^0 = I
+\sigma^x = \begin{bmatrix}0&1\\1&0\end{bmatrix}, \sigma^y = \begin{bmatrix}0&-i\\i&0\end{bmatrix}, \sigma^z = \begin{bmatrix}1&0\\0&-1\end{bmatrix}, \sigma^0 = \II
 \end{equation}
 We also need the projection matrices:
 \begin{equation}
@@ -1085,7 +1087,7 @@ k_4=p
 Now our nasty Hamiltonian gets reduced to the following.
 \[(\ast) = \frac{e^2}{2V}\sum_{k,p,q}\sum_{\alpha_1,\alpha_2}\frac{4\pi}{q^2+\mu^2}a_{k+q,\alpha_1}^\dagger a_{p-q,\alpha_2}^\dagger a_{p,\alpha_2}a_{k,\alpha_1}\]
 
-If you only have this term here, you will end up with a divergence for your potential energy in the limit where you add tons of charged particles - this is why we have the background term. You will only really have $10^23$ particles, but we allow our system to go to infinity so that we can do calculations with calculus, so we can see how our system behaves as we add more things to the system, and so on. That's the real reason why we take thermodynamic limits - so that we can see how the system responds to a change in size.
+If you only have this term here, you will end up with a divergence for your potential energy in the limit where you add tons of charged particles - this is why we have the background term. You will only really have $10^{23}$ particles, but we allow our system to go to infinity so that we can do calculations with calculus, so we can see how our system behaves as we add more things to the system, and so on. That's the real reason why we take thermodynamic limits - so that we can see how the system responds to a change in size.
 \begin{exercise}
     Show that the above equation $(\ast)$ can be rewritten as the following, and hence show that the first term in $H$ is cancelled.
     \[(\ast) = \frac{e^2}{2V}\sum_{k,p,q, q\neq 0} \frac{4\pi}{q^2+\mu^2}a_{k+q,\alpha_1}^\dagger a_{p-q,\alpha_2}^\dagger a_{p,\alpha_2}a_{k,\alpha_1} + \frac{e^2}{2V}\frac{4\pi}{\mu^2}(\hat N^2-\hat N)\]
@@ -1147,12 +1149,12 @@ We let the propogator $U(t) = \exp(-itH)$ be the solution to the time dependent 
 \[(i)\hspace{1em} U(t)\ket{\psi}\xrightarrow[t\to -\infty]{} U_0(t)\ket{\psi_{in}}\]
 \[(ii) \hspace{1em}U(t)\ket{\psi}\xrightarrow[t\to \infty]{} U_0(t)\ket{\psi_{out}}\]
 We can't let this $\ket{\psi_{in}}$ state (which we will call the in-asymptote) be localized near the potential, it should be localized (have position expectation value) some distance away from the potential. We can construct nasty pathological examples where there are bound states, etc. What we should do is prove that whenever we have an in-asymptote that according to some assumptions, the out-asymptote exists. Our assumptions are the following:
-\begin{itemize}
+\begin{enumerate}
 \item $V$ is spherically symmetric
 \item $V(r) = O(r^{-3-\epsilon})$ as $r\to \infty$
 \item $V(r) = O(r^{-\frac{3}{2}+\epsilon})$ as $r\to 0$
 \item There are a finite number of discontinuities for $r\in (0,\infty)$
-\end{itemize}
+\end{enumerate}
 We arrive at the \textbf{asymptotic condition}: if $V$ satisfies these conditions, then for all possible free trajectories $\ket{\psi_{in}}$ there is some $\ket{\psi}$ such that $U(t)\ket{\psi} - U_0(t)\ket{\psi_{in}} \to 0$ as $t\to -\infty$. The nice thing about scattering theory is that it's very rigorous, but the proofs require lots of functional analysis and are quite difficult. What we will do here is provide a proof sketch, which can be filled in by reading Reed \& Simon Volume 3 \cite{reed1979scattering}.
 \subsubsection{Proof Sketch of Existence Theorem}
 First we multiply by $U^\dagger(t)$ (we are assuming that $U$ is unitary, which is not obvious). The desired condition is that:
@@ -1175,7 +1177,43 @@ Note that Gaussians are an overcomplete basis, since Gaussians come from coheren
 The $\Psi$ might be ill behaved! So the solution is to restrict ourselves to smooth and rapidly decaying input states. Another subtlety is that the Gaussians have some phase factor, which is some momentum $e^{ikx}$ multiplied by the Gaussian, but that can be accounted for. If we wanted to relax a few of our assumptions, that won't be super hard - spherical symmetry can be relaxed if our potential is bounded, and so on. However, we can't allow our systems to be discrete! It turns out that $H$ needs to have a continuous spectrum, otherwise there are no in/out states because the system will always return to its original configuration. This is called a revival, and every quantum system with discrete spectrum will experience a revival after some (astronomically long) time.
 \begin{exercise} Show equations \eqref{scattering_exercise_1} and \eqref{scattering_exericse_2}\end{exercise}
 
-
+\subsection{M\o ller Operators}
+What we will do next is build a mapping between these in/out states and the 'interacting' trajectories (where the particle is near the potential). What we proved in the previous secction was that if $V(r)$ satisfies some conditions then for any $\ket{\psi_{in}}$ there is a corresponding interacting $\ket{\psi}$ which tends to $\ket{\psi_{in}}$ as $t$ goes to negative infinity, and similarly for $\ket{\psi_{out}}$. The two asymptotes are related by the following:
+\begin{align}
+\ket{\psi}=\lim_{t\to-\infty}U^\dagger (t)U_0(t)\ket{\psi_{in}}&=\Omega_+\ket{\psi_{in}}\\
+\ket{\psi}=\lim_{t\to\infty}U^\dagger (t)U_0(t)\ket{\psi_{out}}&=\Omega_-\ket{\psi_{out}}
+\end{align}
+These operators $\Omega_{\pm}$ are called M\o ller operators. We do have to be cautious defining limits of unitary operators - as a cautionary example just take $\diag(e^{it},e^{-it})$, which is unitary and oscillates wildly - the limit is not well defined. These operators are only well defined on an infinite dimensional Hilbert space.
+\begin{defn}[M\o ller Wave Operators] 
+\[\Omega_{\pm}\ket{\psi} = \lim_{t\to\mp\infty}U^\dagger (t)U_0(t)\ket{\psi_{in/out}}\]
+\end{defn}
+These operators may not be unitary, but in general they are isometries - they preserve the norm of a state.
+\[\norm{\Omega_{\pm}\ket{\psi}}=\norm{\ket{\psi}}\]
+In scattering theory the goal is to ignore the interacting terms - all we want is the information about the in and out states. It turns out that some combination of these M\o ller operators give us exactly what we need. Let's define some notation: 
+\begin{equation}
+\ket{\phi}\equiv \ket{\psi_{in}} \hspace{1em}
+\ket{\chi}\equiv \ket{\psi_{out}}
+\end{equation}
+In textbooks and literature we will often also see $\Omega_+ \ket{\phi}=\ket{\phi_+}$ and $\Omega_-\ket{\chi}=\ket{\chi_-}$. Is it the case that every asymptotic free "in" trajectory gets mapped to the same subset of Hilbert space as the asymptotic free "out" trajectory? That is: we wish to know if the image of $\Omega_+$ is the same as the image of $\Omega_-$.
+\subsubsection{Orthogonality and Asymptotic Completeness}
+Does every $\ket{\psi} \in \Hh$ define a full trajectory $U(t)\ket{\psi}$ with in/out asymptotes? In general we already know that the answer is no (because of bound states). So let's define $\Bb \subset \Hh$ to be the space of bound states. Any state with an "in" asymptote is in the range of $\Omega_+$. This subspace will be called $R_+ \equiv \textrm{im}(\Omega_+)$, and similarly for $R_-$.
+\begin{thm}[Orthogonality Theorem] If $V(r)$ satisfies the asymptotic condition then $R_+ \perp \Bb$ and $R_- \perp \Bb$.
+\end{thm}
+\textit{Proof.} Consider $\ket{\psi}\in R_+$. Then $\ket{\psi}=\Omega_+ \ket{\psi_{in}}$. Let $\ket{\phi}$ be a bound state; $H\ket{\phi}=E\ket{\phi}$.
+\begin{align}
+\braket{\phi}{\psi}&=\mel{\phi}{U^\dagger(t) U(t)}{\psi}\\
+&= \exp(iEt)\bra{\phi}U(t)\ket{\psi}\\
+\end{align}
+(Since $U(t)\ket{\psi}\to U_0\ket{\psi_{in}}$ So let's study:
+\[\lim_{t\to-\infty}\exp(iEt)\mel{\phi}{U_0(t)}{\psi_{in}}\]
+Since $\ket{\phi}$ is always localized near the potential, we can see that this limit is going to be zero since the in trajectory is far away from the potential iin the limit. So this gives us some proof for the orthogonality theorem (you should go to Reed \& Simon to see the rest), but we don't yet know whether bound states and scattering states are the only possibilities! Let's define what a nice space should look like:
+\begin{thm}[Asymptotic Completeness]
+A scattering theory is called asymptotically complete if $R_-=R_+ = R$. The Asymptotic Completeness theorem would then tell us that if a scattering theory is asymptotically complete, then $\Hh=R\oplus \Bb$ whenever $V(r)$ satisfies the asymptotic condition. 
+\end{thm}
+Assuming these conditions, we can see that $\ket{\psi} = \Omega_+ \ket{\psi_{in}} = \Omega_- \ket{\psi_{out}}$. Since $\Omega_\pm$ is an isometry, we can consider the adjoint $\Omega_\pm^\dagger$ which goes in the opposite direction. All along, these operators were just a way to construct something we can observe - one of the most important observables in all of physics:
+\begin{defn}[Scattering Operator] Let $\ket{\psi}=\Omega_-\ket{\psi_{out}}$. Then we define the scattering operator (or S-Matrix).
+\begin{equation}S \equiv \Omega_-^\dagger \Omega_+\end{equation}
+\end{defn}
 \pagebreak
 \nocite{*}
 \printbibliography
