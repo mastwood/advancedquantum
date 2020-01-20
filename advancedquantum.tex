@@ -12,7 +12,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{MnSymbol,wasysym}
+\usepackage{wasysym}
 \usepackage{physics}
 \usepackage{listings}
 \usepackage{amsmath}
@@ -23,6 +23,7 @@
 \captionsetup{belowskip=-30pt}
 \usepackage{hyperref}
 \usepackage{biblatex}
+\usepackage{fouriernc}
 \bibliography{bib}
 % ------------------------------------------------------
 
@@ -1255,11 +1256,11 @@ This apparatus demonstrates the setup for a typical scattering experiment. Parti
 \end{defn}
 So now, given an in wavefunction $\braket{p}{\psi_{in}}$ we can find the probability that the particle is scattered into a volume $\dd^3 p$ of momentum space, which we denote $w(\psi_{in}\to \dd^3 p) = \dd^3 p |\psi_{out}(p)|^2$. Then the probability this particle emerges in the solid angle $\dd \Omega$ along the direction $\hat p$ (the unit vector in the direction of $p = \hat p |p|$) is given by:
 \begin{equation}\label{scatter4}w(\psi_{in} \to \dd \Omega) = \dd \Omega \int_0^\infty p^2 \dd p |\psi_{out}(p)|^2\end{equation}
-All we're doing here is throwing out the momentum of the output particle by transforming from $p$ to $\Omega$. In some cases a detector can find the momentum but the typical experiment can not, this is done via calorimetry. We now will connect this with the F-matrix which we defined in equation \ref{scatter3}. Let $\phi_\rho(p) = e^{-i\rho\cdot \hat p} \phi(p)$, where $\rho$ is the impact parameter vector (deviation vector from the input-target axis). What this does is translate the position by $\rho$, since a phase change by $\exp(-i\rho\cdot \hat p)$ in momentum space is the same as a translation in configuration space (you may show this with the shift property of the Fourier transform). Then we have:
+All we're doing here is throwing out the momentum of the output particle by transforming from $p$ to $\Omega$. In some cases a detector can find the momentum but the typical experiment can not, this is done via calorimetry. We now will connect this with the F-matrix which we defined in equation \eqref{scatter3}. Let $\phi_\rho(p) = e^{-i\rho\cdot \hat p} \phi(p)$, where $\rho$ is the impact parameter vector (deviation vector from the input-target axis). What this does is translate the position by $\rho$, since a phase change by $\exp(-i\rho\cdot \hat p)$ in momentum space is the same as a translation in configuration space (you may show this with the shift property of the Fourier transform). Then we have:
 \[N_{sc}(\dd \Omega) = \sum_{j=1}^{N_{inc}} w(\phi_{\rho j} \to \dd \Omega)\]
 Where we sum over $N_{inc}$ experiments. This gives
 \[N_{sc}(\dd \Omega) = \int \dd^3 \rho n_{inc} w(\phi_{\rho} \to \dd \Omega)= n_{inc} \sigma(\phi \to \dd\Omega)\]
-Now, combining \ref{scatter1}, \ref{scatter2}, \ref{scatter3}, and \ref{scatter4}
+Now, combining \eqref{scatter1}, \eqref{scatter2}, \eqref{scatter3}, and \eqref{scatter4}
 \begin{equation}\psi_{out}(p) = \psi_{in}(p) + \frac{i}{2\pi} \int \dd^3 p' \delta(E_{p}-E_{p'})f(p' \to p) \psi_{in}(p')\end{equation}
 And we assume that the wavefunction is localized away from the forward direction. Let's write $\psi_{in} = e^{-i\rho \hat p} \phi$. Then,
 \[\psi_{out} = \frac{i}{2\pi} \int \dd^3 p' \delta(E_p-E_{p'})f(p' \to p) e^{-i\rho \cdot \hat p} \phi(p')\]
@@ -1271,6 +1272,7 @@ Finally, if $\phi(p')$ is nonzero only in a tiny region we may replace $f(p'\to 
 \begin{equation}\dv{\sigma}{\Omega}(p_0\to p) = |f(p_0\to p)|^2\end{equation}
 This does not give phase data, but it does give us most of the data needed to describe the scattering experiment.
 \subsection{Optical Theorem, Green's Functions, and T Operators}
+\subsubsection{Optical Theorem}
 The next objective is to introduce several ways to connect scattering objects such as M\o ller operators to Hamiltonians and other observables. The first step to calculating the cross section is to recall a specific constraint, which is that the $S$ matrix is unitary. Recall the definition of the R matrix, which is $S = \II + R$. This gives us a quadratic equation:
 \[S^\dagger S = \II \implies (\II + R^\dagger)(\II + R) = \II\]
 \[\implies R+R^\dagger = -R^\dagger R\]
@@ -1278,6 +1280,67 @@ Working out the matrix elements, we have:
 \[\bra{p'}(R+R^\dagger)\ket{p} = \bra{p'}-R^\dagger R \ket{p}\]
 Then we have:
 \[\bra{p'}R\ket{p}+\bra{p'}R^\dagger \ket{p} = -\int\dd^3 p'' \bra{p'}R^{\dagger} \ket{p''}\bra{p''}R\ket{p}\]
+Now we use all of our previous definitions.
+\[\mel{p'}{R}{p}=\frac{i}{2\pi m}\delta(E_{p'}-E_p) f(p\to p')\]
+\begin{equation} f(p\to p') - f(p'\to p)^* = \frac{i}{2\pi m} \int \dd^3 p'' \delta(E_p-E_{p''}) f(p'\to p'')^* f(p\to p'')\end{equation}
+Which provides:
+\begin{thm}[Optical Theorem] Let $\sigma(p) = \int \dd \Omega_{p'}\dv{\sigma}{\Omega}(p\to p')$. Then
+\begin{equation}\label{opticaltheorem}\Im f(p'\to p) = \frac{|p_{||}|}{4\pi}\sigma(p)\end{equation}
+\end{thm}
+\begin{exercise} Prove equation \eqref{opticaltheorem}
+\end{exercise}
+This is a great check to see whether or not your experiment is preserving the unitarity of the S matrix, which tells you if your experiment has gone wrong. Remember, you can calculate the scattering cross section by adding up all the number of particle hits in each solid angle! And you know the momentum of the incoming particles! So this gives you information about S from your experiment.
+\subsubsection{Green's Operator and the T Operator}
+Let $H_0 = \frac{p^2}{2m}$ be the free particle Hamiltonian, and set $H = H_0 + V$. What we want to do is exploit the free particle Hamiltonian, and use perturbation theory to expand things like the S matrix in terms of powers of $V$. We will introduce the Green's operator. Recall the Green's function of a partial differential equation:
+\begin{defn}[Green's Function] Let $L\phi=F$ be a linear partial differential equation with differential operator $\phi$. Then the solution $G$ to $LG=\delta(x-y)$ satisfies $\phi(x,t) = \int \dd y G(x,y,t) F(y)$, with $\phi(x,0)=F(x)$. The function $G(x,y,t)$ is called the Green's function of the operator $L$.
+\end{defn}
+In first order perturbation theory, we have $G(z) = (z-H)^{-1}$ and $G_0(z) = (z_0\II - H_0)^{-1}$ whenever $z \not\in \textrm{Spec}(H_0)$ or $\textrm{Spec}(H)$ respectively. In general, these operators are not analytic on $\RR^+$. In order to work with these on the positive real axis, it is important to work with values of $z$ with $\Im z \neq 0$ - this provides a so called $i \epsilon$ prescription where we take $\Im z$ arbitrarily close to the real axis. A useful identity is the following:
+\begin{equation}A^{-1} = B^{-1} + B^{-1}(B-A)A^{-1}\end{equation}
+Let $A = z-H$ and $B = z-H_0$. Then:
+\begin{thm}[Lippman-Schwinger Equation]
+\[G(z)=G_0(z)+G_0(z)VG(z)\]
+\[G_0(z)=G(z)-G(z)VG_0(z)\]\end{thm}
+Using these two equations, we can construct a perturbation theory for $G$! Just plug one equation into the other repeatedly. We know $G_0(z)\ket{p} = (z-\frac{p^2}{2m})\ket{p} = \frac{1}{z-E_p}\ket{p}$, which is a simple equation (note that if $z \in \textrm{Spec}(H)$ we will add $i\epsilon$ to the denominator to keep things well defined). We will introduce another operator, called the T operator.
+\begin{defn}[T Operator]
+\begin{equation}
+T(z) = V+VG(z)V
+\end{equation}
+\end{defn}
+Multiplying on the left by $G_0(z)$ gives us:
+\[G_0(z)T(z) = G_0(z)V+G_0(z)VG(z)V = G(z)V \implies G_0 T = GV\]
+Similarly, $TG_0 = VG$. Now let's tie these operators together.
+\begin{align}
+G(z) &= G_0(z)+G_0(z)VG(z)\\
+&= G_0(z)+G_0(z)T(z)G_0(z)\\
+\implies T(z) &= V+VG_0(z)T(z)\\
+&= V+VG_0(z)(V+VG_0(z)T(z)\\\end{align}
+Which gives us the Born Series.
+\[T(z)= V+VG_0(z)V + VG_0(z)VG_0(z)V + ... \]
+Now let's relate these operators to M\o ller operators. Recall that for $\ket{\psi_{in}}=\ket{\phi}$ we defined $\ket{\psi}=\Omega_+ \ket{\psi_{in}} = \ket{\phi_+}$ and similarly for $\Omega_-$. And we had a definition for the M\o ller operator in terms of the Hamiltonian, which we will use to connect it to the T and G operators. Recall equation \eqref{scattering_exercise_1}:
+\[\ket{\phi_-} = \ket{\phi}+i\int_0^\infty \dd \tau U(\tau)^\dagger V U_0(\tau)\ket{\phi}\]
+Where $U(\tau) = e^{-i\tau H}$ and $U_0(\tau)=e^{-i\tau H_0}$. If we know that the M\o ller operator can be written in terms of T and G operators, we are very close to expressing $S$ in terms of theoretical quantities as a perturbation expansion. Whenever this integral is absolutely convergent we may write:
+\[\int_0^\infty \dd \tau \ket{\psi_\tau} = \lim_{\epsilon \to 0^+} \int_0^\tau \dd \tau e^{-\epsilon \tau} \ket{\psi_\tau}\]
+Doing this here allows us to push the integral off the real axis, so that we don't have to worry about the Green's functions spectral issues. This gives:
+\[\ket{\phi_-} = \Omega_-\ket{\phi} = \ket{\phi} + i\lim_{\epsilon \to 0^+} \int_0^\infty \dd \tau e^{-\epsilon \tau} U^\dagger(\tau)VU_0(\tau)\int \dd^3 p \dyad{p}{p} \ket{\phi}\]
+Noting that $U_0(\tau)\ket{p}=e^{-i\tau E_p}\ket{p}$, we have:
+\begin{align}\ket{\phi_-} &= \ket{\phi}+i\lim_{\epsilon\to 0^+} \int \dd^3 p \int_0^\infty \dd \tau e^{-i(E_p-i\epsilon - H)\tau}V\dyad{p}{p}\ket{\phi}\\
+&= \ket{\phi}+i\lim_{\epsilon \to 0^+} \int\dd^3 p (-i)(E_p-i\epsilon - H)^{-1} V \dyad{p}{p}\ket{\phi}\\
+&= \ket{\phi}+\lim_{\epsilon\to0^+}\int \dd^3 p G(E_p-i\epsilon)V\dyad{p}{p}\ket{\phi}
+\end{align}
+Since $E_p$ is on the real line, we needed to introduce the $i\epsilon$ factor. Similarly,
+\begin{equation}\ket{\phi_+} = \ket{\phi}+\lim_{\epsilon \to 0^-}\int \dd^3 p G(E_p+i\epsilon)V\dyad{p}{p}\ket{\phi}\end{equation}
+Now we relate to the Scattering operator.
+\[\mel{\chi}{S}{\phi}=\bra{\chi}\Omega_-^\dagger \Omega_+\ket{\phi} = \lim_{t\to \infty}\lim_{t'\to \infty} \mel{\chi}{e^{iH_0t}e^{-iHt}e^{iHt'}e^{-iH_0t}}{\phi}\]
+The order in the limit is not important, so you can actually take $t=t'$. So $\mel{\chi}{S}{\phi} = \lim_{t\to\infty}\mel{\chi}{e^{iH_0t}e^{-2iHt}e^{iH_0t}}{\phi}$. Then we apply the same trick as for the M\o ller operators.
+\begin{align}
+\mel{\chi}{S}{\phi}&=\braket{\chi}{\phi}-i\bra{\chi}\int_0^\infty \dd t e^{-\epsilon t} \dv{t}\left(e^{iH_0t}e^{-2iHt}e^{iH_0t}\right)\ket{\phi}\\
+&= \braket{\chi}{\phi}-i\int_0^\infty \dd t e^{-\epsilon t} \bra{\chi}\dv{t}\left(e^{iH_0t}e^{-2iHt}e^{iH_0t}\right)\ket{\phi}\\
+\implies \mel{p'}{S}{p}&= \delta(p'-p)-i\lim_{\epsilon\to0^+}\int_0^\infty \dd t \bra{p'}\left\{V,e^{i(E_p+E_{p'}+i\epsilon-2H)t}\right\}\ket{p}\\
+&= \delta(p'-p)+\lim_{\epsilon\to 0^+}\left(\frac{1}{E_{p'}-E_{p}+i\epsilon}+\frac{1}{E_{p}-E_{p'}+i\epsilon}\right)\mel{p'}{T\left(\frac{E_{p'}+E_p}{2}+i\epsilon\right)}{p'}\\
+&= \delta(p'-p)-2\pi i \delta(E_{p'}-E_p)\lim_{\epsilon\to 0^+}\mel{p'}{T(E_p+i\epsilon)}{p}\label{Tmatrix}
+\end{align}
+\begin{exercise}Prove equation \eqref{Tmatrix}\end{exercise}
+This gives a direct way of calculating $t(p\to p')$ which we saw previously, through a perturbation expansion in $G_0(z)$.
 
 \pagebreak
 
