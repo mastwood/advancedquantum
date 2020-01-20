@@ -1214,7 +1214,75 @@ Assuming these conditions, we can see that $\ket{\psi} = \Omega_+ \ket{\psi_{in}
 \begin{defn}[Scattering Operator] Let $\ket{\psi}=\Omega_-\ket{\psi_{out}}$. Then we define the scattering operator (or S-Matrix).
 \begin{equation}S \equiv \Omega_-^\dagger \Omega_+\end{equation}
 \end{defn}
+
+This is an operator composed of two M\o ller operators, and is one of the main observable operators in scattering theory. However, this is unitary, so it should be a little bit concerning to you since you have been taught that observables are positive operators - so in what sense is this operator observed? We will construct something called the cross section which you can relate to the S matrix. 
+
+First, let's prove that the scattering operator conserves energy, that is that is commutes with the Hamiltonian. One important observation is the following:
+\[H\Omega_\pm\ket{\psi} = \Omega_\pm H_0\ket{\psi}\]
+Whenever $\ket{\psi}$ is a scattering state. Which we can prove as follows:
+\begin{align}
+e^{i H \tau} \Omega_\pm &= e^{iH\tau} \lim_{t\to \mp \infty} e^{iHt}e^{-iH_0 t}\\
+&= \lim_{t \to \mp \infty} e^{iH(t+\tau)}e^{-iH_0t}\\
+&= \lim_{t\to \mp \infty} e^{iH(t+\tau)}e^{-i(H_0t+\tau)}e^{iH_0\tau}\\
+&=  \Omega_{\pm}e^{iH_0\tau}
+\end{align}
+Now we differentiate both sides and set $\tau = 0$ to get the desired result. Since $\Omega_\pm^\dagger \Omega_\pm = \II$, $\Omega_\pm H \Omega_\pm = H_0$. So then we have $SH_0 = \Omega_-^\dagger \Omega_+ H_0 = \Omega_-^\dagger H\Omega_+ = H_0 \Omega_-^\dagger \Omega^+$. Which shows that $S$ conserves the incoming energy. That is $\mel{\psi_{in}}{H_0}{\psi_{in}} = \mel{\psi_{in}}{S^\dagger H_0 S }{\psi_{out}} = \mel{\psi_{out}}{H_0}{\psi_{out}}$.
+
+Since $S$ and $H_0$ commute, we can try to diagonalize $S$ in terms of $H_0$ - which we can probably do since it's likely that $H_0$ is nondegenerate. $H_0$ has an improper basis given by plane waves (remember, this is the free particle Hamiltonian), so we can use that and apply the good old smearing argument for why this basis is good enough to use in a proof. The improper basis is given by: $\braket{x}{p} = (2\pi)^{-3/2}e^{ip\cdot x}$, $\braket{p}{p'} = \delta(p'-p)$. These are eigenstates of $H_0$ as $H_0\ket{p}=\frac{p^2}{2m}\ket{p}$. We write $E_p = \frac{p^2}{2m}$ (though in the Klein-gordon equation we will have $E_p=\sqrt{p^2+m^2}$). So we expend our out ket as:
+\[\ket{\psi_{out}} = S\ket{\psi_{in}}\]
+\begin{equation}\label{scatter1}\braket{p}{\psi_{out}} = \int \dd^3 p' \mel{p}{S}{p'}\braket{p'}{\psi_{in}}\end{equation}
+Where the term $ \mel{p}{S}{p'}\braket{p'}$ is referred to as the S-matrix element (or just the S matrix as an abuse of notation). We need to use conesrvation of energy here:
+\[0 = \mel{p}{[H,S]}{p} = (E_{p}-E_{p'})\mel{p}{S}{p'}\]
+So this tells us that $\mel{p}{S}{p'}=\delta(E_p-E_{p'})$ times something else. Let's write $S = \II + R$ where $R$ is called the R-matrix. Then $\II$ gives us the non-scattering component, and $R$ should give us something else. We will see:
+\begin{equation}\label{scatter2}\mel{p}{R}{p'}=-2\pi i \delta(E_p-E_{p'})t(p \to p')\end{equation}
+Where $t$ is called the T-matrix. So then we have $\mel{p}{S}{p'}=\delta(p-p')-2\pi i \delta(E_p-E_{p'})t(p\to p')$. The momentum delta function gives us the scenario when no scattering occurs - if no scattering occurs then the $t$ matrix is zero, and so the $S$ matrix should only be nonzero when momentum is carried over. The T-matrix should be smooth, which you can prove through something called the cluster decomposition principle (which you should look up). Secondly, the T matrix is only defined on-shell, which means that $p^2=p'^2$ - we guarantee this with the delta function. In addition, we will define the "scattering amplitude" by pulling out some more constants.
+\begin{equation}\label{scatter3} f(p \to p') = -(2\pi)^2 m t(p \to p')\end{equation}
+Now that we have the definitions necessary, we will describe a proper scattering experiment and show how the S-matrix may be measured in principle.
 \pagebreak
+
+\subsection{Scattering Experiments and the Cross Section}
+Let's begin with the classical cross section. Consider the following apparatus:
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/scattering.png}
+    \caption*{}
+    \label{fig:scattering}
+\end{figure}
+
+This apparatus demonstrates the setup for a typical scattering experiment. Particles are fired from the cylinder with initial momentum $p_0$ in the direction of the source-target axis. The spread of particles falls within some deviation from the center of the cylinder, and the distance is denoted $\rho$. This quantity is referred to as the impact parameter. Here we will assume it follows a roughly uniform distribution, but this is not a perfect approximation. A particle is scattered off the target with some angle from the source-target axis, and has a probability of ending up in some solid angle. We repeat this scattering experiment $N_{inc}$ times with random impact parameter, and the number which hit some region of the target's surface is given by the cross sectional area of the target multiplied by the number of incident particles. This gives $N_{scatter} = N_{inc} \sigma$, where $\sigma$ is the cross sectional area. We will write $n_{inc}$ for the number of incident particles per unit area, which has some kind of random distribution (which here we are taking to be uniform dispite the fact that that is not a good approximation). Then, we take our detectors and check how many particles got scattered into a given solid angle, which is pictured in the diagram as $N_{sc}(\Delta \Omega)$. Then we can ask, what effective area led to the events in that solid angle? Thus we have $N_{sc}(\Delta\Omega) = n_{inc} \sigma(\Delta\Omega)$, where $\sigma$ is that area. By piecing this data together we can figure out the structure of the object you are scattering off of. We then have a definition of something called the differential cross section.
+\begin{defn}[Differential Cross Section]
+\begin{equation}\sigma(\dd \Omega) = \dv{\sigma}{\Omega}\dd \Omega\end{equation}
+\end{defn}
+So now, given an in wavefunction $\braket{p}{\psi_{in}}$ we can find the probability that the particle is scattered into a volume $\dd^3 p$ of momentum space, which we denote $w(\psi_{in}\to \dd^3 p) = \dd^3 p |\psi_{out}(p)|^2$. Then the probability this particle emerges in the solid angle $\dd \Omega$ along the direction $\hat p$ (the unit vector in the direction of $p = \hat p |p|$) is given by:
+\begin{equation}\label{scatter4}w(\psi_{in} \to \dd \Omega) = \dd \Omega \int_0^\infty p^2 \dd p |\psi_{out}(p)|^2\end{equation}
+All we're doing here is throwing out the momentum of the output particle by transforming from $p$ to $\Omega$. In some cases a detector can find the momentum but the typical experiment can not, this is done via calorimetry. We now will connect this with the F-matrix which we defined in equation \ref{scatter3}. Let $\phi_\rho(p) = e^{-i\rho\cdot \hat p} \phi(p)$, where $\rho$ is the impact parameter vector (deviation vector from the input-target axis). What this does is translate the position by $\rho$, since a phase change by $\exp(-i\rho\cdot \hat p)$ in momentum space is the same as a translation in configuration space (you may show this with the shift property of the Fourier transform). Then we have:
+\[N_{sc}(\dd \Omega) = \sum_{j=1}^{N_{inc}} w(\phi_{\rho j} \to \dd \Omega)\]
+Where we sum over $N_{inc}$ experiments. This gives
+\[N_{sc}(\dd \Omega) = \int \dd^3 \rho n_{inc} w(\phi_{\rho} \to \dd \Omega)= n_{inc} \sigma(\phi \to \dd\Omega)\]
+Now, combining \ref{scatter1}, \ref{scatter2}, \ref{scatter3}, and \ref{scatter4}
+\begin{equation}\psi_{out}(p) = \psi_{in}(p) + \frac{i}{2\pi} \int \dd^3 p' \delta(E_{p}-E_{p'})f(p' \to p) \psi_{in}(p')\end{equation}
+And we assume that the wavefunction is localized away from the forward direction. Let's write $\psi_{in} = e^{-i\rho \hat p} \phi$. Then,
+\[\psi_{out} = \frac{i}{2\pi} \int \dd^3 p' \delta(E_p-E_{p'})f(p' \to p) e^{-i\rho \cdot \hat p} \phi(p')\]
+Which expands out into the following nasty expression.
+\[\sigma(\phi \to \dd \Omega) = \frac{\dd \Omega}{(2\pi^2)m^2}\int \dd^3 \rho p^2 \dd^3 p  \dd^3 p' \dd^3 p'' \delta(E_p-E_{p'})\delta(E_p-E_{p''})f(p' \to p) \overline{f}(p''\to p) e^{-i \rho \cdot (p'-p'')} \phi(p')\overline{\phi}(p'')\]
+Which reduces to
+\begin{equation}\sigma(\phi \to \dd\Omega) = \dd \Omega \int \dd^3 p' \frac{p'}{p_{||}'}|f(p'\to p)|^2 |\phi(p')|^2\end{equation}
+Finally, if $\phi(p')$ is nonzero only in a tiny region we may replace $f(p'\to p)$ and $\frac{p'}{p_{||}'}$ by their values at $p_0$. This gives our final equation.
+\begin{equation}\dv{\sigma}{\Omega}(p_0\to p) = |f(p_0\to p)|^2\end{equation}
+This does not give phase data, but it does give us most of the data needed to describe the scattering experiment.
+\subsection{Optical Theorem, Green's Functions, and T Operators}
+The next objective is to introduce several ways to connect scattering objects such as M\o ller operators to Hamiltonians and other observables. The first step to calculating the cross section is to recall a specific constraint, which is that the $S$ matrix is unitary. Recall the definition of the R matrix, which is $S = \II + R$. This gives us a quadratic equation:
+\[S^\dagger S = \II \implies (\II + R^\dagger)(\II + R) = \II\]
+\[\implies R+R^\dagger = -R^\dagger R\]
+Working out the matrix elements, we have:
+\[\bra{p'}(R+R^\dagger)\ket{p} = \bra{p'}-R^\dagger R \ket{p}\]
+Then we have:
+\[\bra{p'}R\ket{p}+\bra{p'}R^\dagger \ket{p} = -\int\dd^3 p'' \bra{p'}R^{\dagger} \ket{p''}\bra{p''}R\ket{p}\]
+
+\pagebreak
+
+
+
 \nocite{*}
 \printbibliography
 \end{document}
