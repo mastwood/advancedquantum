@@ -43,7 +43,8 @@
 \DeclareMathOperator{\Nul}{\textrm{Nul}}
 \DeclareMathOperator{\Bb}{\mathcal{B}}
 \DeclareMathOperator{\Cc}{\mathcal{C}}
-\DeclareMathOperator{\Hh}{\mathcal{Hh}}
+\DeclareMathOperator{\Hh}{{\mathcal{H}}}
+\DeclareMathOperator{\Rr}{{\mathcal{R}}}
 \DeclareMathOperator{\Dd}{\mathcal{D}}
 \DeclareMathOperator{\GL}{\textrm{GL}}
 \DeclareMathOperator{\NN}{\mathbb{N}}
@@ -1197,10 +1198,10 @@ In scattering theory the goal is to ignore the interacting terms - all we want i
 \end{equation}
 In textbooks and literature we will often also see $\Omega_+ \ket{\phi}=\ket{\phi_+}$ and $\Omega_-\ket{\chi}=\ket{\chi_-}$. Is it the case that every asymptotic free "in" trajectory gets mapped to the same subset of Hilbert space as the asymptotic free "out" trajectory? That is: we wish to know if the image of $\Omega_+$ is the same as the image of $\Omega_-$.
 \subsubsection{Orthogonality and Asymptotic Completeness}
-Does every $\ket{\psi} \in \Hh$ define a full trajectory $U(t)\ket{\psi}$ with in/out asymptotes? In general we already know that the answer is no (because of bound states). So let's define $\Bb \subset \Hh$ to be the space of bound states. Any state with an "in" asymptote is in the range of $\Omega_+$. This subspace will be called $R_+ \equiv \textrm{im}(\Omega_+)$, and similarly for $R_-$.
-\begin{thm}[Orthogonality Theorem] If $V(r)$ satisfies the asymptotic condition then $R_+ \perp \Bb$ and $R_- \perp \Bb$.
+Does every $\ket{\psi} \in \Hh$ define a full trajectory $U(t)\ket{\psi}$ with in/out asymptotes? In general we already know that the answer is no (because of bound states). So let's define $\Bb \subset \Hh$ to be the space of bound states. Any state with an "in" asymptote is in the range of $\Omega_+$. This subspace will be called $\Rr_+ \equiv \textrm{im}(\Omega_+)$, and similarly for $\Rr_-$.
+\begin{thm}[Orthogonality Theorem] If $V(r)$ satisfies the asymptotic condition then $\Rr_+ \perp \Bb$ and $\Rr_- \perp \Bb$.
 \end{thm}
-\textit{Proof.} Consider $\ket{\psi}\in R_+$. Then $\ket{\psi}=\Omega_+ \ket{\psi_{in}}$. Let $\ket{\phi}$ be a bound state; $H\ket{\phi}=E\ket{\phi}$.
+\textit{Proof.} Consider $\ket{\psi}\in \Rr_+$. Then $\ket{\psi}=\Omega_+ \ket{\psi_{in}}$. Let $\ket{\phi}$ be a bound state; $H\ket{\phi}=E\ket{\phi}$.
 \begin{align}
 \braket{\phi}{\psi}&=\mel{\phi}{U^\dagger(t) U(t)}{\psi}\\
 &= \exp(iEt)\bra{\phi}U(t)\ket{\psi}\\
@@ -1209,7 +1210,7 @@ Does every $\ket{\psi} \in \Hh$ define a full trajectory $U(t)\ket{\psi}$ with i
 \[\lim_{t\to-\infty}\exp(iEt)\mel{\phi}{U_0(t)}{\psi_{in}}\]
 Since $\ket{\phi}$ is always localized near the potential, we can see that this limit is going to be zero since the in trajectory is far away from the potential iin the limit. So this gives us some proof for the orthogonality theorem (you should go to Reed \& Simon to see the rest), but we don't yet know whether bound states and scattering states are the only possibilities! Let's define what a nice space should look like:
 \begin{thm}[Asymptotic Completeness]
-A scattering theory is called asymptotically complete if $R_-=R_+ = R$. The Asymptotic Completeness theorem would then tell us that if a scattering theory is asymptotically complete, then $\Hh=R\oplus \Bb$ whenever $V(r)$ satisfies the asymptotic condition. 
+A scattering theory is called asymptotically complete if $\Rr_-=\Rr_+ = \Rr$. The Asymptotic Completeness theorem would then tell us that if a scattering theory is asymptotically complete, then $\Hh=\Rr\oplus \Bb$ whenever $V(r)$ satisfies the asymptotic condition. 
 \end{thm}
 Assuming these conditions, we can see that $\ket{\psi} = \Omega_+ \ket{\psi_{in}} = \Omega_- \ket{\psi_{out}}$. Since $\Omega_\pm$ is an isometry, we can consider the adjoint $\Omega_\pm^\dagger$ which goes in the opposite direction. All along, these operators were just a way to construct something we can observe - one of the most important observables in all of physics:
 \begin{defn}[Scattering Operator] Let $\ket{\psi}=\Omega_-\ket{\psi_{out}}$. Then we define the scattering operator (or S-Matrix).
@@ -1341,6 +1342,57 @@ The order in the limit is not important, so you can actually take $t=t'$. So $\m
 \end{align}
 \begin{exercise}Prove equation \eqref{Tmatrix}\end{exercise}
 This gives a direct way of calculating $t(p\to p')$ which we saw previously, through a perturbation expansion in $G_0(z)$.
+
+\subsection{Stationary Scattering States and the Born Approximation}
+Earlier we saw the connection between the theoretical calculations of scattering experiments and the experimental calculations. You can observe the $S$ matrix via the differential cross section. We want to predict this differential cross section for some system, so we need a model - the free particle in a central potential is the one we will focus on here. 
+\begin{equation}
+H=\frac{p^2}{2m}+V(r)
+\end{equation}
+How do we get $S$ from $H$? When the potential is strong and nontrivial this is difficult, so we will apply simplifications - exploit the fact that $V$ is small. In the last section we derived the equation
+\begin{equation}\mel{\chi}{S}{\phi}=\delta(p'-p)-2\pi i \delta(E_{p'}-E_p)\lim_{\epsilon\to 0^+}\mel{p'}{T(E_p+i\epsilon)}{p}\label{scatter}\end{equation}
+\begin{equation}\mel{p'}{T}{p}= \mel{p'}{V}{p}+\int \dd^3 p" \frac{\mel{p'}{V}{p"}}{z-E_{p"}}\mel{p"}{T}{p}\end{equation}
+Where the equation for $T$ can be solved via a series expansion. Recall as well that we introduced the improper vectors $\ket{p_\pm} = \Omega_\pm \ket{p}$. We can expand full states in terms of these improper vectors. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{Figures/stationary_scattering.png}
+    \caption*{}
+    \label{fig:stationary_sc}
+\end{figure}
+
+So, far away from the origin the improper states look like plane waves, but close to the origin there is a disturbance (pictured in the above diagram). There is also a phase shift, which is captured in the diagram by the shifting of the peaks. On the right side of the diagram, the picture looks like plane waves disturbed by some kind of circularly symmetric wave which may decay far away from the origin of the potential. Let's write down how to write full states in terms of these improper states.
+\[\ket{\phi_+} = \Omega_+ \int \dd^3 p \phi(p)\ket{p} = \int \dd^3 p \phi(p)\ket{p_+}\]
+So all you need to do to get the full trajectory from an asymptotic trajectory is replace $\ket{p}$ by $\ket{p_\pm}$. These improper states are called stationary scattering states.
+\begin{defn}[Stationary Scattering State] Let $\{\ket{p}\}$ be a momentum eigenbasis. The following defines a stationary state $\ket{p_\pm}$.
+\begin{equation}\ket{p_\pm} = \Omega_\pm \ket{p}\end{equation}
+\end{defn}
+These states satisfy the time independent Schrodinger equation: $H\ket{p_\pm} = E_p \ket{p_\pm}$ - which you can see by the intertwining relation:
+\[H\ket{p_\pm} = H\Omega_\pm\ket{p} = \Omega_{\pm} H_0 \ket{p} = E_p \ket{p_\pm}\]
+Now, the interpretation of these things is not as vectors in the Hilbert space (remember - we integrate them against functions to build vectors, so they're distributions). For these scattering states to be defined, they really need to be as components of a trajectory. But from the definition of the M\o ller operators, you might think that the statement $U(t)\ket{\phi_+} \to U_0(t)\ket{\phi}$ implies that $U(t)\ket{p_+} \to U_0(t)\ket{p}$. But this is not the case! Since $U(t)\ket{p_+} = e^{-iE_p t} \ket{p_+}$ - the limit does not exist! So you can't take limits of these objects - only limits of states which are images of the distribution associated with them. For some intuition behind this, imagine a water wave. A wave localized near the origin will diffuse out - it has a well defined limit, but the fourier components of the wave don't individually have well defined limits! The limiting effect only shows up because of constructive and destructive interference. For a rigorous description, see the Riemann-Lebesgue Lemma. Recall that $\Omega_\pm : \Hh \to\Rr$. Then we see that since the $\ket{p}$s form an improper complete basis for $\Hh$, then the stationary scattering states form an improper complete basis for $\Rr$. Let's have a look at the orthogonality conditions then:
+\[\braket{p_+}{p'_+} = \bra{p}\Omega^\dagger_+\Omega_+\ket{p'} = \braket{p}{p'} = \delta(p-p')\]
+Since by assumption $\Hh = \Rr \oplus \Bb$, let's pick a basis $\ket{E_n}$ for $\Bb$. Then our completeness relation is:
+\[\II = \int \dd^3 p \dyad{p_\pm} + \sum_k \dyad{E_k}\]
+Now we need to g get an equation for stationary scattering states. We have already seen:
+\[\ket{\phi_\pm} = \ket{\phi}+\int \dd^3 p G(E_p\pm i\epsilon) V\dyad{p}\ket{\phi}\]
+\[\implies \int \dd^3 p \phi(p)\ket{p_\pm} = \int\dd^3 p \phi(p)\ket{p} + \int \dd^3 p G(E_p \pm i\epsilon)V\ket{p}\phi(p)\]
+\[\implies \ket{p_\pm} = \ket{p} + G(E_p\pm i\epsilon) V\ket{p}\]
+Now consider the T matrix $t(p\to p') = \mel{p'}{T}{p}$. We have $T(E_p+i\epsilon)\ket{p} = [V+VG(E_p+i\epsilon)V]\ket{p}$, so then:
+\begin{equation}T(E_p\pm i\epsilon) \ket{p} = V\ket{p_\pm},\qquad t(p\to p') = \mel{p'}{V}{p_\pm}\end{equation}
+If we could somehow figure out $\ket{p_\pm}$ then we would have a great solution! First, replace $GV$ by $G_0 T$ and substitute into the above:
+\begin{equation}\ket{p_\pm} = \ket{p} + G_0(E_p\pm i\epsilon)V\ket{p_\pm}\end{equation}
+Which is the Lippman Schwinger equation for the stationary scattering states. The solution is again the Born series:
+\[\ket{p_\pm} = \ket{p} + G_0 V\ket{p} + (G_0 V)^2 \ket{p} + ...\]
+This gives us an expression for the T matrix, called the Born approximation:
+\begin{thm}[Born Approximation]
+\begin{equation}t(p\to p') = \mel{p'}{V}{p}+\mel{p'}{V G_0 V}{p} + ... \approx \mel{p'}{V}{p}\end{equation}
+\end{thm}
+This final approximation is something we can calculate completely, with only a model of the internal structure of the system. We need absolutely no information about the Greens function or anything - just the potential. Let's do an example now.
+
+\subsubsection*{Example}
+Let $V(x) = -\exp(-\lambda |x|)$. Then we have $t(p\to p') = \int e^{ip'x}e^{-\lambda |x|}e^{-ipx}\dd x$ This integral becomes:
+\begin{align*}t(p\to p')&=\frac{1}{2\pi}\left[\int_0^\infty e^{i(p'-p)x} e^{-\lambda x}\dd x + \int_{-\infty}^0 e^{i(p'-p)x}e^{\lambda x} \dd x\right]\\
+&= \frac{1}{2\pi}\left[\frac{1}{i(p'-p)+\lambda}-\frac{1}{i(p'-p)-\lambda}\right]\\
+&= \frac{2\lambda}{(p'-p)^2+\lambda^2}\end{align*}
 
 \pagebreak
 
