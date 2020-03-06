@@ -9,11 +9,9 @@
 % ---------------- Packages ----------------------------
 \usepackage{graphicx}
 \usepackage{listings}
-\usepackage{amsfonts}
-\usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{wasysym}
 \usepackage{physics}
+\usepackage{amsfonts}
 \usepackage{listings}
 \usepackage{amsmath}
 \usepackage[margin=1in]{geometry}
@@ -23,7 +21,6 @@
 \captionsetup{belowskip=-30pt}
 \usepackage{hyperref}
 \usepackage{biblatex}
-\usepackage{fouriernc}
 \bibliography{bib}
 % ------------------------------------------------------
 
@@ -105,9 +102,9 @@ Course Outline
         \item Green's Operators, T Operators
         \item Stationary Scattering States
     \end{enumerate}
-    \item Relativistic Quantum Mechanics
+    \item Additional Topics
     \begin{enumerate}
-        \item Quantum Lorentz \& Poincare Transformations
+        \item Symmetries
         \item Wigner's Theorem
     \end{enumerate}
 \end{enumerate}
@@ -188,7 +185,7 @@ You will notice that if you draw vectors which \textit{stay tangent to the surfa
 \subsubsection{Parallel Transport in Relative Space}
 Let's consider this parallel transport in our relative space $r(2,2)$, which we saw earlier could be represented as that sort of 'cone' shape. You can check that on an ordinary trajectory on the surface of this cone, vectors do not undergo any strange transformation. But consider when a vector is transported around the singularity. Suppose the trajectory begins at a point $x$, and crosses through the point $-x \sim x$. A vector held parallel along this trajectory is going to have to undergo the transformation $v \mapsto -v$ in order to satisfy the criteria for 'parallel transport'. You can see the reasoning behind this in more detail in any text on Differential Geometry.
 
-Now let's look at three dimensions. We consider the relative space $r(2,3) \cong \RP^2$ of two particles living in three spacial dimensions. A good way to visualize this space (Figure \ref{fig:23} may help in this task) is as follows: imagine the sphere, where each point $x$ is identified with the point on the opposite side of the sphere. As you move towards the equator, you need to identify points on opposite sides of the equator. In this way, it's sort of like the upper half of the sphere (of radius $d/2$, where $d$ is the distance between the particles). There are some great visualizations of this on wikipedia, if you look up 'real projective space'.
+Now let's look at three dimensions. We consider the relative space $r(2,3) \cong \RP^2$ of two particles living in three spacial dimensions. A good way to visualize this space is as follows: imagine the sphere, where each point $x$ is identified with the point on the opposite side of the sphere. As you move towards the equator, you need to identify points on opposite sides of the equator. In this way, it's sort of like the upper half of the sphere (of radius $d/2$, where $d$ is the distance between the particles). There are some great visualizations of this on wikipedia, if you look up 'real projective space'.
 
 The next thing to do would be to try to look at trajectories in this space, so let's consider a few different trajectories, as shown in the next figure.
 
@@ -326,7 +323,7 @@ f_{k\ell}(x) = i[D_k,D_\ell] = \pdv{b_\ell}{x^k} - \pdv{b_k}{x^\ell}=0
 
 As long as equation 5 is imposed everywhere (except singularities, such as is the case on $\mathcal{M}=r(2,2)$) we will have freedom in choosing the $b_k$ terms. This freedom at the singularities allows us to pick nontrivial $b_k$ terms, which gives rise to interesting phenomena in 2-d materials. Due to $b_k$ being curl free, we also now know that $P_\gamma(y,x)$ is path independent as long as $\gamma$ does not encircle the singularity.
 
-Let's study what happens when you go in a loop around the singularity. You can see that $P_\gamma(x,x)$ should just be some number $e^{i\xi}$ for some $\xi \in [0,2\pi)$, as $h_x \cong \CC$ and $\dim(\CC)=1$. However, this $\xi$ turns out to be independent of $x$! Consider now Figure \ref{fig:31}. 
+Let's study what happens when you go in a loop around the singularity. You can see that $P_\gamma(x,x)$ should just be some number $e^{i\xi}$ for some $\xi \in [0,2\pi)$, as $h_x \cong \CC$ and $\dim(\CC)=1$. However, this $\xi$ turns out to be independent of $x$!
 
 \begin{figure}[ht]
     \centering
@@ -1393,6 +1390,91 @@ Let $V(x) = -\exp(-\lambda |x|)$. Then we have $t(p\to p') = \int e^{ip'x}e^{-\l
 \begin{align*}t(p\to p')&=\frac{1}{2\pi}\left[\int_0^\infty e^{i(p'-p)x} e^{-\lambda x}\dd x + \int_{-\infty}^0 e^{i(p'-p)x}e^{\lambda x} \dd x\right]\\
 &= \frac{1}{2\pi}\left[\frac{1}{i(p'-p)+\lambda}-\frac{1}{i(p'-p)-\lambda}\right]\\
 &= \frac{2\lambda}{(p'-p)^2+\lambda^2}\end{align*}
+
+\subsection{Spacial Description of Scattering}
+In the previous section we looked at momentum space scattering, so let's look at the spacial description through a Fourier transform. Step one is to look at the stationary scattering state wavefunctions $\braket{x}{p_\pm}$. These satisfy:
+\[\ket{p_\pm} = \ket{p}+G_0(E_p\pm i \epsilon) V\ket{p_\pm}\]
+\begin{equation}\label{ppm}\braket{x}{p_\pm} + \braket{x}{p} + \int \dd^3 x' \mel{x}{G_0(E_p\pm i\epsilon)}{x'}V(x')\braket{x'}{p_\pm}\end{equation}
+So this is just an integral equation which we can solve. Let's look at the hard part first, which is $\mel{x}{G_0}{x'}$. We know how to diagonalize $G_0$ as $\II/(z-H_0)$. 
+\[\mel{x}{G_0}{x'}=\mel{x}{\II(z-H_0)^{-1}}{x'}=\int \dd^3 p \bra{x}\II(z-H_0)^{-1} \dyad{p}\ket{x'}\]
+Noting that $H_0\ket{p}=E_p\ket{p}$, we have:
+\[\mel{x}{G_0}{x'} = \int \dd^3 p \braket{x}{p}\braket{p}{x'} \frac{1}{z-E_p} = \frac{1}{(2\pi)^3}\int \dd^3 p \frac{e^{ip\cdot(x-x')}}{z-\frac{p^2}{2m}}\]
+This integral is doable with contour integration. Note that we really only care about when $|t|$ is very large. So if the particle has some wave velocity $v$ we are interested only in large $|x|$ - when the particle is localized far away from the scattering target. For the integral, convert to polar coordinates by setting $x-x'$ to be the polar axis, and then we have $ip\cdot(x-x') = i|p| |x-x'|\cos\theta$ in polar coordinates. In spherical coordinates we just introduce another angle transverse to $\theta$. So a factor of $4\pi$ vanishes from the denominator, and by a $u$ substitution we can integrate by contour integration.
+\[\mel{x}{G_0}{x'}=\frac{im}{2\pi^2 |x-x'|}\int_{-\infty}^\infty \dd u \frac{u e^{iu|x-x'|}}{u^2-2mz} = \frac{-m}{2\pi} \frac{\exp(i\sqrt{2mz} |x-x'|)}{|x-x'|}\]
+We don't really care about $z$ in general, we only care about when $z = E_p\pm i\epsilon$. So as $z \to E_p$ (from above or below), we get:
+\begin{equation}\mel{x}{G_0(E_p\pm i0)}{x'}= \frac{-m}{2\pi}\frac{e^{\pm i |p||x-x'|}}{|x-x'|} \end{equation}
+Substituting this into \eqref{ppm}: Suppose $|V(x)| = 0$ for $|x|>a>0$. with $a$ large.
+\[\braket{x}{p_\pm}=\braket{x}{p} - \frac{m}{2\pi}\int \dd^3 x' \frac{e^{\pm i|p||x-x'|}}{|x-x'|} V(x') \braket{x'}{p_\pm}\]
+So we only need to integrate on some finite effective range of the potential, which gives us essentially a plane wave plus something short range. Let's expand $|x-x'|$:
+\[|x-x'| = r\left[1-\frac{x\cdot x'}{r^2}+O\left(\frac{r'^2}{r^2}\right)\right]\]
+\[\implies \braket{x}{p_\pm} = \braket{x}{p} - \frac{me^{i|p|r}}{2\pi} \int \dd^3 x' e^{\mp i|p|\hat{x}\cdot x'} V(x')\braket{x'}{p_\pm} \left[1+O\left(\frac{a}{r}+\frac{a^2}{r}\right)\right]\]
+When $r$ is large this then becomes:
+\begin{equation}\braket{x}{p_\pm} \xrightarrow[r\to\infty]{} (2\pi)^{-3/2} \left[ e^{i p\cdot x} - (2\pi)^2 m \mel{\pm |p|\hat x}{V}{p_\pm} e^{i|p|r}\right]\end{equation}
+Since $-(2\pi)^2 m\mel{p'}{V}{p_\pm} = f(p\to p')$, we have:
+\begin{equation} \braket{x}{p_\pm} \xrightarrow[r\to \infty]{} (2\pi)^{-3/2}\left[e^{ip\cdot x} + f(p \to |p|\hat x) \frac{1}{r}e^{ipr}\right] \end{equation}
+Which is a plane wave plus a spherical wave!
+
+Now let's focus on the dynamics of the system as time passes. We have:
+\[\ket{\psi_{in}} = \int \dd^3 p \phi(p) \ket{p}\]
+With some kind of 'kick' where we peak the momentum wave function $\phi(p)$ around some $p_0$ which is parallel to the scattering beam direction. This looks like some kind of gaussian centered at $p_0$.  To see the free wave function $\psi_0$ we just solve the free theory to get \[\psi_0(x,t) = (2\pi)^{-3/2} \int \dd^3 p \phi(p)e^{i(p\cdot x - E_p t)}\]
+The group velocity is $\pdv{E_p}{p} = v$ and we expand this around $E_0$ which is the component focused around $p_0$ and get $E_p = E_0 + v_0 (p-p_0) + O(\Delta p^2) = -E_0 + v_0 p$.  Where $v_0 = \frac{p_0}{m}$ and $E_p = \frac{p^2}{2m}$. So the outgoing wave can be written as:
+\[\psi_{in}(x,t) \approx (2\pi)^{-3/2} e^{iE_0 t} \int \dd^3 p \phi(p) e^{ip\cdot(x-v_0 t)} (1+ O(\Delta p^2 t))\]
+\[\approx \psi_{in}(x-v_0 t) e^{i E_0 t} \left(1+O\left(\frac{t}{mb^2}\right)\right)\]
+Where $b$ is the impact parameter. Here we assume that $a << b$ - the effective range of the potential is much smaller than the impact parameter. Assume that at $t=0$ the particle arrives at the target. Around $t = 0$ we have:
+\[\psi(x,t) = \int \dd^3 p \phi(p) e^{-iE_p t} \braket{x}{p_+}\]
+And for $t>0$ and $r >> pa^2$ (where $a$ is the effective range of the potential) we may write:
+\[\braket{x}{\psi} \to (2\pi)^{-3/2} \int \dd^3p \phi(p) e^{-iE_p t} \left[e^{ipx} + f(p \to \rho\hat x) \frac{e^{ipr}}{r}\right] = \psi_{in} + \psi_{\hat x}\]
+We haven't derived any guarantees on the smoothness of the F matrix, but let's assume it's smooth for the time being. If $\phi(p)$ is very localized around $p_0$ then
+\[\psi_{\hat x}(x,t) \approx (2\pi)^{-3/2} f(p_0 \to p_0 \hat x)\frac{\psi_in(r\hat k,t)}{r}(1+O(r/p_0b^2))\]
+So the scattered wave at $x$ is some radially decaying function multiplied by the unscattered wave at $r \hat k$.
+
+\pagebreak
+\section{Symmetries and Wigner's Theorem}
+The last part of this course will be to discuss a theorem called Wigner's theorem, which tells us how to implement symmetries in many particle quantum mechanics. Symmetries make it easier to do physics because it slims down the number of things we need to examine! 
+\begin{defn}[Symmetry Transformation] A symmetry transformation $T$ is an invertible transformation of rays\footnote{A ray $[{\ket{\psi}}]$ is the collection $\{a\ket{\psi}\}$ for all $a \in \CC$.} in Hilbert space which preserves transition probabilities. That is: for all $\ket\psi \in [\ket\psi_0]$ and for all $\ket\phi \in [\ket\phi_0]$, with $\ket\psi' \in T[\ket\psi_0], \ket\phi'\in T[\ket\phi_0]$, the transition probabilities are conserved:
+\[|\braket{\psi'}{\phi'}|^2 = |\braket{\psi}{\phi}|^2\] 
+\end{defn}
+The reason we define these transformations over rays is because up to a normalization constant, states which are multiplies of each other are equivalent. Symmetry transformations need not be linear - they may be antilinear (which we will define). Our goal will be to prove Wigner's theorem:
+\begin{thm}[Wigner] Any symmetry transformation $T$ has a representation over the Hilbert space of states given by an operator which is either Unitary or Antiunitary.
+\end{thm}
+By antiunitary we mean that the transformation $U$ preserves transition probabilities and that $U(a\ket{\psi}) = a^* U(\ket{\psi})$.
+\subsection{Proof of Wigner's Theorem}
+An example of an antiunitary symmetry would be time-reversal symmetry. To begin the proof, we need to figure out that $T$ is an operator in the first place. Consider a complete orthonormal set of state vectors belonging to rays $\ket{\psi_j} \in [\ket{\phi_k}]$ with $\braket{\psi_k}{\psi_j} = \delta_{kj}$. Consider $\ket{\psi_j'} \in T[\ket{\phi_j}]$. Then we know from the preservation of transition probabilities that these $\ket{\psi_j'}$ are orthonormal, since $\braket{\psi'_j}{\psi'_k} \geq 0$. We need this basis to also be complete. Suppose this is not a complete basis - then there is some $\ket{\chi'}$ which is orthogonal to all of the $\ket{\psi_j'}$'s. Then we may apply the inverse $T^{-1}$ to the ray $[\ket{\chi'}]$ to find $\ket{\chi''}$ which has $|\braket{\chi''}{\psi_j}| = 0$, so $\ket\chi'$ must be equal to one of those $\ket{\psi'_j}$ vectors.
+
+Now we build something called a phase reference. Without loss of generality take $\ket{\psi_1}$ and build 
+\[\ket{\xi_j} = \frac{1}{\sqrt{2}}(\ket{\psi_1} + \ket{\psi_j}) \in [\ket{\xi_j}], j \neq 1\]
+Let $\ket{\xi_j'} \in T[\ket\xi]$ and expand in terms of $\ket{\psi_j'}$ as $\ket{\xi_j'} = \sum_k c_{jk}\ket{\psi'_k}$. Then from the preservation of transition probabilities, $|c_{jj}|=|c_{j1}| = \frac{1}{\sqrt{2}}$. And for $j\neq k$, $|c_{jk}|=0$. We can, for all $j$, choose phases of $\ket{\xi_j'}$ and $\ket{\psi_j'}$.
+
+Denote the vectors $\ket{\xi_j'} = U\ket{\xi_j}$ and $\ket{\psi_j'} = U\ket{\psi_j}$. This is an abuse of notation at the moment but it will work. We then see that:
+\[U\frac{1}{\sqrt{2}}(\ket{\psi_j}+\ket{\psi_1}) = U\ket{\xi_j} = \frac{1}{\sqrt{2}}(U\ket{\psi_j}+U\ket{\psi_1})\]
+So this $U$ thing behaves almost like an operator. Let $\ket{\Psi} \in [\ket\Phi]$ be an arbitary vector and expand.
+\[\ket\Psi = \sum_j c_j \ket{\psi_j}\]
+Any vector $\ket{\Psi'}$ belonging to $T[\ket\Phi]$ may be written as
+\[\ket{\Psi'} = \sum_j c_j' \ket{\psi_j'}\]
+Since the transition probabilities are conserved,
+\[|\braket{\psi_j}{\Psi}|^2 = |\braket{U\psi_j}{\Psi'}|^2\]
+So $|c_j|^2 = |c_j'|^2$. This means the two sets of coefficients differ only up to a possible phase. We only know that these phases are simple in the case of the basis $\ket\psi_j$ vectors. The other equation we get is
+\[|\braket{\xi_j}{\Psi}|^2 = |\braket{U\xi_j}{\Psi'}|^2 \implies |c_j+c_1|^2 = |c_j'+c_1'|^2\]
+Take these two relations between the $c_j$ coefficicents and divide them - you will get:
+\[\Re\frac{c_1}{c_j} = \Re \frac{c_1'}{c_j'}\]
+And also,
+\[\Im\frac{c_1}{c_j} = \pm \Im \frac{c_1'}{c_j'}\]
+This $\pm$ is important - we either have $c_j/c_1 = c'_j/c_1'$ or $c_j/c_1 = (c_j'/c_1')^*$. Nothing now forbids different $j$ from having different cases - we need to show that either all the $c_j$'s get preserved or all the $c_j$'s get conjugated. Suppose otherwise. Then for some $j$ we have $c_j/c_1 = c_j'/c_1'$ but for some $k$ we have $c_k/c_1 = c_k^*/c_1^*$. Define the state:
+\[\ket\phi = \frac{1}{\sqrt 3} (\ket{\psi_1} + \ket{\psi_j} + \ket{\psi_k})\]
+So the transformed vector is 
+\[\ket{\phi'} = \frac{\alpha}{\sqrt 3} (U\ket{\psi_1} + U\ket{\psi_j} + U\ket{\psi_k})\]
+With $|\alpha| = 1$. But equality of $|\braket{\phi}{\psi}|^2$ with $|\braket{\phi'}{\psi'}|^2$ requires that $\Im c_j/c_1 = 0 $ or $\Im c_k/c_1 = 0$ (as an exercise) which is a contradiction. So either all of the components get conjugated or none. So let's prove that this happens with arbitrary superpositions. Choose either:
+\begin{align*}\textrm{(a)} &\qquad U\left[\sum_j c_j \ket{\psi_j}\right] = \sum_j c_j U\ket{\psi_j}\end{align*}
+or
+\begin{align*}\textrm{(b)} & \qquad U\left[\sum_j c_j \ket{\psi_j}\right] = \sum_j c_j^* U\ket{\psi_j}\end{align*}
+Suppose we find a pair of states $\ket{\Psi} = \sum_j a_j\ket{\psi_j}$, $\ket{\Phi}=\sum_j b_j\ket{\psi_j}$ so that (a) applies to one and (b) applies to the other. Then:
+\[|\braket{\Psi}{\Phi}|^2 = \left|\sum_j a_j b_j^*\right| =|\braket{\Psi'}{\Phi'}|^2  =  \left|\sum_j a_j b_j\right|\]
+So then: $\sum_{j,k} \Im(a_j^* a_k)\Im(b_j^* b_k) = 0$. We can always find a state vector $\ket{\Xi} = \sum_j d_j \ket{\psi_j}$ so that:
+\[\sum_{j,k} \Im(d_j^* d_k)\Im(a_j^* a_k) = 0\] 
+and
+\[\sum_{j,k} \Im(d_j^* d_k)\Im(b_j^* b_k) = 0\]
+But this vector $\ket\Xi$ can't possibly satisfy both of these, since we said that it can't satisfy both (a) and (b) at the same time. So this is a contradiction. Thus $U$ acts either antiunitarily or unitarily. This completes the course!
+
 
 \pagebreak
 
