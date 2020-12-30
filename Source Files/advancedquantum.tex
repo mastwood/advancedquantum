@@ -985,44 +985,38 @@ To see this, begin with the commutator $[\hat\Psi(x),D(\hat\Psi,\phi)]$. Then ap
 \pdv{s}\hat\Psi(s,x) &= \pdv{s}\left(\exp{-s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)} \hat\Psi(x) \exp{s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)}\right)\\
 &= -\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) \left(\exp{-s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)} \hat\Psi(x) \exp{s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)}\right)\\
 &+\left(\exp{-s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)}\hat\Psi(x)  \int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) \exp{s\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)}\right)\\
-&= -\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) D^{\dagger s} \hat\Psi(x)D^s+ D^{\dagger s}\hat\Psi(x)\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)D^s
-\end{align*}
-Note that $[\exp(A),A] = 0$ from the following identity:
-\[[A,\exp{B}]= \int_0^1 \dd s \exp{(1-s)B}[A,B]\exp{sB}\]
-Then we have the following.
-\begin{align*}
-\pdv{s}\hat\Psi(s,x) &= -\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) D^{\dagger s} \hat\Psi(x)D^s+ D^{\dagger s}\hat\Psi(x)\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)D^s\\
+&= -\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi) D^{\dagger s} \hat\Psi(x)D^s+ D^{\dagger s}\hat\Psi(x)\int \dd^3 x (\phi\hat\Psi^\dagger-\overline\phi\hat\Psi)D^s\\
 &= D^{\dagger s} [\hat\Psi(x),\int \dd^3 y \phi(y)\hat\Psi^\dagger(y)-\overline\phi(y)\hat\Psi(y)]D^s\\
 [\hat\Psi(x),\int \dd^3 y \phi(y)\hat\Psi^\dagger(y)-\overline\phi(y)\hat\Psi(y)] &= \int \dd^3 y \hat\Psi(x)\phi(y)\hat\Psi^\dagger(y)-\hat\Psi(x)\overline\phi(y)\hat\Psi(y)\\
 &= \int\dd^3 y \phi(y)([\hat\Psi(x),\hat\Psi^\dagger(y)]-[\hat\Psi(x),\hat\Psi(y)]\\
-&= \int \dd^3 y \phi(y)(0-\delta(x-y))\\
-&= -\phi(x)
+&= \int \dd^3 y \phi(y)(\delta(x-y)\II-0)\\
+&= \phi(x)\II
 \end{align*}
 Putting this together tells us:
-\begin{equation}
-\Psi(1,x)=D^\dagger \hat\Psi(x) D = -\phi(x)\hat\Psi(x)
-\end{equation}
-\[[\hat\Psi,D(\hat\Psi,\phi)] = (\phi-1)D(\hat\Psi,\phi)\hat\Psi\]
-\[\implies [\hat\Psi,D(\hat\Psi,\phi)]\ket{\Omega} = (\phi-1)D(\hat\Psi,\phi)\hat\Psi\ket{\Omega}\]
 \begin{align}
-\implies \hat\Psi(x) D(\hat\Psi(x),\phi(x))\ket{\Omega} - D(\hat\Psi(x),\phi(x))\hat\Psi(x)\ket{\Omega} &= (\phi(x)-1)\ket{\phi}\\
-\hat\Psi(x)\ket{\phi}-\ket{\phi}=(\phi(x)-1)\ket{\phi}\\
+\hat\Psi(s,x)&=s\phi(x)\II+\hat\Psi(0,x)\\
+\hat\Psi(1,x)&=D^\dagger \hat\Psi(x) D = \phi(x)\II+\hat\Psi(0,x)
+\end{align}
+\[[\hat\Psi,D(\hat\Psi,\phi)] = \phi(x)D(\hat\Psi,\phi)\]
+\[\implies [\hat\Psi,D(\hat\Psi,\phi)]\ket{\Omega} = \phi(x)D(\hat\Psi,\phi)\ket{\Omega}\]
+\begin{align}
+\implies \hat\Psi(x) D(\hat\Psi(x),\phi(x))\ket{\Omega} - D(\hat\Psi(x),\phi(x))\hat\Psi(x)\ket{\Omega} &= \phi(x)\ket{\phi}\\
 \hat\Psi(x)\ket{\phi}=\phi(x)\ket{\phi}
 \end{align}
 Now we begin the variational calculation using these states. Let our variational class to be all field coherent states which are twice differentiable.
 \begin{align}
-E^* &= \inf_{\ket{\phi}\in V} \expval{\dd^3 x \hat\Psi^\dagger(x)(T(x)-V_0(x))\hat\Psi(x) + \frac{1}{2}\iint\dd^3 x \dd^3 y \hat\Psi^\dagger(x)\hat\Psi^\dagger(y)V(x,y)\hat\Psi(x)\hat\Psi(y)}{\phi}\\
+E^* &= \inf_{\ket{\phi}\in V} \expval{\int \dd^3 x \hat\Psi^\dagger(x)(T(x)-V_0(x))\hat\Psi(x) + \frac{1}{2}\iint\dd^3 x \dd^3 y \hat\Psi^\dagger(x)\hat\Psi^\dagger(y)V(x,y)\hat\Psi(x)\hat\Psi(y)}{\phi}\\
 &= \inf_{\phi}\int \dd^3 x\overline\phi(x) (T(x)-V_0(x))\phi(x)+\frac{1}{2} \iint \dd^3 x \dd^3 y \overline\phi(x)\overline\phi(y)V(x,y)\phi(x)\phi(y)
 \end{align}
-This is a functional of some $\phi$! This means that this is now just a problem in the calculus of variations. We needed $\phi$ to be twice differentiable because $T = \frac{-\hbar^2}{2m}\nabla^2$. So now we let our Action be the following.
-\[S[\phi,\partial_x \phi, \partial_x^2 \phi] =\int \dd^3 x\overline\phi(x) (T(x)-V_0(x))\phi(x)+\frac{1}{2} \iint \dd^3 x \dd^3 y \overline\phi(x)\overline\phi(y)V(x,y)\phi(x)\phi(y)\]
-Which gives us the Euler-Lagrange equations:
+This is a functional of some $\phi$! This means that this is now just a problem in the calculus of variations. We needed $\phi$ to be twice differentiable because $T = \frac{-\hbar^2}{2m}\nabla^2$. So now we let our Lagrangian $L$ be the following.
+\[L[\phi,\partial_x \phi, \partial_x^2 \phi] =\overline\phi(x) (T(x)-V_0(x))\phi(x)+\frac{1}{2} \int \dd^3 y \overline\phi(x)\overline\phi(y)V(x,y)\phi(x)\phi(y)\]
+Which gives us the Euler-Lagrange equations $\mathcal{L}[\phi]=0$ :
 \begin{equation}
-\pdv{S}{\phi}-\pdv{x}\pdv{S}{\partial_x\phi} = 0
+\pdv{L}{\phi}-\pdv{x}\pdv{L}{\partial_x\phi} = 0
 \end{equation}
 As a simple example, we can take $V(x,y) = \kappa \delta^{(3)}(x-y)$. This gives a very special form for the equations of motion: the Time-Independent Gross-Pitaevskii Equation.
 \begin{equation}
-L[\phi]=0\implies \left(\frac{-\hbar^2}{2m}\nabla^2 + V_0(x)\right)\phi(x) + \kappa|\phi(x)|^2 \phi(x)=0
+\mathcal{L}[\phi]=0\implies \left(\frac{-\hbar^2}{2m}\nabla^2 + V_0(x)\right)\phi(x) + \kappa|\phi(x)|^2 \phi(x)=0
 \end{equation}
 
 Next we will consider another system, the degenerate electron gas. This is appropriate for a plasma or a metal.
