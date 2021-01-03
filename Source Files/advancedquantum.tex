@@ -1233,9 +1233,9 @@ Since $S$ and $H_0$ commute, we can try to diagonalize $S$ in terms of $H_0$ - w
 Where the term $ \mel{p}{S}{p'}\braket{p'}$ is referred to as the S-matrix element (or just the S matrix as an abuse of notation). We need to use conesrvation of energy here:
 \[0 = \mel{p}{[H,S]}{p} = (E_{p}-E_{p'})\mel{p}{S}{p'}\]
 So this tells us that $\mel{p}{S}{p'}=\delta(E_p-E_{p'})$ times something else. Let's write $S = \II + R$ where $R$ is called the R-matrix. Then $\II$ gives us the non-scattering component, and $R$ should give us something else. We will see:
-\begin{equation}\label{scatter2}\mel{p}{R}{p'}=-2\pi i \delta(E_p-E_{p'})t(p \to p')\end{equation}
-Where $t$ is called the T-matrix. So then we have $\mel{p}{S}{p'}=\delta(p-p')-2\pi i \delta(E_p-E_{p'})t(p\to p')$. The momentum delta function gives us the scenario when no scattering occurs - if no scattering occurs then the $t$ matrix is zero, and so the $S$ matrix should only be nonzero when momentum is carried over. The T-matrix should be smooth, which you can prove through something called the cluster decomposition principle (which you should look up). Secondly, the T matrix is only defined on-shell, which means that $p^2=p'^2$ - we guarantee this with the delta function. In addition, we will define the "scattering amplitude" by pulling out some more constants.
-\begin{equation}\label{scatter3} f(p \to p') = -(2\pi)^2 m t(p \to p')\end{equation}
+\begin{equation}\label{scatter2}\mel{p}{R}{p'}=-2\pi i \delta(E_p-E_{p'})t(p' \to p)\end{equation}
+Where $t$ is called the T-matrix. So then we have $\mel{p}{S}{p'}=\delta(p-p')-2\pi i \delta(E_p-E_{p'})t(p' \to p)$. The momentum delta function gives us the scenario when no scattering occurs - if no scattering occurs then the $t$ matrix is zero, and so the $S$ matrix should only be nonzero when momentum is carried over. The T-matrix should be smooth, which you can prove through something called the cluster decomposition principle (which you should look up). Secondly, the T matrix is only defined on-shell, which means that $p^2=p'^2$ - we guarantee this with the delta function. In addition, we will define the "scattering amplitude" by pulling out some more constants.
+\begin{equation}\label{scatter3} f(p' \to p) = -(2\pi)^2 m t(p' \to p)\end{equation}
 Now that we have the definitions necessary, we will describe a proper scattering experiment and show how the S-matrix may be measured in principle.
 \pagebreak
 
@@ -1254,16 +1254,16 @@ This apparatus demonstrates the setup for a typical scattering experiment. Parti
 \end{defn}
 So now, given an in wavefunction $\braket{p}{\psi_{in}}$ we can find the probability that the particle is scattered into a volume $\dd^3 p$ of momentum space, which we denote $w(\psi_{in}\to \dd^3 p) = \dd^3 p |\psi_{out}(p)|^2$. Then the probability this particle emerges in the solid angle $\dd \Omega$ along the direction $\hat p$ (the unit vector in the direction of $p = \hat p |p|$) is given by:
 \begin{equation}\label{scatter4}w(\psi_{in} \to \dd \Omega) = \dd \Omega \int_0^\infty p^2 \dd p |\psi_{out}(p)|^2\end{equation}
-All we're doing here is throwing out the momentum of the output particle by transforming from $p$ to $\Omega$. In some cases a detector can find the momentum but the typical experiment can not, this is done via calorimetry. We now will connect this with the F-matrix which we defined in equation \eqref{scatter3}. Let $\phi_\rho(p) = e^{-i\rho\cdot \hat p} \phi(p)$, where $\rho$ is the impact parameter vector (deviation vector from the input-target axis). What this does is translate the position by $\rho$, since a phase change by $\exp(-i\rho\cdot \hat p)$ in momentum space is the same as a translation in configuration space (you may show this with the shift property of the Fourier transform). Then we have:
+All we're doing here is throwing out the momentum of the output particle by transforming from $p$ to $\Omega$. In some cases a detector can find the momentum but the typical experiment can not, this is done via calorimetry. We now will connect this with the F-matrix which we defined in equation \eqref{scatter3}. Let $\phi_\rho(p) = e^{-i\rho\cdot p} \phi(p)$, where $\rho$ is the impact parameter vector (deviation vector from the input-target axis). What this does is translate the position by $\rho$, since a phase change by $\exp(-i\rho\cdot p)$ in momentum space is the same as a translation in configuration space (you may show this with the shift property of the Fourier transform). Then we have:
 \[N_{sc}(\dd \Omega) = \sum_{j=1}^{N_{inc}} w(\phi_{\rho j} \to \dd \Omega)\]
 Where we sum over $N_{inc}$ experiments. This gives
-\[N_{sc}(\dd \Omega) = \int \dd^3 \rho n_{inc} w(\phi_{\rho} \to \dd \Omega)= n_{inc} \sigma(\phi \to \dd\Omega)\]
+\[N_{sc}(\dd \Omega) = \int \dd^2 \rho n_{inc} w(\phi_{\rho} \to \dd \Omega)= n_{inc} \sigma(\phi \to \dd\Omega)\]
 Now, combining \eqref{scatter1}, \eqref{scatter2}, \eqref{scatter3}, and \eqref{scatter4}
 \begin{equation}\psi_{out}(p) = \psi_{in}(p) + \frac{i}{2\pi} \int \dd^3 p' \delta(E_{p}-E_{p'})f(p' \to p) \psi_{in}(p')\end{equation}
-And we assume that the wavefunction is localized away from the forward direction. Let's write $\psi_{in} = e^{-i\rho \hat p} \phi$. Then,
-\[\psi_{out} = \frac{i}{2\pi} \int \dd^3 p' \delta(E_p-E_{p'})f(p' \to p) e^{-i\rho \cdot \hat p} \phi(p')\]
+And we assume that the wavefunction is localized away from the forward direction. Let's write $\psi_{in} = e^{-i\rho\cdot p} \phi$. Then,
+\[\psi_{out} = \frac{i}{2\pi} \int \dd^3 p' \delta(E_p-E_{p'})f(p' \to p) e^{-i\rho \cdot p} \phi(p')\]
 Which expands out into the following nasty expression.
-\[\sigma(\phi \to \dd \Omega) = \frac{\dd \Omega}{(2\pi^2)m^2}\int \dd^3 \rho p^2 \dd^3 p  \dd^3 p' \dd^3 p'' \delta(E_p-E_{p'})\delta(E_p-E_{p''})f(p' \to p) \overline{f}(p''\to p) e^{-i \rho \cdot (p'-p'')} \phi(p')\overline{\phi}(p'')\]
+\[\sigma(\phi \to \dd \Omega) = \frac{\dd \Omega}{(2\pi^2)m^2}\int \dd^2 \rho p^2 \dd^3 p  \dd^3 p' \dd^3 p'' \delta(E_p-E_{p'})\delta(E_p-E_{p''})f(p' \to p) \overline{f}(p''\to p) e^{-i \rho \cdot (p'-p'')} \phi(p')\overline{\phi}(p'')\]
 Which reduces to
 \begin{equation}\sigma(\phi \to \dd\Omega) = \dd \Omega \int \dd^3 p' \frac{p'}{p_{||}'}|f(p'\to p)|^2 |\phi(p')|^2\end{equation}
 Finally, if $\phi(p')$ is nonzero only in a tiny region we may replace $f(p'\to p)$ and $\frac{p'}{p_{||}'}$ by their values at $p_0$. This gives our final equation.
