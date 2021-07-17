@@ -1159,18 +1159,19 @@ We arrive at the \textbf{asymptotic condition}: if $V$ satisfies these condition
 First we multiply by $U^\dagger(t)$ (we are assuming that $U$ is unitary, which is not obvious). The desired condition is that:
 \[\ket{\psi}-U^\dagger(t)U_0(t)\ket{\psi_{in}}\to 0\]
 That is, we need to show that $U^\dagger(t)U_0(t)\ket{\psi_{in}}$ has a limit in the first place, then we need to show that its' limit is $\ket{\psi}$. Let's focus on the existence of the limit itself. One trick people use very often is to differentiate and then integrate:
-\begin{equation}\label{scattering_exercise_1}U^\dagger(t)U_o(t) = \II+ \int_0^t \dd s U^\dagger(s) \hat V U_0(s) \end{equation}
-We then require that $\ket{\psi_{in}}+ \int_0^t \dd s U^\dagger(s) \hat V U_0(s)\ket{\psi_{in}}$ has a limit at $t\to -\infty$. A sufficient condition is that the norm of the integral is bounded:
+\begin{equation}\label{scattering_exercise_1}U^\dagger(t)U_o(t) = \II+ i\int_0^t \dd s U^\dagger(s) \hat V U_0(s) \end{equation}
+We then require that $\ket{\psi_{in}}+ i\int_0^t \dd s U^\dagger(s) \hat V U_0(s)\ket{\psi_{in}}$ has a limit at $t\to -\infty$. A sufficient condition is that the norm of the integral is bounded:
 \[\int_{-\infty}^0 \dd s \norm{U^\dagger(s) \hat V U_0(s) \ket{\psi_{in}}} < \infty\]
 Something useful is that Unitary transformations preserve norm!
 \[\implies \int_{-\infty}^0 \dd s \norm{U^\dagger(s) \hat V U_0(s) \ket{\psi_{in}}}  = \int_{-\infty}^0 \dd s \norm{\hat V U_0(s) \ket{\psi_{in}}}\]
 We're going to first restrict our attention to when $\psi_{in}$ is a Gaussian, that is:
 \[\bra{x}\ket{\psi_{in}} \propto \exp\left[-\frac{\norm{x-a}^2}{2\xi^2}\right]\]
 We know from the Schrodinger equation that this evolves as follows:
-\begin{equation} |\bra{x}U_0(s)\ket{\psi_{in}}|^2= \left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{2}}\exp\left[-\frac{\norm{x-a}^2}{\xi^2+\frac{s^2}{m^2\xi^4}}\right]\end{equation}
+\begin{equation} |\bra{x}U_0(s)\ket{\psi_{in}}|^2= \left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{2}}\exp\left[-\frac{\norm{x-a}^2}{\xi^2+\frac{s^2}{m^2\xi^2}}\right]\end{equation}
 So that now,
-\begin{align} \norm{\hat V U_0(s)\ket{\psi_{in}}}^2 &= \int \dd^3 x |V(x)|^2\left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{2}}\exp\left[-\frac{\norm{x-a}^2}{\xi^2+\frac{s^2}{m^2\xi^4}}\right] \\
-& \leq \left(\int \dd ^3 x|V(x)|\right)^{\frac{1}{2}}\int_{-\infty}^0 \dd s \left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{4}}<\infty \label{scattering_exericse_2}\end{align}
+\begin{align} \norm{\hat V U_0(s)\ket{\psi_{in}}}^2 &= \int \dd^3 x |V(x)|^2\left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{2}}\exp\left[-\frac{\norm{x-a}^2}{\xi^2+\frac{s^2}{m^2\xi^2}}\right]
+\end{align}
+\begin{align} \int_{-\infty}^0 \dd s \norm{\hat V U_0(s) \ket{\psi_{in}}}\] & \leq \left(\int \dd ^3 x|V(x)|\right)^{\frac{1}{2}}\int_{-\infty}^0 \dd s \left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{4}}\\&<\infty \label{scattering_exericse_2}\end{align}
 Note that Gaussians are an overcomplete basis, since Gaussians come from coherent states which are overcomplete. So now we are basically done besides some subtleties. In the following,
 \[\ket{\psi_{in}} = \int \dd^3 y \Psi_{in}(y)\ket{G(y)}\]
 The $\Psi$ might be ill behaved! So the solution is to restrict ourselves to smooth and rapidly decaying input states. Another subtlety is that the Gaussians have some phase factor, which is some momentum $e^{ikx}$ multiplied by the Gaussian, but that can be accounted for. If we wanted to relax a few of our assumptions, that won't be super hard - spherical symmetry can be relaxed if our potential is bounded, and so on. However, we can't allow our systems to be discrete! It turns out that $H$ needs to have a continuous spectrum, otherwise there are no in/out states because the system will always return to its original configuration. This is called a revival, and every quantum system with discrete spectrum will experience a revival after some (astronomically long) time.
