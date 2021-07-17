@@ -1165,11 +1165,11 @@ We know from the Schrodinger equation that this evolves as follows:
 So that now,
 \begin{align} \norm{\hat V U_0(s)\ket{\psi_{in}}}^2 &= \int \dd^3 x |V(x)|^2\left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{2}}\exp\left[-\frac{\norm{x-a}^2}{\xi^2+\frac{s^2}{m^2\xi^2}}\right]
 \end{align}
-\begin{align} \int_{-\infty}^0 \dd s \norm{\hat V U_0(s) \ket{\psi_{in}}}\] & \leq \left(\int \dd ^3 x|V(x)|\right)^{\frac{1}{2}}\int_{-\infty}^0 \dd s \left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{4}}\\&<\infty \label{scattering_exericse_2}\end{align}
+\begin{align} \int_{-\infty}^0 \dd s \norm{\hat V U_0(s) \ket{\psi_{in}}} & \leq \left(\int \dd ^3 x|V(x)|\right)^{\frac{1}{2}}\int_{-\infty}^0 \dd s \left(1+\frac{s^2}{m^2\xi^4}\right)^{-\frac{3}{4}}\\&<\infty \label{scattering_exercise_2}\end{align}
 Note that Gaussians are an overcomplete basis, since Gaussians come from coherent states which are overcomplete. So now we are basically done besides some subtleties. In the following,
 \[\ket{\psi_{in}} = \int \dd^3 y \Psi_{in}(y)\ket{G(y)}\]
 The $\Psi$ might be ill behaved! So the solution is to restrict ourselves to smooth and rapidly decaying input states. Another subtlety is that the Gaussians have some phase factor, which is some momentum $e^{ikx}$ multiplied by the Gaussian, but that can be accounted for. If we wanted to relax a few of our assumptions, that won't be super hard - spherical symmetry can be relaxed if our potential is bounded, and so on. However, we can't allow our systems to be discrete! It turns out that $H$ needs to have a continuous spectrum, otherwise there are no in/out states because the system will always return to its original configuration. This is called a revival, and every quantum system with discrete spectrum will experience a revival after some (astronomically long) time.
-\begin{exercise} Show equations \eqref{scattering_exercise_1} and \eqref{scattering_exericse_2}\end{exercise}
+\begin{exercise} Show equations \eqref{scattering_exercise_1} and \eqref{scattering_exercise_2}\end{exercise}
 
 \subsection{M\o ller Operators}
 What we will do next is build a mapping between these in/out states and the 'interacting' trajectories (where the particle is near the potential). What we proved in the previous secction was that if $V(r)$ satisfies some conditions then for any $\ket{\psi_{in}}$ there is a corresponding interacting $\ket{\psi}$ which tends to $\ket{\psi_{in}}$ as $t$ goes to negative infinity, and similarly for $\ket{\psi_{out}}$. The two asymptotes are related by the following:
